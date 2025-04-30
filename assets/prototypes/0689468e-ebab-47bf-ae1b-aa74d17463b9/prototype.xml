@@ -1,0 +1,46 @@
+<prototype uuid="0689468e-ebab-47bf-ae1b-aa74d17463b9" name="Shuttle" version="1">	
+    <parameter name="shuttleStep" type="double" value="500">
+        <property name="constraints" value=">0" type="string"/>
+        <property name="displayName" value="Shuttle step length [mm]" type="string"/>
+        <property name="affectGeometry" value="false" type="boolean"/>
+    </parameter>
+    <parameter name="length" type="double" value="1000">
+        <property name="constraints" value=">0" type="string"/>
+        <property name="displayName" value="Length [mm]" type="string"/>
+        <property name="affectGeometry" value="true" type="boolean"/>
+    </parameter>
+    <parameter name="width" type="double" value="500">
+        <property name="constraints" value=">0" type="string"/>
+        <property name="displayName" value="Width [mm]" type="string"/>
+        <property name="affectGeometry" value="true" type="boolean"/>
+    </parameter>
+    <parameter name="height" type="double" value="900">
+        <property name="constraints" value=">0" type="string"/>
+        <property name="displayName" value="Height [mm]" type="string"/>
+        <property name="affectGeometry" value="true" type="boolean"/>
+    </parameter>
+    <parameter name="positionsNumber" type="int" value="2">
+        <property name="constraints" value=">0" type="string"/>
+        <property name="displayName" value="Number of positions" type="string"/>
+        <property name="affectGeometry" value="true" type="boolean"/>
+    </parameter>
+    <parameter name="shuttleStepTime" type="int" value="1500">
+        <property name="constraints" value=">0" type="string"/>
+        <property name="displayName" value="Shuttle step time [ms]" type="string"/>
+        <property name="affectGeometry" value="false" type="boolean"/>
+    </parameter>
+    <property name="displayName" value="Shuttle" type="string"/>
+    <property name="vendor" value="TTS" type="string"/>
+    <property name="category" value="transport" type="string"/>
+    <property name="generator" value="builder.js" type="string"/>
+    <property name="bounds_center" value="0;-28;532" type="double[]"/>
+    <property name="bounds_size" value="1000;588;1064" type="double[]"/>
+    <logics type="com.ttsnetwork.modules.standard.ShuttleTable">
+        <param name="width" type="double">${width}</param>
+        <param name="tableName" type="string">${instance.name}.table</param>
+        <param name="shuttleStepTime" type="long">${shuttleStepTime}</param>
+        <param name="shuttleStep" type="double">${shuttleStep}</param>
+        <param name="positionsNumber" type="int">${positionsNumber}</param>
+        
+    </logics>
+</prototype>
