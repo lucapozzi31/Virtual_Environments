@@ -1,3 +1,5 @@
-code;length;width;height;probability;interval;weight;rfid;color
-1;300;200;20;50;3000;450;P001;0x00ff00
-2;300;200;20;50;3000;350;P002;0xff00ff
+code;length;width;height;probability;interval;weight;rfid;color;def
+1;300;200;20;49;3000;450;P001;0x00ff00;0
+2;300;200;20;48;3000;350;P002;0xff00ff;0
+3;300;200;20;1;3000;450;P001;0x00ff00;1
+4;300;200;20;2;3000;350;P002;0xff00ff;1

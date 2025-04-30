@@ -4,10 +4,59 @@
  */
 package my.company;
 
+import com.ttsnetwork.modules.standard.BoxUtils;
+import com.ttsnetwork.modules.standard.IConveyorCommands;
+import com.ttsnetwork.modules.standard.IRobotCommands;
+import com.ttsnetwork.modules.standard.ISensorProvider;
+import com.ttsnetwork.modules.standard.ISource;
+import com.ttsnetwork.modules.standard.ProgrammableLogics;
+import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
+import com.ttsnetwork.modulespack.conveyors.SensorCatch;
+
 /**
  *
- * @author lucapozzi31
+ * @author ciavr
  */
-public class pl5 {
+public class pl5 extends ProgrammableLogics {
+
+    IConveyorCommands c1Commands;
+    IConveyorCommands c2Commands;
+    //IConveyorCommands c3Commands;
+    ISensorProvider c1Sensors;
+    ISensorProvider c2Sensors;
+    ISensorProvider c3Sensors;
+    //ISource p2cmd;
+    //ISource p3cmd;
     
+    ConveyorBox partA;
+
+    @Override
+    public void onInit() {
+        c1Commands = useSkill(IConveyorCommands.class, "f2");
+        //c2Commands = useSkill(IConveyorCommands.class, "f2");
+        c1Sensors = useSkill(ISensorProvider.class, "f2");
+        c1Sensors.registerOnSensors(this::onSensori, "s1");
+        //c2Sensors = useSkill(ISensorProvider.class, "f2");
+        //c2Sensors.registerOnSensors(this::onSensori2, "s1");
+        //c3Sensors = useSkill(ISensorProvider.class, "f2");
+        //c3Sensors.registerOnSensors(this::onSensori3, "s2");
+        //p2cmd= useSkill(ISource.class, "p2");
+        //p3cmd= useSkill(ISource.class, "p3");
+    }
+
+    void onSensori(SensorCatch t) {
+        System.out.println("Got event" + t.sensorName);
+        partA = t.box;
+        schedule.startSerial();
+        {
+            c1Commands.lock(t.box);
+            schedule.waitTime(3000);
+            c1Commands.release(partA);
+            
+            
+        }
+        schedule.end();
+    }
+
+
 }
