@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding= "UTF-8" ?>
 <instances>
    <instance name="Box1" uuid="8f0ba7a2-eaeb-427f-bb86-a2c8f5af8b23" version="1" prototype="2dc8e763-ef58-4979-b96a-e9831432c82c">
-      <parameter name="width" type="double" value="100">
+      <parameter name="width" type="double" value="1200">
          <property name="constraints" type="string" value="&gt;0"/>
       </parameter>
-      <parameter name="depth" type="double" value="100">
+      <parameter name="depth" type="double" value="1200">
          <property name="constraints" type="string" value="&gt;0"/>
       </parameter>
-      <parameter name="height" type="double" value="100">
+      <parameter name="height" type="double" value="600">
          <property name="constraints" type="string" value="&gt;0"/>
       </parameter>
    </instance>
@@ -778,27 +778,6 @@
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
    </instance>
-   <instance name="ProgrammableLogics1" uuid="d45b70c0-83d7-4b5a-a373-e62bcef138d9" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.pl1">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
-   <instance name="ProgrammableLogics2" uuid="d8847a22-4b31-466b-8298-dcd664f8853d" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.pl2">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
-   <instance name="ProgrammableLogics4" uuid="35959104-59dc-4b22-b900-c95763a547e4" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.pl4">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
    <instance name="Shuttle2" uuid="a5386c26-4628-4e42-932c-55a66b947146" version="1" prototype="0689468e-ebab-47bf-ae1b-aa74d17463b9">
       <parameter name="shuttleStep" type="double" value="500">
          <property name="constraints" type="string" value="&gt;0"/>
@@ -1249,8 +1228,36 @@
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
    </instance>
+   <instance name="pl1" uuid="d45b70c0-83d7-4b5a-a373-e62bcef138d9" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.pl1">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="pl2" uuid="d8847a22-4b31-466b-8298-dcd664f8853d" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.pl2">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
    <instance name="pl3" uuid="59dd7f19-6ede-4933-b48b-e41a15aec9aa" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
       <parameter name="plClass" type="string" value="my.company.pl3">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="pl4" uuid="35959104-59dc-4b22-b900-c95763a547e4" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.pl4">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="pl5" uuid="ae870cb6-8334-4a99-b467-a25dd53c206a" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.pl5">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Logics class"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1516,9 +1523,9 @@
    <relationship sourcePortName="out" sourceInstanceUuid="72eb477a-5798-40d8-b47b-56e23e28f64b" targetPortName="in" targetInstanceUuid="da62becb-530c-4cab-b505-7ad1537adb88"/>
    <relationship sourcePortName="out" sourceInstanceUuid="943ce6db-85fe-4172-8c52-7814e88e8c53" targetPortName="in" targetInstanceUuid="208c33fe-7506-4de3-8f05-2bd54682d550"/>
    <relationship sourcePortName="out" sourceInstanceUuid="0637a8c1-8376-4c5d-b701-52dcca40c1d4" targetPortName="in" targetInstanceUuid="6ddf22ea-24e5-4987-8a28-ca87f7740b1c"/>
+   <relationship sourcePortName="control" sourceInstanceUuid="445700e3-f8cd-4361-aca4-d9c334985438" targetPortName="IN" targetInstanceUuid="c763341b-233f-4c9c-a22b-9d48c0d19db6"/>
    <relationship sourcePortName="out" sourceInstanceUuid="445700e3-f8cd-4361-aca4-d9c334985438" targetPortName="in" targetInstanceUuid="00567999-9bbf-4ef7-879a-35f1e4917fc0"/>
    <relationship sourcePortName="out" sourceInstanceUuid="140a4060-9d59-4b0c-b937-7cbf403424ce" targetPortName="in" targetInstanceUuid="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>
-   <relationship sourcePortName="control" sourceInstanceUuid="445700e3-f8cd-4361-aca4-d9c334985438" targetPortName="IN" targetInstanceUuid="c763341b-233f-4c9c-a22b-9d48c0d19db6"/>
    <modifiers type="attach">
       <property name="childInstance" type="string" value="4cbcf99b-ee06-4f83-8235-494ca335709b"/>
       <property name="parentInstance" type="string" value="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>

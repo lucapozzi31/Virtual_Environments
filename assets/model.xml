@@ -437,14 +437,14 @@
             <ns2:joint type="RIGID">
                <ns2:transform>
                   <location lengthUnit="mm">
-                     <x>-259.14852788878164</x>
-                     <y>697.7985070201945</y>
-                     <z>636.301602256357</z>
+                     <x>-259.15</x>
+                     <y>697.8</y>
+                     <z>600.0</z>
                   </location>
                   <orientation angleUnit="deg">
                      <x>0.0</x>
                      <y>0.0</y>
-                     <z>0.9999999999999994</z>
+                     <z>1.0</z>
                      <w>150.00000000000003</w>
                   </orientation>
                </ns2:transform>
@@ -3400,7 +3400,7 @@
                               <orientation angleUnit="deg">
                                  <x>0.0</x>
                                  <y>0.0</y>
-                                 <z>0.9999999999999999</z>
+                                 <z>1.0</z>
                                  <w>45.00000000000001</w>
                               </orientation>
                            </ns2:transform>
@@ -4371,7 +4371,7 @@
                               <orientation angleUnit="deg">
                                  <x>0.0</x>
                                  <y>0.0</y>
-                                 <z>0.9999999999999999</z>
+                                 <z>1.0</z>
                                  <w>45.00000000000001</w>
                               </orientation>
                            </ns2:transform>
@@ -7644,7 +7644,7 @@
                               <orientation angleUnit="deg">
                                  <x>0.0</x>
                                  <y>0.0</y>
-                                 <z>0.9999999999999999</z>
+                                 <z>1.0</z>
                                  <w>45.00000000000001</w>
                               </orientation>
                            </ns2:transform>
@@ -9791,7 +9791,7 @@
                </group>
             </ns2:children>
          </group>
-         <group id="ProgrammableLogics4">
+         <group id="pl4">
             <properties>
                <property name="#instance.uuid" type="string">35959104-59dc-4b22-b900-c95763a547e4</property>
                <property name="#prototype.uuid" type="string">ffb20cba-6216-40c1-81f5-4d18313ca199</property>
@@ -9813,7 +9813,7 @@
                </ns2:transform>
             </ns2:joint>
             <ns2:children>
-               <body id="ProgrammableLogics4.pl_geom" visible="true">
+               <body id="pl4.pl_geom" visible="true">
                   <properties>
                      <property name="#local.name" type="string">pl_geom</property>
                      <property name="#instance.uuid" type="string">35959104-59dc-4b22-b900-c95763a547e4</property>
@@ -10459,8 +10459,8 @@
             <ns2:joint type="RIGID">
                <ns2:transform>
                   <location lengthUnit="mm">
-                     <x>-1267.82</x>
-                     <y>2185.12</y>
+                     <x>-1534.7028902864722</x>
+                     <y>2656.2852373246737</y>
                      <z>0.0</z>
                   </location>
                   <orientation angleUnit="deg">
@@ -11286,7 +11286,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>0.0</x>
-                           <y>628.8793445977508</y>
+                           <y>628.88</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -12168,7 +12168,7 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>-400.0</x>
+                           <x>-600.0</x>
                            <y>1000.0</y>
                            <z>0.0</z>
                         </location>
@@ -12249,7 +12249,7 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>399.9999999999999</x>
+                           <x>599.9999999999999</x>
                            <y>1000.0</y>
                            <z>0.0</z>
                         </location>
@@ -12294,7 +12294,7 @@
                      </body>
                   </ns2:children>
                </body>
-               <group id="ProgrammableLogics1">
+               <group id="pl1">
                   <properties>
                      <property name="#instance.uuid" type="string">d45b70c0-83d7-4b5a-a373-e62bcef138d9</property>
                      <property name="#prototype.uuid" type="string">ffb20cba-6216-40c1-81f5-4d18313ca199</property>
@@ -12316,7 +12316,7 @@
                      </ns2:transform>
                   </ns2:joint>
                   <ns2:children>
-                     <body id="ProgrammableLogics1.pl_geom" visible="true">
+                     <body id="pl1.pl_geom" visible="true">
                         <properties>
                            <property name="#local.name" type="string">pl_geom</property>
                            <property name="#instance.uuid" type="string">d45b70c0-83d7-4b5a-a373-e62bcef138d9</property>
@@ -12686,8 +12686,8 @@
             <ns2:joint type="RIGID">
                <ns2:transform>
                   <location lengthUnit="mm">
-                     <x>0.0</x>
-                     <y>0.0</y>
+                     <x>504.95046616867126</x>
+                     <y>2687.266144243933</y>
                      <z>0.0</z>
                   </location>
                   <orientation angleUnit="deg">
@@ -12708,8 +12708,8 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>693.1769303721899</x>
-                           <y>2285.8817692872462</y>
+                           <x>0.0</x>
+                           <y>-400.0</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -13081,8 +13081,8 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>1360.1465268981478</x>
-                           <y>2812.874920569645</y>
+                           <x>600.0</x>
+                           <y>0.0</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -13483,9 +13483,9 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>16.668254154408118</x>
-                           <y>2844.2085731381358</y>
-                           <z>-9.094947017729282E-13</z>
+                           <x>-600.0</x>
+                           <y>0.0</y>
+                           <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
                            <x>0.0</x>
@@ -13832,8 +13832,8 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>782.8068900642968</x>
-                           <y>3480.4535097142307</y>
+                           <x>0.0</x>
+                           <y>628.88</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -14715,9 +14715,9 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>27.921361858415395</x>
-                           <y>3844.2085731381358</y>
-                           <z>-9.094947017729282E-13</z>
+                           <x>-600.0</x>
+                           <y>1000.0</y>
+                           <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
                            <x>1.0</x>
@@ -14796,8 +14796,8 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>1358.561334621506</x>
-                           <y>3812.874920569645</y>
+                           <x>600.0</x>
+                           <y>1000.0</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -14841,7 +14841,7 @@
                      </body>
                   </ns2:children>
                </body>
-               <group id="ProgrammableLogics2">
+               <group id="pl2">
                   <properties>
                      <property name="#instance.uuid" type="string">d8847a22-4b31-466b-8298-dcd664f8853d</property>
                      <property name="#prototype.uuid" type="string">ffb20cba-6216-40c1-81f5-4d18313ca199</property>
@@ -14850,8 +14850,8 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>2992.661530164966</x>
-                           <y>3580.312044350774</y>
+                           <x>1380.5525986859095</x>
+                           <y>-70.08524032312789</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -14863,7 +14863,7 @@
                      </ns2:transform>
                   </ns2:joint>
                   <ns2:children>
-                     <body id="ProgrammableLogics2.pl_geom" visible="true">
+                     <body id="pl2.pl_geom" visible="true">
                         <properties>
                            <property name="#local.name" type="string">pl_geom</property>
                            <property name="#instance.uuid" type="string">d8847a22-4b31-466b-8298-dcd664f8853d</property>
@@ -14936,8 +14936,8 @@
             <ns2:joint type="RIGID">
                <ns2:transform>
                   <location lengthUnit="mm">
-                     <x>-410.2312109530312</x>
-                     <y>1316.3689940736224</y>
+                     <x>-305.47957210400114</x>
+                     <y>772.2546954715008</y>
                      <z>0.0</z>
                   </location>
                   <orientation angleUnit="deg">
@@ -14953,6 +14953,71 @@
             </ns2:geometry>
             <ns2:children/>
          </body>
+         <group id="pl5">
+            <properties>
+               <property name="#instance.uuid" type="string">ae870cb6-8334-4a99-b467-a25dd53c206a</property>
+               <property name="#prototype.uuid" type="string">ffb20cba-6216-40c1-81f5-4d18313ca199</property>
+            </properties>
+            <ns2:frames/>
+            <ns2:joint type="RIGID">
+               <ns2:transform>
+                  <location lengthUnit="mm">
+                     <x>5374.028959595516</x>
+                     <y>1295.4155890954903</y>
+                     <z>0.0</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </ns2:transform>
+            </ns2:joint>
+            <ns2:children>
+               <body id="pl5.pl_geom" visible="true">
+                  <properties>
+                     <property name="#local.name" type="string">pl_geom</property>
+                     <property name="#instance.uuid" type="string">ae870cb6-8334-4a99-b467-a25dd53c206a</property>
+                     <property name="#prototype.element.expert_mode" type="boolean">true</property>
+                  </properties>
+                  <ns2:frames>
+                     <frame name="control">
+                        <location lengthUnit="mm">
+                           <x>0.0</x>
+                           <y>0.0</y>
+                           <z>300.0</z>
+                        </location>
+                        <orientation angleUnit="deg">
+                           <x>0.0</x>
+                           <y>-1.0</y>
+                           <z>0.0</z>
+                           <w>90.0</w>
+                        </orientation>
+                     </frame>
+                  </ns2:frames>
+                  <ns2:joint type="RIGID">
+                     <ns2:transform>
+                        <location lengthUnit="mm">
+                           <x>0.0</x>
+                           <y>0.0</y>
+                           <z>0.0</z>
+                        </location>
+                        <orientation angleUnit="deg">
+                           <x>1.0</x>
+                           <y>0.0</y>
+                           <z>0.0</z>
+                           <w>0.0</w>
+                        </orientation>
+                     </ns2:transform>
+                  </ns2:joint>
+                  <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
+                     <geometry-uri>generated/pl_ae870cb6-8334-4a99-b467-a25dd53c206a.ptx</geometry-uri>
+                  </ns2:geometry>
+                  <ns2:children/>
+               </body>
+            </ns2:children>
+         </group>
       </ns2:children>
    </ns2:group>
 </environment>
