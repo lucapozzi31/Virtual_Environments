@@ -9863,9 +9863,35 @@
                      <property name="#visible" type="boolean">true</property>
                   </properties>
                   <location lengthUnit="mm">
-                     <x>1700.0</x>
+                     <x>1200.0</x>
                      <y>0.0</y>
-                     <z>1500.0</z>
+                     <z>1000.0</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </frame>
+               <frame name="f2">
+                  <location lengthUnit="mm">
+                     <x>1362.3833336385744</x>
+                     <y>1055.7352428609877</y>
+                     <z>1039.557340114502</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </frame>
+               <frame name="f3">
+                  <location lengthUnit="mm">
+                     <x>3404.786441380341</x>
+                     <y>1152.9958357614466</y>
+                     <z>962.8061537297666</z>
                   </location>
                   <orientation angleUnit="deg">
                      <x>1.0</x>
@@ -12132,7 +12158,7 @@
                      </group>
                   </ns2:children>
                </group>
-               <body id="ParametricSourceV4" visible="true">
+               <body id="PS1_C" visible="true">
                   <properties>
                      <property name="#instance.uuid" type="string">140a4060-9d59-4b0c-b937-7cbf403424ce</property>
                      <property name="#prototype.uuid" type="string">afa70dcf-9016-4459-995a-69cadfff917e</property>
@@ -12184,7 +12210,7 @@
                      <geometry-uri>generated/source_140a4060-9d59-4b0c-b937-7cbf403424ce.ptx</geometry-uri>
                   </ns2:geometry>
                   <ns2:children>
-                     <body id="ParametricSourceV4.entity" visible="true">
+                     <body id="PS1_C.entity" visible="true">
                         <properties>
                            <property name="#local.name" type="string">entity</property>
                            <property name="#instance.uuid" type="string">140a4060-9d59-4b0c-b937-7cbf403424ce</property>
