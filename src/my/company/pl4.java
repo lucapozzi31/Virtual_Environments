@@ -33,9 +33,9 @@ public class pl4 extends ProgrammableLogics {
 
     @Override
     public void onInit() {
-        c1Commands = useSkill(IConveyorCommands.class, "f1");
+        c1Commands = useSkill(IConveyorCommands.class, "C5_Forno1");
         //c2Commands = useSkill(IConveyorCommands.class, "f2");
-        c1Sensors = useSkill(ISensorProvider.class, "f1");
+        c1Sensors = useSkill(ISensorProvider.class, "C5_Forno1");
         c1Sensors.registerOnSensors(this::onSensori, "s1");
         c1Sensors.registerOnSensors(this::onSensori2, "s2");
         //c3Sensors = useSkill(ISensorProvider.class, "f2");

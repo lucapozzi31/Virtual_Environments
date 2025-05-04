@@ -6,7 +6,7 @@ package my.company;
 
 /**
  *
- * @author ciavr
+ * @author lucapozzi31
  */
 import com.ttsnetwork.modules.standard.BoxUtils;
 import com.ttsnetwork.modules.standard.IConveyorCommands;
@@ -28,53 +28,51 @@ public class pl3 extends ProgrammableLogics {
 
     //Shuttles
     IShuttle shuttle1;
-    //ISource ps1_c;
+    ISource s1_c1;
 
     @Override
     public void onInit() {
 
-       //Area Start Pick
-        C1= useSkill(IConveyorCommands.class, "C1_Start.C1_StartPick");
-        C1_s1 = useSkill(ISensorProvider.class, "C1_Start.C1_StartPick");
-        C1_s1.registerOnSensors(this::onSensori);
-        
-        //Robot
-        r3commands = useSkill(IRobotCommands.class, "C1_Start.R3");
+        //Area Start Pick
+        C1 = useSkill(IConveyorCommands.class, "C1_StartPick");
+        C1_s1 = useSkill(ISensorProvider.class, "C1_StartPick");
+        C1_s1.registerOnSensors(this::onSensori, "s1");
 
-        /*Logistica stazioni di assemblaggio
-        shuttle1 = useSkill(IShuttle.class, "S1");
+        //Robot
+        r3commands = useSkill(IRobotCommands.class, "R3");
+
+        //Logistica stazioni di assemblaggio
+        shuttle1 = useSkill(IShuttle.class, "SH1");
         shuttle1.registerOnPosition(1, this::onPosition_s1_1);
         shuttle1.registerOnPosition(2, this::onPosition_s1_2);
-        ps1_c = useSkill(ISource.class, "PS1_C");
-      */
-
+        s1_c1 = useSkill(ISource.class, "PS1_C");
+         
     }
 
-    
     @Override
     public void onStart() {
         schedule.startSerial();
         //ps1_c.create(null);
         schedule.end();
     }
-    private void onSensori(SensorCatch t) {
 
+    private void onSensori(SensorCatch t) {
+System.out.println("Sensore attivato: ");
         schedule.startSerial();
         {
             //Arriva la scatola, la prendo
             C1.lock(t.box);
-            r3commands.move(driver.getFrameTransform("C1_Start.f1"), 2000);
+            r3commands.move(driver.getFrameTransform("Frames.f1"), 2000);
             r3commands.move(BoxUtils.targetOffset(t.box, 0, 0, 100, 0, 0, 0), 1000);
             r3commands.pick(t.box.entity);
 
             //Decido dove mettere la scatola in base alla saturazione macchina
             //Vado su R1
-            r3commands.move(driver.getFrameTransform("C1_Start.f2"), 2000);
+            r3commands.move(driver.getFrameTransform("Frames.f2"), 2000);
             r3commands.release();
-            //ps1_c.create(null);
+            //s1_c1.create(null);
             //ps1_c.insert(t.box);
 
-            
             /*Vado su R2
             r3commands.move(driver.getFrameTransform("ciniz1group.f3"), 2000);
             r3commands.move(BoxUtils.targetOffset(t.box, 0, 0, 100, 0, 0, 0), 1000);
@@ -98,13 +96,11 @@ public class pl3 extends ProgrammableLogics {
         shuttle1.shuttle();
         schedule.end();
     }
-    
-        private void onPosition_s1_2(SensorCatch t) {
+
+    private void onPosition_s1_2(SensorCatch t) {
         schedule.startSerial();
         //ciclo di assemblaggio
-        
-        
-        
+
         shuttle1.shuttle();
         schedule.end();
     }

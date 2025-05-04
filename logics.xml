@@ -2,11 +2,11 @@
 <model name="model.xml" xmlns="http://heron.ttsnetwork.com/xml/v1">
     <variables/>
     <modules>
-        <module-instance name="ConveyorCurve3" type="com.ttsnetwork.modules.standard.ConveyorArc">
+        <module-instance name="C10" type="com.ttsnetwork.modules.standard.ConveyorArc">
             <visual x="7438" y="-1349"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">ConveyorCurve3.startFrame</param>
-            <param name="endFrame">ConveyorCurve3.endFrame</param>
+            <param name="startFrame">C10.startFrame</param>
+            <param name="endFrame">C10.endFrame</param>
             <param name="direction">right</param>
             <param name="sensorNames"></param>
             <param name="sensorPositions"></param>
@@ -15,11 +15,11 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="c1d" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C1D" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-935" y="2656"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">c1d.startFrame</param>
-            <param name="endFrame">c1d.endFrame</param>
+            <param name="startFrame">C1D.startFrame</param>
+            <param name="endFrame">C1D.endFrame</param>
             <param name="sensorNames">s1</param>
             <param name="sensorPositions">1700</param>
             <param name="sensorsReveal">LEAD</param>
@@ -27,10 +27,10 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="ParametricSourceV5" type="com.ttsnetwork.modules.standard.ParametricSource2">
+        <module-instance name="S6_D1" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="-935" y="3656"/>
-            <param name="modelName">ParametricSourceV5</param>
-            <param name="creationFrameName">ParametricSourceV5.creationFrame</param>
+            <param name="modelName">S6_D1</param>
+            <param name="creationFrameName">S6_D1.creationFrame</param>
             <param name="timeInterval">3000</param>
             <param name="minCreationDistance">100</param>
             <param name="marker"></param>
@@ -52,11 +52,11 @@
             <param name="script"></param>
             <param name="logicClassName"></param>
         </module-instance>
-        <module-instance name="ConveyorV10" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C7" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="7438" y="1151"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">ConveyorV10.startFrame</param>
-            <param name="endFrame">ConveyorV10.endFrame</param>
+            <param name="startFrame">C7.startFrame</param>
+            <param name="endFrame">C7.endFrame</param>
             <param name="sensorNames"></param>
             <param name="sensorPositions"></param>
             <param name="sensorsReveal"></param>
@@ -64,10 +64,10 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="PS1_C" type="com.ttsnetwork.modules.standard.ParametricSource2">
+        <module-instance name="S5_C1" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="-2135" y="4895"/>
-            <param name="modelName">PS1_C</param>
-            <param name="creationFrameName">PS1_C.creationFrame</param>
+            <param name="modelName">S5_C1</param>
+            <param name="creationFrameName">S5_C1.creationFrame</param>
             <param name="timeInterval">3000</param>
             <param name="minCreationDistance">100</param>
             <param name="marker"></param>
@@ -77,11 +77,11 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
-        <module-instance name="ConveyorV12" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C11_Quality" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="1938" y="-2849"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">ConveyorV12.startFrame</param>
-            <param name="endFrame">ConveyorV12.endFrame</param>
+            <param name="startFrame">C11_Quality.startFrame</param>
+            <param name="endFrame">C11_Quality.endFrame</param>
             <param name="sensorNames">s1;s2</param>
             <param name="sensorPositions">2000;4000</param>
             <param name="sensorsReveal">LEAD;LEAD</param>
@@ -89,23 +89,23 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="r4" type="com.ttsnetwork.modules.standard.Robot6DOF2">
+        <module-instance name="R4" type="com.ttsnetwork.modules.standard.Robot6DOF2">
             <visual x="2403" y="-4200"/>
             <param name="translationSpeed">1000</param>
             <param name="translationAcceleration">1000</param>
             <param name="rotationSpeed">360</param>
             <param name="rotationAcceleration">180</param>
-            <param name="modelName">r4</param>
+            <param name="modelName">R4</param>
             <param name="jerkTime">32</param>
             <param name="showAllGhosts">false</param>
             <param name="script"></param>
             <param name="logicClassName"></param>
         </module-instance>
-        <module-instance name="ConveyorV8" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C3" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="3038" y="1151"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">ConveyorV8.startFrame</param>
-            <param name="endFrame">ConveyorV8.endFrame</param>
+            <param name="startFrame">C3.startFrame</param>
+            <param name="endFrame">C3.endFrame</param>
             <param name="sensorNames"></param>
             <param name="sensorPositions"></param>
             <param name="sensorsReveal"></param>
@@ -113,28 +113,33 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="s1" type="com.ttsnetwork.modules.standard.ShuttleTable">
+        <module-instance name="SH1" type="com.ttsnetwork.modules.standard.ShuttleTable">
             <visual x="-1535" y="2256"/>
             <param name="width">500</param>
-            <param name="tableName">s1.table</param>
+            <param name="tableName">SH1.table</param>
             <param name="shuttleStepTime">1500</param>
             <param name="shuttleStep">500</param>
             <param name="positionsNumber">2</param>
         </module-instance>
-        <module-instance name="Sink1" type="com.ttsnetwork.modules.standard.Sink">
+        <module-instance name="PL3_Logistic" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="-2495" y="1478"/>
+            <param name="id">PL3_Logistic</param>
+            <param name="logicClassName">my.company.pl3</param>
+        </module-instance>
+        <module-instance name="S1_KO" type="com.ttsnetwork.modules.standard.Sink">
             <visual x="842" y="-4098"/>
             <param name="timeInterval">1000</param>
             <param name="infoContent"></param>
-            <param name="infoFrame">Sink1.creationFrame</param>
+            <param name="infoFrame">S1_KO.creationFrame</param>
         </module-instance>
-        <module-instance name="split" type="com.ttsnetwork.modules.standard.CustomConveyorSplit">
+        <module-instance name="C2_Split" type="com.ttsnetwork.modules.standard.CustomConveyorSplit">
             <visual x="2538" y="-349"/>
             <param name="conveyorSpeed">1</param>
-            <param name="out1Frame">split.outConv1.endFrame</param>
-            <param name="out2Frame">split.outConv2.endFrame</param>
-            <param name="out3Frame">split.outConv3.endFrame</param>
-            <param name="startFrame">split.main.startFrame</param>
-            <param name="endFrame">split.main.endFrame</param>
+            <param name="out1Frame">C2_Split.outConv1.endFrame</param>
+            <param name="out2Frame">C2_Split.outConv2.endFrame</param>
+            <param name="out3Frame">C2_Split.outConv3.endFrame</param>
+            <param name="startFrame">C2_Split.main.startFrame</param>
+            <param name="endFrame">C2_Split.main.endFrame</param>
             <param name="idleOnStart">${idleOnStart}</param>
             <param name="infoContent">${infoContent}</param>
             <param name="mainLength">1000</param>
@@ -144,14 +149,14 @@
             <param name="width">800</param>
             <param name="splitRuleClass">my.company.Rule1</param>
         </module-instance>
-        <module-instance name="ConveyorJoin1" type="com.ttsnetwork.modules.standard.ConveyorJoin">
+        <module-instance name="C9_Join" type="com.ttsnetwork.modules.standard.ConveyorJoin">
             <visual x="7438" y="-849"/>
             <param name="conveyorSpeed">1</param>
-            <param name="in1Frame">ConveyorJoin1.inConv1.startFrame</param>
-            <param name="in2Frame">ConveyorJoin1.inConv2.startFrame</param>
-            <param name="in3Frame">ConveyorJoin1.inConv3.startFrame</param>
-            <param name="startFrame">ConveyorJoin1.main.startFrame</param>
-            <param name="endFrame">ConveyorJoin1.main.endFrame</param>
+            <param name="in1Frame">C9_Join.inConv1.startFrame</param>
+            <param name="in2Frame">C9_Join.inConv2.startFrame</param>
+            <param name="in3Frame">C9_Join.inConv3.startFrame</param>
+            <param name="startFrame">C9_Join.main.startFrame</param>
+            <param name="endFrame">C9_Join.main.endFrame</param>
             <param name="idleOnStart">${idleOnStart}</param>
             <param name="infoContent">${infoContent}</param>
             <param name="mainLength">1000</param>
@@ -172,11 +177,11 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="ConveyorCurve1" type="com.ttsnetwork.modules.standard.ConveyorArc">
+        <module-instance name="C4" type="com.ttsnetwork.modules.standard.ConveyorArc">
             <visual x="3038" y="1651"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">ConveyorCurve1.startFrame</param>
-            <param name="endFrame">ConveyorCurve1.endFrame</param>
+            <param name="startFrame">C4.startFrame</param>
+            <param name="endFrame">C4.endFrame</param>
             <param name="direction">right</param>
             <param name="sensorNames"></param>
             <param name="sensorPositions"></param>
@@ -185,11 +190,11 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="f1" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C5_Forno1" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="5238" y="2851"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">f1.startFrame</param>
-            <param name="endFrame">f1.endFrame</param>
+            <param name="startFrame">C5_Forno1.startFrame</param>
+            <param name="endFrame">C5_Forno1.endFrame</param>
             <param name="sensorNames">s1;s2</param>
             <param name="sensorPositions">500;1500</param>
             <param name="sensorsReveal">LEAD;LEAD</param>
@@ -197,10 +202,10 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="ParametricSourceV2" type="com.ttsnetwork.modules.standard.ParametricSource2">
+        <module-instance name="S4_Plates" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="-4962" y="-349"/>
-            <param name="modelName">ParametricSourceV2</param>
-            <param name="creationFrameName">ParametricSourceV2.creationFrame</param>
+            <param name="modelName">S4_Plates</param>
+            <param name="creationFrameName">S4_Plates.creationFrame</param>
             <param name="timeInterval">3000</param>
             <param name="minCreationDistance">100</param>
             <param name="marker"></param>
@@ -210,11 +215,23 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
-        <module-instance name="c2c" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="R2" type="com.ttsnetwork.modules.standard.Robot6DOF2">
+            <visual x="505" y="3316"/>
+            <param name="translationSpeed">1000</param>
+            <param name="translationAcceleration">1000</param>
+            <param name="rotationSpeed">360</param>
+            <param name="rotationAcceleration">180</param>
+            <param name="modelName">R2</param>
+            <param name="jerkTime">32</param>
+            <param name="showAllGhosts">false</param>
+            <param name="script"></param>
+            <param name="logicClassName"></param>
+        </module-instance>
+        <module-instance name="C2C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-95" y="2687"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">c2c.startFrame</param>
-            <param name="endFrame">c2c.endFrame</param>
+            <param name="startFrame">C2C.startFrame</param>
+            <param name="endFrame">C2C.endFrame</param>
             <param name="sensorNames">s1</param>
             <param name="sensorPositions">1700</param>
             <param name="sensorsReveal">LEAD</param>
@@ -222,35 +239,28 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="r2" type="com.ttsnetwork.modules.standard.Robot6DOF2">
-            <visual x="505" y="3316"/>
-            <param name="translationSpeed">1000</param>
-            <param name="translationAcceleration">1000</param>
-            <param name="rotationSpeed">360</param>
-            <param name="rotationAcceleration">180</param>
-            <param name="modelName">r2</param>
-            <param name="jerkTime">32</param>
-            <param name="showAllGhosts">false</param>
-            <param name="script"></param>
-            <param name="logicClassName"></param>
+        <module-instance name="PL5_Forni" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="5441" y="1282"/>
+            <param name="id">PL5_Forni</param>
+            <param name="logicClassName">my.company.pl5</param>
         </module-instance>
-        <module-instance name="r1" type="com.ttsnetwork.modules.standard.Robot6DOF2">
+        <module-instance name="R1" type="com.ttsnetwork.modules.standard.Robot6DOF2">
             <visual x="-1535" y="4201"/>
             <param name="translationSpeed">1000</param>
             <param name="translationAcceleration">1000</param>
             <param name="rotationSpeed">360</param>
             <param name="rotationAcceleration">180</param>
-            <param name="modelName">r1</param>
+            <param name="modelName">R1</param>
             <param name="jerkTime">32</param>
             <param name="showAllGhosts">false</param>
             <param name="script"></param>
             <param name="logicClassName"></param>
         </module-instance>
-        <module-instance name="f2" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C8_Forno2" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="5238" y="-349"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">f2.startFrame</param>
-            <param name="endFrame">f2.endFrame</param>
+            <param name="startFrame">C8_Forno2.startFrame</param>
+            <param name="endFrame">C8_Forno2.endFrame</param>
             <param name="sensorNames">s1</param>
             <param name="sensorPositions">1200</param>
             <param name="sensorsReveal">LEAD</param>
@@ -258,26 +268,26 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="PlanSource" type="com.ttsnetwork.modules.standard.PlanSource">
+        <module-instance name="S3_Planning" type="com.ttsnetwork.modules.standard.PlanSource">
             <visual x="-4405" y="867"/>
-            <param name="modelName">PlanSource</param>
+            <param name="modelName">S3_Planning</param>
             <param name="prodPlanFileName">inputSource/0637a8c1-8376-4c5d-b701-52dcca40c1d4/PlanSource1_prodPlan.csv</param>
-            <param name="creationFrameName">PlanSource.creationFrame</param>
+            <param name="creationFrameName">S3_Planning.creationFrame</param>
             <param name="marker"></param>
             <param name="infoContent"></param>
             <param name="automatic">true</param>
             <param name="minCreationDistance">100</param>
         </module-instance>
-        <module-instance name="pl1" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="-2766" y="2656"/>
-            <param name="id">pl1</param>
+        <module-instance name="PL1_Station1" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="-3024" y="2879"/>
+            <param name="id">PL1_Station1</param>
             <param name="logicClassName">my.company.pl1</param>
         </module-instance>
-        <module-instance name="ConveyorCurve2" type="com.ttsnetwork.modules.standard.ConveyorArc">
+        <module-instance name="C6" type="com.ttsnetwork.modules.standard.ConveyorArc">
             <visual x="6238" y="2851"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">ConveyorCurve2.startFrame</param>
-            <param name="endFrame">ConveyorCurve2.endFrame</param>
+            <param name="startFrame">C6.startFrame</param>
+            <param name="endFrame">C6.endFrame</param>
             <param name="direction">right</param>
             <param name="sensorNames"></param>
             <param name="sensorPositions"></param>
@@ -286,10 +296,15 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="ParametricSourceV6" type="com.ttsnetwork.modules.standard.ParametricSource2">
+        <module-instance name="PL2_Station2" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="1878" y="2978"/>
+            <param name="id">PL2_Station2</param>
+            <param name="logicClassName">my.company.pl2</param>
+        </module-instance>
+        <module-instance name="S7_C2" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="-95" y="3687"/>
-            <param name="modelName">ParametricSourceV6</param>
-            <param name="creationFrameName">ParametricSourceV6.creationFrame</param>
+            <param name="modelName">S7_C2</param>
+            <param name="creationFrameName">S7_C2.creationFrame</param>
             <param name="timeInterval">3000</param>
             <param name="minCreationDistance">100</param>
             <param name="marker"></param>
@@ -299,11 +314,11 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
-        <module-instance name="c1batch" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C1_Batch" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-1462" y="-349"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">c1batch.startFrame</param>
-            <param name="endFrame">c1batch.endFrame</param>
+            <param name="startFrame">C1_Batch.startFrame</param>
+            <param name="endFrame">C1_Batch.endFrame</param>
             <param name="sensorNames">s1</param>
             <param name="sensorPositions">3500</param>
             <param name="sensorsReveal">LEAD</param>
@@ -311,11 +326,16 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="ConveyorV13" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="PL4_Quality" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="4121" y="-4450"/>
+            <param name="id">PL4_Quality</param>
+            <param name="logicClassName">my.company.pl4</param>
+        </module-instance>
+        <module-instance name="C12_KO" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="842" y="-3598"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">ConveyorV13.startFrame</param>
-            <param name="endFrame">ConveyorV13.endFrame</param>
+            <param name="startFrame">C12_KO.startFrame</param>
+            <param name="endFrame">C12_KO.endFrame</param>
             <param name="sensorNames"></param>
             <param name="sensorPositions"></param>
             <param name="sensorsReveal"></param>
@@ -323,11 +343,11 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="Sink2" type="com.ttsnetwork.modules.standard.Sink">
+        <module-instance name="S2_OK" type="com.ttsnetwork.modules.standard.Sink">
             <visual x="-2258" y="-2833"/>
             <param name="timeInterval">1000</param>
             <param name="infoContent"></param>
-            <param name="infoFrame">Sink2.creationFrame</param>
+            <param name="infoFrame">S2_OK.creationFrame</param>
         </module-instance>
         <module-instance name="C1C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-2135" y="3895"/>
@@ -341,10 +361,10 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="ParametricSourceV7" type="com.ttsnetwork.modules.standard.ParametricSource2">
+        <module-instance name="S8_D2" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="1105" y="3687"/>
-            <param name="modelName">ParametricSourceV7</param>
-            <param name="creationFrameName">ParametricSourceV7.creationFrame</param>
+            <param name="modelName">S8_D2</param>
+            <param name="creationFrameName">S8_D2.creationFrame</param>
             <param name="timeInterval">3000</param>
             <param name="minCreationDistance">100</param>
             <param name="marker"></param>
@@ -354,19 +374,19 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
-        <module-instance name="Shuttle2" type="com.ttsnetwork.modules.standard.ShuttleTable">
+        <module-instance name="SH2" type="com.ttsnetwork.modules.standard.ShuttleTable">
             <visual x="505" y="2287"/>
             <param name="width">500</param>
-            <param name="tableName">Shuttle2.table</param>
+            <param name="tableName">SH2.table</param>
             <param name="shuttleStepTime">1500</param>
             <param name="shuttleStep">500</param>
             <param name="positionsNumber">2</param>
         </module-instance>
-        <module-instance name="c2d" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+        <module-instance name="C2D" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="1105" y="2687"/>
             <param name="conveyorSpeed">1</param>
-            <param name="startFrame">c2d.startFrame</param>
-            <param name="endFrame">c2d.endFrame</param>
+            <param name="startFrame">C2D.startFrame</param>
+            <param name="endFrame">C2D.endFrame</param>
             <param name="sensorNames">s1</param>
             <param name="sensorPositions">1700</param>
             <param name="sensorsReveal">LEAD</param>
@@ -377,87 +397,87 @@
     </modules>
     <connections>
         <connection>
-            <port-out module="c1batch" port="flowOut"/>
-            <port-in module="split" port="flowIn"/>
+            <port-out module="C1_Batch" port="flowOut"/>
+            <port-in module="C2_Split" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="split" port="out1"/>
-            <port-in module="ConveyorV8" port="insert"/>
+            <port-out module="C2_Split" port="out1"/>
+            <port-in module="C3" port="insert"/>
         </connection>
         <connection>
-            <port-out module="split" port="out1"/>
-            <port-in module="ConveyorV8" port="flowIn"/>
+            <port-out module="C2_Split" port="out1"/>
+            <port-in module="C3" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ConveyorV8" port="flowOut"/>
-            <port-in module="ConveyorCurve1" port="flowIn"/>
+            <port-out module="C3" port="flowOut"/>
+            <port-in module="C4" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ConveyorCurve1" port="flowOut"/>
-            <port-in module="f1" port="flowIn"/>
+            <port-out module="C4" port="flowOut"/>
+            <port-in module="C5_Forno1" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="f1" port="flowOut"/>
-            <port-in module="ConveyorCurve2" port="flowIn"/>
+            <port-out module="C5_Forno1" port="flowOut"/>
+            <port-in module="C6" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ConveyorCurve2" port="flowOut"/>
-            <port-in module="ConveyorV10" port="flowIn"/>
+            <port-out module="C6" port="flowOut"/>
+            <port-in module="C7" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ConveyorV10" port="flowOut"/>
-            <port-in module="ConveyorJoin1" port="in1"/>
+            <port-out module="C7" port="flowOut"/>
+            <port-in module="C9_Join" port="in1"/>
         </connection>
         <connection>
-            <port-out module="ConveyorV10" port="flowOut"/>
-            <port-in module="ConveyorJoin1" port="in3"/>
+            <port-out module="C7" port="flowOut"/>
+            <port-in module="C9_Join" port="in3"/>
         </connection>
         <connection>
-            <port-out module="split" port="out3"/>
-            <port-in module="f2" port="flowIn"/>
+            <port-out module="C2_Split" port="out3"/>
+            <port-in module="C8_Forno2" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="f2" port="flowOut"/>
-            <port-in module="ConveyorJoin1" port="in2"/>
+            <port-out module="C8_Forno2" port="flowOut"/>
+            <port-in module="C9_Join" port="in2"/>
         </connection>
         <connection>
-            <port-out module="ConveyorJoin1" port="flowOut"/>
-            <port-in module="ConveyorCurve3" port="flowIn"/>
+            <port-out module="C9_Join" port="flowOut"/>
+            <port-in module="C10" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ConveyorCurve3" port="flowOut"/>
-            <port-in module="ConveyorV12" port="insert"/>
+            <port-out module="C10" port="flowOut"/>
+            <port-in module="C11_Quality" port="insert"/>
         </connection>
         <connection>
-            <port-out module="ParametricSourceV6" port="out"/>
-            <port-in module="c2c" port="flowIn"/>
+            <port-out module="S7_C2" port="out"/>
+            <port-in module="C2C" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ParametricSourceV7" port="out"/>
-            <port-in module="c2d" port="flowIn"/>
+            <port-out module="S8_D2" port="out"/>
+            <port-in module="C2D" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ConveyorCurve3" port="flowOut"/>
-            <port-in module="ConveyorV12" port="flowIn"/>
+            <port-out module="C10" port="flowOut"/>
+            <port-in module="C11_Quality" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ConveyorV13" port="flowOut"/>
-            <port-in module="Sink1" port="in"/>
+            <port-out module="C12_KO" port="flowOut"/>
+            <port-in module="S1_KO" port="in"/>
         </connection>
         <connection>
-            <port-out module="ParametricSourceV5" port="out"/>
-            <port-in module="c1d" port="flowIn"/>
+            <port-out module="S6_D1" port="out"/>
+            <port-in module="C1D" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="ParametricSourceV2" port="out"/>
-            <port-in module="c1batch" port="flowIn"/>
+            <port-out module="S4_Plates" port="out"/>
+            <port-in module="C1_Batch" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="PS1_C" port="out"/>
+            <port-out module="S5_C1" port="out"/>
             <port-in module="C1C" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="PlanSource" port="out"/>
+            <port-out module="S3_Planning" port="out"/>
             <port-in module="C1_StartPick" port="flowIn"/>
         </connection>
     </connections>

@@ -32,9 +32,9 @@ public class pl5 extends ProgrammableLogics {
 
     @Override
     public void onInit() {
-        c1Commands = useSkill(IConveyorCommands.class, "f2");
+        c1Commands = useSkill(IConveyorCommands.class, "C8_Forno2");
         //c2Commands = useSkill(IConveyorCommands.class, "f2");
-        c1Sensors = useSkill(ISensorProvider.class, "f2");
+        c1Sensors = useSkill(ISensorProvider.class, "C8_Forno2");
         c1Sensors.registerOnSensors(this::onSensori, "s1");
         //c2Sensors = useSkill(ISensorProvider.class, "f2");
         //c2Sensors.registerOnSensors(this::onSensori2, "s1");
