@@ -20,27 +20,33 @@ import com.ttsnetwork.modulespack.conveyors.SensorCatch;
 //Programmazione del robot nella prima postazione di assemblaggio
 public class pl3 extends ProgrammableLogics {
 
-    // IConveyorCommands c1commands;
-    IConveyorCommands ciniz1commands;
-    ISensorProvider ciniz1sensors;
+    //Conveyors
+    IConveyorCommands C1;
+    ISensorProvider C1_s1;
+    //Robots
     IRobotCommands r3commands;
 
+    //Shuttles
     IShuttle shuttle1;
-     ISource ps1_c;
+    //ISource ps1_c;
 
     @Override
     public void onInit() {
 
-        ciniz1commands = useSkill(IConveyorCommands.class, "ciniz1");
-        ciniz1sensors = useSkill(ISensorProvider.class, "ciniz1");
-        ciniz1sensors.registerOnSensors(this::onSensori);
-        r3commands = useSkill(IRobotCommands.class, "r3");
+       //Area Start Pick
+        C1= useSkill(IConveyorCommands.class, "C1_Start.C1_StartPick");
+        C1_s1 = useSkill(ISensorProvider.class, "C1_Start.C1_StartPick");
+        C1_s1.registerOnSensors(this::onSensori);
+        
+        //Robot
+        r3commands = useSkill(IRobotCommands.class, "C1_Start.R3");
 
+        /*Logistica stazioni di assemblaggio
         shuttle1 = useSkill(IShuttle.class, "S1");
         shuttle1.registerOnPosition(1, this::onPosition_s1_1);
         shuttle1.registerOnPosition(2, this::onPosition_s1_2);
         ps1_c = useSkill(ISource.class, "PS1_C");
-      
+      */
 
     }
 
@@ -56,14 +62,14 @@ public class pl3 extends ProgrammableLogics {
         schedule.startSerial();
         {
             //Arriva la scatola, la prendo
-            ciniz1commands.lock(t.box);
-            r3commands.move(driver.getFrameTransform("ciniz1group.f1"), 2000);
+            C1.lock(t.box);
+            r3commands.move(driver.getFrameTransform("C1_Start.f1"), 2000);
             r3commands.move(BoxUtils.targetOffset(t.box, 0, 0, 100, 0, 0, 0), 1000);
             r3commands.pick(t.box.entity);
 
             //Decido dove mettere la scatola in base alla saturazione macchina
             //Vado su R1
-            r3commands.move(driver.getFrameTransform("ciniz1group.f2"), 2000);
+            r3commands.move(driver.getFrameTransform("C1_Start.f2"), 2000);
             r3commands.release();
             //ps1_c.create(null);
             //ps1_c.insert(t.box);
