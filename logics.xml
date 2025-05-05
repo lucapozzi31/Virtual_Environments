@@ -206,12 +206,12 @@
             <visual x="-4962" y="-349"/>
             <param name="modelName">S4_Plates</param>
             <param name="creationFrameName">S4_Plates.creationFrame</param>
-            <param name="timeInterval">3000</param>
+            <param name="timeInterval">8000</param>
             <param name="minCreationDistance">100</param>
             <param name="marker"></param>
             <param name="counterName">counter</param>
             <param name="entityNamePrefix">E_</param>
-            <param name="delayInterval">3000</param>
+            <param name="delayInterval">0</param>
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
@@ -314,11 +314,6 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
-        <module-instance name="ProgrammableLogics1" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="3674" y="-4296"/>
-            <param name="id">ProgrammableLogics1</param>
-            <param name="logicClassName">my.company.PL1</param>
-        </module-instance>
         <module-instance name="C1_Batch" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-1462" y="-349"/>
             <param name="conveyorSpeed">1</param>
@@ -332,7 +327,7 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="PL4_Quality" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="5416" y="-1672"/>
+            <visual x="5416" y="-1391"/>
             <param name="id">PL4_Quality</param>
             <param name="logicClassName">my.company.pl4</param>
         </module-instance>

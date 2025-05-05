@@ -895,13 +895,6 @@
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
    </instance>
-   <instance name="ProgrammableLogics1" uuid="9e64e9a8-2d1e-463f-ba6c-21e8fa3d6faf" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.PL1">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
    <instance name="R1" uuid="c763341b-233f-4c9c-a22b-9d48c0d19db6" version="1" prototype="4cf0efef-ad27-4ae1-a3d4-068ad898d5e0">
       <parameter name="logics" type="string" value="">
          <property name="displayName" type="string" value="Logics class name"/>
@@ -1143,14 +1136,14 @@
       </parameter>
    </instance>
    <instance name="S4_Plates" uuid="efb3d041-4f16-4c2a-af9a-65e71020dc6c" version="1" prototype="afa70dcf-9016-4459-995a-69cadfff917e">
-      <parameter name="creationtimeInterval" type="long" value="3000">
+      <parameter name="creationtimeInterval" type="long" value="8000">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Creation interval [ms]"/>
       </parameter>
-      <parameter name="delayInterval" type="long" value="3000">
+      <parameter name="delayInterval" type="long" value="0">
          <property name="displayName" type="string" value="Initial delay [ms]"/>
       </parameter>
-      <parameter name="entityLength" type="double" value="1050">
+      <parameter name="entityLength" type="double" value="100">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity length [mm]"/>
       </parameter>
