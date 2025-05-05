@@ -215,18 +215,6 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
-        <module-instance name="R2" type="com.ttsnetwork.modules.standard.Robot6DOF2">
-            <visual x="505" y="3316"/>
-            <param name="translationSpeed">1000</param>
-            <param name="translationAcceleration">1000</param>
-            <param name="rotationSpeed">360</param>
-            <param name="rotationAcceleration">180</param>
-            <param name="modelName">R2</param>
-            <param name="jerkTime">32</param>
-            <param name="showAllGhosts">false</param>
-            <param name="script"></param>
-            <param name="logicClassName"></param>
-        </module-instance>
         <module-instance name="C2C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-95" y="2687"/>
             <param name="conveyorSpeed">1</param>
@@ -239,8 +227,20 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
+        <module-instance name="R2" type="com.ttsnetwork.modules.standard.Robot6DOF2">
+            <visual x="505" y="3316"/>
+            <param name="translationSpeed">1000</param>
+            <param name="translationAcceleration">1000</param>
+            <param name="rotationSpeed">360</param>
+            <param name="rotationAcceleration">180</param>
+            <param name="modelName">R2</param>
+            <param name="jerkTime">32</param>
+            <param name="showAllGhosts">false</param>
+            <param name="script"></param>
+            <param name="logicClassName"></param>
+        </module-instance>
         <module-instance name="PL5_Forni" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="5441" y="1282"/>
+            <visual x="5441" y="1864"/>
             <param name="id">PL5_Forni</param>
             <param name="logicClassName">my.company.pl5</param>
         </module-instance>
@@ -314,6 +314,11 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
+        <module-instance name="ProgrammableLogics1" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="3674" y="-4296"/>
+            <param name="id">ProgrammableLogics1</param>
+            <param name="logicClassName">my.company.PL1</param>
+        </module-instance>
         <module-instance name="C1_Batch" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-1462" y="-349"/>
             <param name="conveyorSpeed">1</param>
@@ -327,7 +332,7 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="PL4_Quality" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="4121" y="-4450"/>
+            <visual x="5416" y="-1672"/>
             <param name="id">PL4_Quality</param>
             <param name="logicClassName">my.company.pl4</param>
         </module-instance>
@@ -361,6 +366,18 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
+        <module-instance name="C2D" type="com.ttsnetwork.modules.standard.ConveyorLine2">
+            <visual x="1105" y="2687"/>
+            <param name="conveyorSpeed">1</param>
+            <param name="startFrame">C2D.startFrame</param>
+            <param name="endFrame">C2D.endFrame</param>
+            <param name="sensorNames">s1</param>
+            <param name="sensorPositions">1700</param>
+            <param name="sensorsReveal">LEAD</param>
+            <param name="sensorFrames"></param>
+            <param name="idleOnStart">false</param>
+            <param name="infoContent"></param>
+        </module-instance>
         <module-instance name="S8_D2" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="1105" y="3687"/>
             <param name="modelName">S8_D2</param>
@@ -381,18 +398,6 @@
             <param name="shuttleStepTime">1500</param>
             <param name="shuttleStep">500</param>
             <param name="positionsNumber">2</param>
-        </module-instance>
-        <module-instance name="C2D" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="1105" y="2687"/>
-            <param name="conveyorSpeed">1</param>
-            <param name="startFrame">C2D.startFrame</param>
-            <param name="endFrame">C2D.endFrame</param>
-            <param name="sensorNames">s1</param>
-            <param name="sensorPositions">1700</param>
-            <param name="sensorsReveal">LEAD</param>
-            <param name="sensorFrames"></param>
-            <param name="idleOnStart">false</param>
-            <param name="infoContent"></param>
         </module-instance>
     </modules>
     <connections>

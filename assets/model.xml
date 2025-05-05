@@ -196,10 +196,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896258</x>
-                                 <y>0.5773502691896258</y>
-                                 <z>0.5773502691896258</z>
-                                 <w>120.00000000000001</w>
+                                 <x>0.5773502691896257</x>
+                                 <y>0.5773502691896257</y>
+                                 <z>0.5773502691896257</z>
+                                 <w>119.99999999999999</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -598,10 +598,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -1023,10 +1023,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -1291,10 +1291,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -1559,10 +1559,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -1827,10 +1827,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -2096,10 +2096,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -2679,10 +2679,10 @@
                                              <z>-53.0</z>
                                           </location>
                                           <orientation angleUnit="deg">
-                                             <x>0.5773502691896257</x>
-                                             <y>0.5773502691896257</y>
-                                             <z>0.5773502691896257</z>
-                                             <w>119.99999999999999</w>
+                                             <x>0.5773502691896258</x>
+                                             <y>0.5773502691896258</y>
+                                             <z>0.5773502691896258</z>
+                                             <w>120.00000000000001</w>
                                           </orientation>
                                        </ns2:transform>
                                     </ns2:joint>
@@ -2812,10 +2812,10 @@
                                              <z>-53.0</z>
                                           </location>
                                           <orientation angleUnit="deg">
-                                             <x>0.5773502691896257</x>
-                                             <y>0.5773502691896257</y>
-                                             <z>0.5773502691896257</z>
-                                             <w>119.99999999999999</w>
+                                             <x>0.5773502691896258</x>
+                                             <y>0.5773502691896258</y>
+                                             <z>0.5773502691896258</z>
+                                             <w>120.00000000000001</w>
                                           </orientation>
                                        </ns2:transform>
                                     </ns2:joint>
@@ -3442,10 +3442,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -4079,10 +4079,10 @@
                                              <z>-53.0</z>
                                           </location>
                                           <orientation angleUnit="deg">
-                                             <x>0.5773502691896257</x>
-                                             <y>0.5773502691896257</y>
-                                             <z>0.5773502691896257</z>
-                                             <w>119.99999999999999</w>
+                                             <x>0.5773502691896258</x>
+                                             <y>0.5773502691896258</y>
+                                             <z>0.5773502691896258</z>
+                                             <w>120.00000000000001</w>
                                           </orientation>
                                        </ns2:transform>
                                     </ns2:joint>
@@ -4212,10 +4212,10 @@
                                              <z>-53.0</z>
                                           </location>
                                           <orientation angleUnit="deg">
-                                             <x>0.5773502691896257</x>
-                                             <y>0.5773502691896257</y>
-                                             <z>0.5773502691896257</z>
-                                             <w>119.99999999999999</w>
+                                             <x>0.5773502691896258</x>
+                                             <y>0.5773502691896258</y>
+                                             <z>0.5773502691896258</z>
+                                             <w>120.00000000000001</w>
                                           </orientation>
                                        </ns2:transform>
                                     </ns2:joint>
@@ -4842,10 +4842,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -5217,10 +5217,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -5642,10 +5642,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -5910,10 +5910,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -6178,10 +6178,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -6446,10 +6446,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -6923,10 +6923,10 @@
                                              <z>-53.0</z>
                                           </location>
                                           <orientation angleUnit="deg">
-                                             <x>0.5773502691896257</x>
-                                             <y>0.5773502691896257</y>
-                                             <z>0.5773502691896257</z>
-                                             <w>119.99999999999999</w>
+                                             <x>0.5773502691896258</x>
+                                             <y>0.5773502691896258</y>
+                                             <z>0.5773502691896258</z>
+                                             <w>120.00000000000001</w>
                                           </orientation>
                                        </ns2:transform>
                                     </ns2:joint>
@@ -7056,10 +7056,10 @@
                                              <z>-53.0</z>
                                           </location>
                                           <orientation angleUnit="deg">
-                                             <x>0.5773502691896257</x>
-                                             <y>0.5773502691896257</y>
-                                             <z>0.5773502691896257</z>
-                                             <w>119.99999999999999</w>
+                                             <x>0.5773502691896258</x>
+                                             <y>0.5773502691896258</y>
+                                             <z>0.5773502691896258</z>
+                                             <w>120.00000000000001</w>
                                           </orientation>
                                        </ns2:transform>
                                     </ns2:joint>
@@ -7686,10 +7686,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -8115,10 +8115,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896258</x>
-                                 <y>0.5773502691896258</y>
-                                 <z>0.5773502691896258</z>
-                                 <w>120.00000000000001</w>
+                                 <x>0.5773502691896257</x>
+                                 <y>0.5773502691896257</y>
+                                 <z>0.5773502691896257</z>
+                                 <w>119.99999999999999</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -8487,10 +8487,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896258</x>
-                                       <y>0.5773502691896258</y>
-                                       <z>0.5773502691896258</z>
-                                       <w>120.00000000000001</w>
+                                       <x>0.5773502691896257</x>
+                                       <y>0.5773502691896257</y>
+                                       <z>0.5773502691896257</z>
+                                       <w>119.99999999999999</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -8807,10 +8807,10 @@
                                        <z>847.0</z>
                                     </location>
                                     <orientation angleUnit="deg">
-                                       <x>0.5773502691896257</x>
-                                       <y>0.5773502691896257</y>
-                                       <z>0.5773502691896257</z>
-                                       <w>119.99999999999999</w>
+                                       <x>0.5773502691896258</x>
+                                       <y>0.5773502691896258</y>
+                                       <z>0.5773502691896258</z>
+                                       <w>120.00000000000001</w>
                                     </orientation>
                                  </ns2:transform>
                               </ns2:joint>
@@ -9130,10 +9130,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896258</x>
-                                 <y>0.5773502691896258</y>
-                                 <z>0.5773502691896258</z>
-                                 <w>120.00000000000001</w>
+                                 <x>0.5773502691896257</x>
+                                 <y>0.5773502691896257</y>
+                                 <z>0.5773502691896257</z>
+                                 <w>119.99999999999999</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -9532,10 +9532,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -9934,10 +9934,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -10336,10 +10336,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896257</x>
-                                 <y>0.5773502691896257</y>
-                                 <z>0.5773502691896257</z>
-                                 <w>119.99999999999999</w>
+                                 <x>0.5773502691896258</x>
+                                 <y>0.5773502691896258</y>
+                                 <z>0.5773502691896258</z>
+                                 <w>120.00000000000001</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -14915,8 +14915,8 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>4120.779382270564</x>
-                           <y>-4449.512636443452</y>
+                           <x>5416.260302602406</x>
+                           <y>-1671.8903397561617</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -14981,7 +14981,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>5440.86551983272</x>
-                           <y>1281.8491615780486</y>
+                           <y>1864.2321164017712</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -15079,6 +15079,71 @@
                   </ns2:joint>
                   <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
                      <geometry-uri>parametrics/8f0ba7a2-eaeb-427f-bb86-a2c8f5af8b23.ptx</geometry-uri>
+                  </ns2:geometry>
+                  <ns2:children/>
+               </body>
+            </ns2:children>
+         </group>
+         <group id="ProgrammableLogics1">
+            <properties>
+               <property name="#instance.uuid" type="string">9e64e9a8-2d1e-463f-ba6c-21e8fa3d6faf</property>
+               <property name="#prototype.uuid" type="string">ffb20cba-6216-40c1-81f5-4d18313ca199</property>
+            </properties>
+            <ns2:frames/>
+            <ns2:joint type="RIGID">
+               <ns2:transform>
+                  <location lengthUnit="mm">
+                     <x>3674.236792281896</x>
+                     <y>-4296.019610845579</y>
+                     <z>0.0</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </ns2:transform>
+            </ns2:joint>
+            <ns2:children>
+               <body id="ProgrammableLogics1.pl_geom" visible="true">
+                  <properties>
+                     <property name="#local.name" type="string">pl_geom</property>
+                     <property name="#instance.uuid" type="string">9e64e9a8-2d1e-463f-ba6c-21e8fa3d6faf</property>
+                     <property name="#prototype.element.expert_mode" type="boolean">true</property>
+                  </properties>
+                  <ns2:frames>
+                     <frame name="control">
+                        <location lengthUnit="mm">
+                           <x>0.0</x>
+                           <y>0.0</y>
+                           <z>300.0</z>
+                        </location>
+                        <orientation angleUnit="deg">
+                           <x>0.0</x>
+                           <y>-1.0</y>
+                           <z>0.0</z>
+                           <w>90.0</w>
+                        </orientation>
+                     </frame>
+                  </ns2:frames>
+                  <ns2:joint type="RIGID">
+                     <ns2:transform>
+                        <location lengthUnit="mm">
+                           <x>0.0</x>
+                           <y>0.0</y>
+                           <z>0.0</z>
+                        </location>
+                        <orientation angleUnit="deg">
+                           <x>1.0</x>
+                           <y>0.0</y>
+                           <z>0.0</z>
+                           <w>0.0</w>
+                        </orientation>
+                     </ns2:transform>
+                  </ns2:joint>
+                  <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
+                     <geometry-uri>generated/pl_9e64e9a8-2d1e-463f-ba6c-21e8fa3d6faf.ptx</geometry-uri>
                   </ns2:geometry>
                   <ns2:children/>
                </body>
