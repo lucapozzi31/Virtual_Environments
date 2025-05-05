@@ -101,6 +101,11 @@
             <param name="script"></param>
             <param name="logicClassName"></param>
         </module-instance>
+        <module-instance name="ProgrammableLogics1" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="3558" y="-4111"/>
+            <param name="id">ProgrammableLogics1</param>
+            <param name="logicClassName">my.company.pl6</param>
+        </module-instance>
         <module-instance name="C3" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="3038" y="1151"/>
             <param name="conveyorSpeed">1</param>

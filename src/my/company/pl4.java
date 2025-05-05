@@ -9,6 +9,7 @@ import com.ttsnetwork.modules.standard.IConveyorCommands;
 import com.ttsnetwork.modules.standard.IRobotCommands;
 import com.ttsnetwork.modules.standard.ISensorProvider;
 import com.ttsnetwork.modules.standard.ISource;
+import com.ttsnetwork.modules.standard.PLGlobalState;
 import com.ttsnetwork.modules.standard.ProgrammableLogics;
 import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
 import com.ttsnetwork.modulespack.conveyors.SensorCatch;
@@ -31,17 +32,15 @@ public class pl4 extends ProgrammableLogics {
     ConveyorBox part2;
     int cont = 0;
 
+    
+
     @Override
     public void onInit() {
         c1Commands = useSkill(IConveyorCommands.class, "C5_Forno1");
-        //c2Commands = useSkill(IConveyorCommands.class, "f2");
         c1Sensors = useSkill(ISensorProvider.class, "C5_Forno1");
         c1Sensors.registerOnSensors(this::onSensori, "s1");
         c1Sensors.registerOnSensors(this::onSensori2, "s2");
-        //c3Sensors = useSkill(ISensorProvider.class, "f2");
-        //c3Sensors.registerOnSensors(this::onSensori3, "s2");
-        //p2cmd= useSkill(ISource.class, "p2");
-        //p3cmd= useSkill(ISource.class, "p3");
+        
     }
 
     void onSensori(SensorCatch t) {
