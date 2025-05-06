@@ -89,6 +89,11 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
+        <module-instance name="ProgrammableLogics1" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="3558" y="-4111"/>
+            <param name="id">ProgrammableLogics1</param>
+            <param name="logicClassName">my.company.pl6</param>
+        </module-instance>
         <module-instance name="R4" type="com.ttsnetwork.modules.standard.Robot6DOF2">
             <visual x="2403" y="-4200"/>
             <param name="translationSpeed">1000</param>
@@ -100,11 +105,6 @@
             <param name="showAllGhosts">false</param>
             <param name="script"></param>
             <param name="logicClassName"></param>
-        </module-instance>
-        <module-instance name="ProgrammableLogics1" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="3558" y="-4111"/>
-            <param name="id">ProgrammableLogics1</param>
-            <param name="logicClassName">my.company.pl6</param>
         </module-instance>
         <module-instance name="C3" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="3038" y="1151"/>
@@ -349,7 +349,7 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="S2_OK" type="com.ttsnetwork.modules.standard.Sink">
-            <visual x="-2258" y="-2833"/>
+            <visual x="-2062" y="-2849"/>
             <param name="timeInterval">1000</param>
             <param name="infoContent"></param>
             <param name="infoFrame">S2_OK.creationFrame</param>
@@ -484,6 +484,10 @@
         <connection>
             <port-out module="S3_Planning" port="out"/>
             <port-in module="C1_StartPick" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C11_Quality" port="flowOut"/>
+            <port-in module="S2_OK" port="in"/>
         </connection>
     </connections>
 </model>
