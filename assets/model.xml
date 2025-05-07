@@ -44,8 +44,8 @@
                <frame name="f2">
                   <location lengthUnit="mm">
                      <x>1362.3833336385744</x>
-                     <y>1646.1773782966081</y>
-                     <z>1111.318861661259</z>
+                     <y>1998.0178627887456</y>
+                     <z>990.2248121636385</z>
                   </location>
                   <orientation angleUnit="deg">
                      <x>1.0</x>
@@ -57,7 +57,7 @@
                <frame name="f3">
                   <location lengthUnit="mm">
                      <x>1331.4762923317994</x>
-                     <y>2846.2584198895347</y>
+                     <y>3135.7213541396504</y>
                      <z>990.903218250272</z>
                   </location>
                   <orientation angleUnit="deg">
@@ -100,7 +100,7 @@
                <frame name="f4">
                   <location lengthUnit="mm">
                      <x>759.5858980386793</x>
-                     <y>2620.748017014278</y>
+                     <y>4258.041222570905</y>
                      <z>916.9528648139552</z>
                   </location>
                   <orientation angleUnit="deg">
@@ -112,7 +112,7 @@
                </frame>
                <frame name="f5">
                   <location lengthUnit="mm">
-                     <x>3161.8216880670875</x>
+                     <x>1634.6335810232845</x>
                      <y>-1203.2958501990565</y>
                      <z>915.3463190917638</z>
                   </location>
@@ -141,9 +141,22 @@
                      <property name="#visible" type="boolean">true</property>
                   </properties>
                   <location lengthUnit="mm">
-                     <x>3427.166152818481</x>
+                     <x>2904.76</x>
                      <y>156.05510513616036</y>
                      <z>1800.6838285380702</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </frame>
+               <frame name="f3_1">
+                  <location lengthUnit="mm">
+                     <x>1360.1012787505258</x>
+                     <y>3884.6847469028726</y>
+                     <z>1354.6564043328033</z>
                   </location>
                   <orientation angleUnit="deg">
                      <x>1.0</x>
@@ -946,7 +959,7 @@
                         <ns2:joint type="RIGID">
                            <ns2:transform>
                               <location lengthUnit="mm">
-                                 <x>2000.0</x>
+                                 <x>500.0</x>
                                  <y>0.0</y>
                                  <z>900.0</z>
                               </location>
@@ -8492,7 +8505,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>-1534.7028902864722</x>
-                           <y>3123.734363929394</y>
+                           <y>3457.648601698483</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -9185,7 +9198,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>-2134.702890286472</x>
-                           <y>4351.694673651792</y>
+                           <y>6001.491728018051</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -9587,7 +9600,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>-934.7028902864722</x>
-                           <y>4318.0946841377245</y>
+                           <y>5990.064513069232</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -10760,7 +10773,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>-1534.7028902864722</x>
-                           <y>5096.792837433969</y>
+                           <y>5906.02466438728</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -14405,7 +14418,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>-2134.702890286472</x>
-                           <y>5351.694673651792</y>
+                           <y>7001.491728018051</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -14486,7 +14499,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>-934.7028902864723</x>
-                           <y>5318.0946841377245</y>
+                           <y>6990.064513069232</y>
                            <z>0.0</z>
                         </location>
                         <orientation angleUnit="deg">
@@ -14722,7 +14735,7 @@
                      <ns2:transform>
                         <location lengthUnit="mm">
                            <x>-934.7028902864723</x>
-                           <y>5568.0946841377245</y>
+                           <y>7240.064513069232</y>
                            <z>600.0</z>
                         </location>
                         <orientation angleUnit="deg">

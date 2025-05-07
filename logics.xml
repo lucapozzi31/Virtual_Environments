@@ -21,7 +21,7 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="C1D" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="-935" y="4318"/>
+            <visual x="-935" y="5990"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C1D.startFrame</param>
             <param name="endFrame">C1D.endFrame</param>
@@ -40,7 +40,7 @@
             <param name="zero">551.0</param>
         </module-instance>
         <module-instance name="S6_D1" type="com.ttsnetwork.modules.standard.ParametricSource2">
-            <visual x="-935" y="5318"/>
+            <visual x="-935" y="6990"/>
             <param name="modelName">S6_D1</param>
             <param name="creationFrameName">S6_D1.creationFrame</param>
             <param name="timeInterval">3000</param>
@@ -77,7 +77,7 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="S5_C1" type="com.ttsnetwork.modules.standard.ParametricSource2">
-            <visual x="-2135" y="5352"/>
+            <visual x="-2135" y="7001"/>
             <param name="modelName">S5_C1</param>
             <param name="creationFrameName">S5_C1.creationFrame</param>
             <param name="timeInterval">3000</param>
@@ -131,11 +131,11 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="SH1" type="com.ttsnetwork.modules.standard.ShuttleTable">
-            <visual x="-1535" y="3124"/>
+            <visual x="-1535" y="3458"/>
             <param name="width">500</param>
             <param name="tableName">SH1.table</param>
             <param name="shuttleStepTime">1500</param>
-            <param name="shuttleStep">1300</param>
+            <param name="shuttleStep">1100</param>
             <param name="positionsNumber">2</param>
         </module-instance>
         <module-instance name="PL3_Logistic" type="com.ttsnetwork.modules.standard.PLModule">
@@ -249,7 +249,7 @@
             <param name="logicClassName">my.company.pl5</param>
         </module-instance>
         <module-instance name="R1" type="com.ttsnetwork.modules.standard.Robot6DOF2">
-            <visual x="-1535" y="5097"/>
+            <visual x="-1535" y="5906"/>
             <param name="translationSpeed">1000</param>
             <param name="translationAcceleration">1000</param>
             <param name="rotationSpeed">360</param>
@@ -283,7 +283,7 @@
             <param name="minCreationDistance">100</param>
         </module-instance>
         <module-instance name="PL1_Station1" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="-935" y="5568"/>
+            <visual x="-935" y="7240"/>
             <param name="id">PL1_Station1</param>
             <param name="logicClassName">my.company.pl1</param>
         </module-instance>
@@ -324,7 +324,7 @@
             <param name="startFrame">C1_Batch.startFrame</param>
             <param name="endFrame">C1_Batch.endFrame</param>
             <param name="sensorNames">s1</param>
-            <param name="sensorPositions">5500</param>
+            <param name="sensorPositions">4000</param>
             <param name="sensorsReveal">LEAD</param>
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
@@ -364,7 +364,7 @@
             <param name="infoFrame">S2_OK.creationFrame</param>
         </module-instance>
         <module-instance name="C1C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="-2135" y="4352"/>
+            <visual x="-2135" y="6001"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C1C.startFrame</param>
             <param name="endFrame">C1C.endFrame</param>

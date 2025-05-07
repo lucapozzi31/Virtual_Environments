@@ -1,3 +1,4 @@
+// Pl1.java
 package my.company;
 
 import com.ttsnetwork.modules.standard.BoxUtils;
@@ -6,6 +7,7 @@ import com.ttsnetwork.modules.standard.IRobotCommands;
 import com.ttsnetwork.modules.standard.ISensorProvider;
 import com.ttsnetwork.modules.standard.IShuttle;
 import com.ttsnetwork.modules.standard.ProgrammableLogics;
+import com.ttsnetwork.modules.standard.SimpleStateVar;
 import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
 import com.ttsnetwork.modulespack.conveyors.SensorCatch;
 
@@ -13,71 +15,59 @@ public class pl1 extends ProgrammableLogics {
 
     public LineInfo sharedState;
 
-    private IRobotCommands robot;
-    private IShuttle shuttle;
-
+    private IRobotCommands r1;
+    private IShuttle      sh1;
     private IConveyorCommands c1c;
-    private ISensorProvider c1cSensors;
+    private ISensorProvider   c1cS;
 
-    private ConveyorBox boxC1C;
+    private final SimpleStateVar boxOnC1C = new SimpleStateVar();
 
     @Override
     public void onInit() {
-        c1c = useSkill(IConveyorCommands.class, "C1C");
-        c1cSensors = useSkill(ISensorProvider.class, "C1C");
-        c1cSensors.registerOnSensors(this::onSensorC1C, "s1");
+        c1c  = useSkill(IConveyorCommands.class, "C1C");
+        c1cS = useSkill(ISensorProvider.class,   "C1C");
+        c1cS.registerOnSensors(this::onC1C, "s1");
 
-        shuttle = useSkill(IShuttle.class, "SH1");
-        shuttle.registerOnPosition(2, this::onShuttleAtPos2);
+        sh1 = useSkill(IShuttle.class, "SH1");
+        sh1.registerOnPosition(2, this::onShAtPos2);
 
-        robot = useSkill(IRobotCommands.class, "R1");
+        r1 = useSkill(IRobotCommands.class, "R1");
     }
 
-    @Override
-    public void onStart() {
-    }
-
-    private void onSensorC1C(SensorCatch sc) {
+    private void onC1C(SensorCatch sc) {
         schedule.startSerial();
         c1c.lock(sc.box);
-        boxC1C = sc.box;
+        boxOnC1C.write(sc.box);        // memorizzo il box per lo shuttle
         schedule.end();
     }
 
-    private void onShuttleAtPos2(SensorCatch sc) {
-        ConveyorBox boxOnShuttle = sc.box;
-        if (boxC1C == null || boxOnShuttle == null) {
-            return;
-        }
+    private void onShAtPos2(SensorCatch sc) {
+        ConveyorBox convBox = (ConveyorBox) boxOnC1C.readAndForget();
+        ConveyorBox stackBox = sc.box;
+        if (convBox == null || stackBox == null) return;
 
         schedule.startSerial();
 
-        robot.move(driver.getFrameTransform("Frames.f4"), 1000);
-        robot.pick(boxC1C.entity);
-        c1c.remove(boxC1C); // importante: rimuoviamo la box dal nastro
+        r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+        r1.move(driver.getFrameTransform("Frames.f4"),     1000);
+        r1.pick(convBox.entity);
+        c1c.remove(convBox);
 
-        robot.move(
-                BoxUtils.targetOffset(
-                        boxOnShuttle,
-                        0, 0,
-                        BoxUtils.zSize(boxOnShuttle) + BoxUtils.zSize(boxC1C),
-                        0, 0, 0),
-                1000);
+        r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+        r1.move(driver.getFrameTransform("Frames.f3"), 1000);
+        /*r1.move(BoxUtils.targetOffset(
+                   stackBox,
+                   0, 0,
+                   BoxUtils.zSize(stackBox) + BoxUtils.zSize(convBox),
+                   0, 0, 0), 1000);*/
+        
+        r1.release();
+        schedule.attach(convBox.entity, stackBox.entity);
 
-        schedule.attach(boxC1C.entity, boxOnShuttle.entity);
+        r1.home();
 
-        robot.release();
-        robot.home();
-
-        boxC1C = null;
-
-        if (sharedState != null) {
-            sharedState.assemblaggioCompletatoStazione1 = true;
-            sharedState.pezziSuShuttle1 = 1;
-
-        }
-
-        shuttle.shuttle();
+        schedule.callFunction(() -> sharedState.assemblyDoneStation1 = true);
+        sh1.shuttle();                 // ritorno a Pos-1
         schedule.end();
     }
 }
