@@ -1,107 +1,102 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package my.company;
 
-/**
- *
- * @author lucapozzi31
- */
 import com.ttsnetwork.modules.standard.BoxUtils;
 import com.ttsnetwork.modules.standard.IConveyorCommands;
 import com.ttsnetwork.modules.standard.IRobotCommands;
 import com.ttsnetwork.modules.standard.ISensorProvider;
 import com.ttsnetwork.modules.standard.IShuttle;
-import com.ttsnetwork.modules.standard.ISource;
 import com.ttsnetwork.modules.standard.ProgrammableLogics;
 import com.ttsnetwork.modulespack.conveyors.SensorCatch;
 
-//Programmazione del robot nella prima postazione di assemblaggio
 public class pl3 extends ProgrammableLogics {
 
-    //Conveyors
-    IConveyorCommands C1;
-    ISensorProvider C1_s1;
-    //Robots
-    IRobotCommands r3commands;
+    public LineInfo sharedState;
+    
+    private IConveyorCommands c1Start;
+    private ISensorProvider c1StartS;
+    private ISensorProvider c1cS;
 
-    //Shuttles
-    IShuttle shuttle1;
-    ISource s1_c1;
+    private IConveyorCommands c1Batch;
+    private ISensorProvider c1BatchS;
+
+    private IRobotCommands r3;
+    private IShuttle shuttle1;
+
+    private SensorCatch trayOnBatch;
 
     @Override
     public void onInit() {
+        c1Start = useSkill(IConveyorCommands.class, "C1_StartPick");
+        c1StartS = useSkill(ISensorProvider.class, "C1_StartPick");
+        c1StartS.registerOnSensors(this::onC1Start, "s1");
 
-        //Area Start Pick
-        C1 = useSkill(IConveyorCommands.class, "C1_StartPick");
-        C1_s1 = useSkill(ISensorProvider.class, "C1_StartPick");
-        C1_s1.registerOnSensors(this::onSensori, "s1");
+        c1cS = useSkill(ISensorProvider.class, "C1C");
+        c1cS.registerOnSensors(this::onC1C, "s1");
 
-        //Robot
-        r3commands = useSkill(IRobotCommands.class, "R3");
+        c1Batch = useSkill(IConveyorCommands.class, "C1_Batch");
+        c1BatchS = useSkill(ISensorProvider.class, "C1_Batch");
+        c1BatchS.registerOnSensors(this::onC1Batch, "s1");
 
-        //Logistica stazioni di assemblaggio
+        r3 = useSkill(IRobotCommands.class, "R3");
+
         shuttle1 = useSkill(IShuttle.class, "SH1");
-        shuttle1.registerOnPosition(1, this::onPosition_s1_1);
-        shuttle1.registerOnPosition(2, this::onPosition_s1_2);
-        s1_c1 = useSkill(ISource.class, "PS1_C");
-         
+        shuttle1.registerOnPosition(1, this::onPos1);
+        shuttle1.registerOnPosition(2, this::onPos2);
     }
 
     @Override
     public void onStart() {
+    }
+
+    private void onC1Start(SensorCatch sc) {
         schedule.startSerial();
-        //ps1_c.create(null);
+        c1Start.lock(sc.box);
+        r3.move(driver.getFrameTransform("Frames.f1"), 2000);
+        r3.move(BoxUtils.targetOffset(sc.box, 0, 0, 100, 0, 0, 0), 1000);
+        r3.pick(sc.box.entity);
+        r3.move(driver.getFrameTransform("Frames.f1_1"), 2000);
+        r3.move(driver.getFrameTransform("Frames.f2"), 2000);
+        r3.release();
+        r3.home();
+        shuttle1.insert(1, sc.box);
+        shuttle1.shuttle();
         schedule.end();
     }
 
-    private void onSensori(SensorCatch t) {
-System.out.println("Sensore attivato: ");
+    private void onC1Batch(SensorCatch sc) {
         schedule.startSerial();
-        {
-            //Arriva la scatola, la prendo
-            C1.lock(t.box);
-            r3commands.move(driver.getFrameTransform("Frames.f1"), 2000);
-            r3commands.move(BoxUtils.targetOffset(t.box, 0, 0, 100, 0, 0, 0), 1000);
-            r3commands.pick(t.box.entity);
+        c1Batch.lock(sc.box);
+        trayOnBatch = sc;
+        schedule.end();
+    }
 
-            //Decido dove mettere la scatola in base alla saturazione macchina
-            //Vado su R1
-            r3commands.move(driver.getFrameTransform("Frames.f2"), 2000);
-            r3commands.release();
-            //s1_c1.create(null);
-            //ps1_c.insert(t.box);
+    private void onC1C(SensorCatch sc) {
+    }
 
-            /*Vado su R2
-            r3commands.move(driver.getFrameTransform("ciniz1group.f3"), 2000);
-            r3commands.move(BoxUtils.targetOffset(t.box, 0, 0, 100, 0, 0, 0), 1000);
-            r3commands.release();*/
-            //Torno a destinazione
-
-            /*ciniz1commands.remove(t.box);
-            r3commands.move(driver.getFrameTransform("ciniz1group.f2"), 5000);
-            r3commands.move(driver.getFrameTransform("C2.startFrame"), t.box.cF, 1500);
-            r3commands.release();
-            sh1commands.insert(t.box);*/
-            r3commands.home();
+    private void onPos1(SensorCatch sc) {
+        if (trayOnBatch == null || !sharedState.assemblaggioCompletatoStazione1 || sharedState.pezziSuShuttle1 == 0) {
+            return;
         }
 
-        schedule.end();
+        schedule.startSerial();
 
+        r3.move(driver.getFrameTransform("Frames.f3"), 2000);
+        r3.pick(sc.box.entity);
+        r3.move(driver.getFrameTransform("Frames.f5_1"), 1000);
+        r3.move(BoxUtils.targetOffset(trayOnBatch.box, 0, 0, 100 + BoxUtils.zSize(trayOnBatch.box), 0, 0, 0), 1500);
+        r3.release();
+        r3.home();
+
+        schedule.attach(sc.box.entity, trayOnBatch.box.entity);
+        c1Batch.release(trayOnBatch.box);
+        trayOnBatch = null;
+
+        sharedState.assemblaggioCompletatoStazione1 = false;
+        sharedState.pezziSuShuttle1 = 0;
+
+        schedule.end();
     }
 
-    private void onPosition_s1_1(SensorCatch t) {
-        schedule.startSerial();
-        shuttle1.shuttle();
-        schedule.end();
-    }
-
-    private void onPosition_s1_2(SensorCatch t) {
-        schedule.startSerial();
-        //ciclo di assemblaggio
-
-        shuttle1.shuttle();
-        schedule.end();
+    private void onPos2(SensorCatch sc) {
     }
 }
