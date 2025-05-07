@@ -9,7 +9,6 @@ import com.ttsnetwork.modules.standard.IConveyorCommands;
 import com.ttsnetwork.modules.standard.IRobotCommands;
 import com.ttsnetwork.modules.standard.ISensorProvider;
 import com.ttsnetwork.modules.standard.ISource;
-import com.ttsnetwork.modules.standard.PLGlobalState;
 import com.ttsnetwork.modules.standard.ProgrammableLogics;
 import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
 import com.ttsnetwork.modulespack.conveyors.SensorCatch;
@@ -24,7 +23,7 @@ public class pl6 extends ProgrammableLogics {
     IConveyorCommands c2Commands;
     ISensorProvider c1Sensors;
     ISensorProvider c3Sensors;
-    IRobotCommands r4commands;
+    IRobotCommands r4Commands;
 
     ConveyorBox part1;
     //ConveyorBox part2;
@@ -36,7 +35,7 @@ public class pl6 extends ProgrammableLogics {
         c1Sensors = useSkill(ISensorProvider.class, "C11_Quality");
         c1Sensors.registerOnSensors(this::onSensori, "s1");
         c1Sensors.registerOnSensors(this::onSensori2, "s2");
-
+        r4Commands = useSkill(IRobotCommands.class, "r4");
     }
 
     void onSensori(SensorCatch t) {
@@ -61,16 +60,19 @@ public class pl6 extends ProgrammableLogics {
 
         schedule.startSerial();
         {
-            c1Commands.lock(t.box);
-
-            //Arriva la scatola, la prendo
-            r4commands.move(BoxUtils.targetOffset(t.box, 0, 0, 100, 0, 0, 0), 3000);
-            r4commands.pick(t.box.entity);
-            
-            r4commands.release();
+            c2Commands.lock(t.box);
+            r4Commands.move(BoxUtils.targetOffset(t.box, 0, 0, BoxUtils.zSize(t.box) + 100, 0, 0, 0), 1000);
+            r4Commands.moveLinear(BoxUtils.targetTop(t.box), 1000);
+            r4Commands.pick(t.box.entity);
+            c2Commands.remove(t.box);
+            r4Commands.moveLinear(BoxUtils.targetTop(part1), t.box.cF, 2000);
+            r4Commands.release();
+            schedule.attach(t.box.entityId, part1.entityId);
             c1Commands.release(part1);
+
         }
         schedule.end();
 
     }
+
 }

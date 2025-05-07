@@ -27,6 +27,13 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
+        <module-instance name="RobotGripper1" type="com.ttsnetwork.modules.standard.RobotGripper">
+            <visual x="703" y="-3300"/>
+            <param name="tcpFrameId">RobotGripper1.GruppoPinza.tcp</param>
+            <param name="leftJoint">RobotGripper1.pinza_singola_sx.T</param>
+            <param name="rightJoint">RobotGripper1.pinza_singola_dx.T</param>
+            <param name="zero">551.0</param>
+        </module-instance>
         <module-instance name="S6_D1" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="-935" y="3656"/>
             <param name="modelName">S6_D1</param>
@@ -207,19 +214,6 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="S4_Plates" type="com.ttsnetwork.modules.standard.ParametricSource2">
-            <visual x="-4962" y="-349"/>
-            <param name="modelName">S4_Plates</param>
-            <param name="creationFrameName">S4_Plates.creationFrame</param>
-            <param name="timeInterval">8000</param>
-            <param name="minCreationDistance">100</param>
-            <param name="marker"></param>
-            <param name="counterName">counter</param>
-            <param name="entityNamePrefix">E_</param>
-            <param name="delayInterval">0</param>
-            <param name="infoContent"></param>
-            <param name="automatic">true</param>
-        </module-instance>
         <module-instance name="C2C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-95" y="2687"/>
             <param name="conveyorSpeed">1</param>
@@ -330,6 +324,16 @@
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
+        </module-instance>
+        <module-instance name="PlanSource1" type="com.ttsnetwork.modules.standard.PlanSource">
+            <visual x="-4962" y="-349"/>
+            <param name="modelName">PlanSource1</param>
+            <param name="prodPlanFileName">inputSource/a5c69317-bf07-4128-85d5-21a425547ec7/PlanSource1_prodPlan.csv</param>
+            <param name="creationFrameName">PlanSource1.creationFrame</param>
+            <param name="marker"></param>
+            <param name="infoContent"></param>
+            <param name="automatic">true</param>
+            <param name="minCreationDistance">100</param>
         </module-instance>
         <module-instance name="PL4_Quality" type="com.ttsnetwork.modules.standard.PLModule">
             <visual x="5416" y="-1391"/>
@@ -474,10 +478,6 @@
             <port-in module="C1D" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="S4_Plates" port="out"/>
-            <port-in module="C1_Batch" port="flowIn"/>
-        </connection>
-        <connection>
             <port-out module="S5_C1" port="out"/>
             <port-in module="C1C" port="flowIn"/>
         </connection>
@@ -488,6 +488,14 @@
         <connection>
             <port-out module="C11_Quality" port="flowOut"/>
             <port-in module="S2_OK" port="in"/>
+        </connection>
+        <connection>
+            <port-out module="PlanSource1" port="out"/>
+            <port-in module="C1_Batch" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="RobotGripper1" port="control"/>
+            <port-in module="R4" port="tool"/>
         </connection>
     </connections>
 </model>
