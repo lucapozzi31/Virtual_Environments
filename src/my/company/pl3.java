@@ -20,7 +20,8 @@ public class pl3 extends StateMachine {
     SimpleStateVar r3Free = new SimpleStateVar();
     SimpleStateVar BoxOnStart = new SimpleStateVar();
     SimpleStateVar Box1ToEject = new SimpleStateVar();
-    
+    SimpleStateVar Prova = new SimpleStateVar(); //debug
+
     SimpleStateVar PlateOnHand = new SimpleStateVar();
 
     private IConveyorCommands c1Start, c1Batch;
@@ -52,7 +53,7 @@ public class pl3 extends StateMachine {
         switchState(100); //stato iniziale
         sh1Free.write(true);
         sh2Free.write(true);
-        
+        PlateOnHand.write(false);
     }
 
     // 100 – Che cosa devo fare?
@@ -60,34 +61,38 @@ public class pl3 extends StateMachine {
         if (sh1Free.readBoolean() && BoxOnStart.read() != null) {
             boxStart = BoxOnStart.readAndForget();
             switchState(1000);
-        } else if (sh2Free.readBoolean() && BoxOnStart.read() != null) {
-            boxStart = BoxOnStart.readAndForget();
-            switchState(2000);
+       // } else if (sh2Free.readBoolean() && BoxOnStart.read() != null) {
+         //   boxStart = BoxOnStart.readAndForget();
+         //   switchState(2000);
         } else if (PlateOnHand.readBoolean() && Box1ToEject.read()!=null) {
             boxEject = Box1ToEject.readAndForget();
             switchState(1200);
         }
     }
-
+    
+//Carica il pezzo da start a SH1
     public void state_1000() {
         r3Free.write(false);
         sh1Free.write(false);
         fromStartToSh1();
         switchState(1100);
     }
-
+    
+//Aspetta che il robot sia libero
     public void state_1100() {
         if (r3Free.readBoolean()) {
             switchState(100);
         }
     }
 
+    //Scarica il pezzo da SH1 al Vassoio
     public void state_1200() {
         r3Free.write(false);
         fromSh1ToBatch();
         switchState(1300);
     }
 
+    //Aspetta che il robot sia libero
     public void state_1300() {
         if (r3Free.readBoolean()) {
             switchState(100);
@@ -114,16 +119,15 @@ public class pl3 extends StateMachine {
     private void fromSh1ToBatch() {
         schedule.startSerial();
         r3.move(driver.getFrameTransform("Frames.f2"), 2000);
-        r3.pick(boxStart.entity);
+        r3.pick(boxEject.entity);
         sh1.remove(1);
-        r3.move(driver.getFrameTransform("Frames.f5_1"), 1000);
+        r3.move(driver.getFrameTransform("Frames.f1_1"), 1000);
         r3.move(driver.getFrameTransform("Frames.f5"), 1000);
         r3.release();
         r3.home();
-        c1Batch.release(boxStart);
+        c1Batch.release(boxEject);
         setVar(r3Free, true);
         setVar(sh1Free, true);
-        setVar(Box1ToEject, false);
         schedule.end();
     }
 
@@ -135,9 +139,11 @@ public class pl3 extends StateMachine {
         setVar(BoxOnStart, bx.box);
         schedule.end();
     }
-    
-    private void onSh1Eject(SensorCatch bx){
-        setVar(Box1ToEject, bx.box);
+
+    private void onSh1Eject(SensorCatch t) {
+        schedule.startSerial();
+        setVar(Box1ToEject, t.box);
+        schedule.end();
     }
 
     //Sensore C1 Batch
@@ -147,5 +153,5 @@ public class pl3 extends StateMachine {
         setVar(PlateOnHand, true);
         schedule.end();
     }
-    
+
 }
