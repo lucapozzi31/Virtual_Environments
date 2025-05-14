@@ -212,7 +212,7 @@ private void fromSh2ToBatch() {
         schedule.end();
     }
 
-    //TUTTI I VARI INPUT
+    //TUTTI GLI INPUT
     //Pezzo arrivato su C1Start
     private void onC1Start(SensorCatch bx) {
         schedule.startSerial();
