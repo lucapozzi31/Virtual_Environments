@@ -250,7 +250,7 @@
          <property name="displayName" type="string" value="Height [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="sensorPositions" type="double[]" value="1700">
+      <parameter name="sensorPositions" type="double[]" value="1900">
          <property name="displayName" type="string" value="Sensor positions [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
@@ -400,7 +400,7 @@
          <property name="displayName" type="string" value="Height [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="sensorPositions" type="double[]" value="1700">
+      <parameter name="sensorPositions" type="double[]" value="1900">
          <property name="displayName" type="string" value="Sensor positions [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
@@ -450,7 +450,7 @@
          <property name="displayName" type="string" value="Height [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="sensorPositions" type="double[]" value="1700">
+      <parameter name="sensorPositions" type="double[]" value="1900">
          <property name="displayName" type="string" value="Sensor positions [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
@@ -1499,7 +1499,7 @@
       </parameter>
    </instance>
    <instance name="SH2" uuid="a5386c26-4628-4e42-932c-55a66b947146" version="1" prototype="0689468e-ebab-47bf-ae1b-aa74d17463b9">
-      <parameter name="shuttleStep" type="double" value="1600">
+      <parameter name="shuttleStep" type="double" value="1100">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Shuttle step length [mm]"/>
          <property name="affectGeometry" type="boolean" value="false"/>

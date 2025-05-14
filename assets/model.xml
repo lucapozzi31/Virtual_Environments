@@ -99,9 +99,9 @@
                </frame>
                <frame name="f4">
                   <location lengthUnit="mm">
-                     <x>-507.8817571934487</x>
-                     <y>3389.504242996496</y>
-                     <z>916.9528648139552</z>
+                     <x>-507.88</x>
+                     <y>3389.5</y>
+                     <z>917.0</z>
                   </location>
                   <orientation angleUnit="deg">
                      <x>1.0</x>
@@ -154,9 +154,9 @@
                </frame>
                <frame name="f3_1">
                   <location lengthUnit="mm">
-                     <x>388.43701420150774</x>
-                     <y>2849.7646511157545</y>
-                     <z>1354.6564043328033</z>
+                     <x>393.54</x>
+                     <y>2850.0</y>
+                     <z>1355.0</z>
                   </location>
                   <orientation angleUnit="deg">
                      <x>1.0</x>
@@ -170,6 +170,45 @@
                      <x>2462.27</x>
                      <y>1593.03</y>
                      <z>1060.0</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </frame>
+               <frame name="f7">
+                  <location lengthUnit="mm">
+                     <x>2471.519142499241</x>
+                     <y>2721.2799999999997</y>
+                     <z>1060.0</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </frame>
+               <frame name="f8">
+                  <location lengthUnit="mm">
+                     <x>1798.15</x>
+                     <y>3386.41</y>
+                     <z>917.0</z>
+                  </location>
+                  <orientation angleUnit="deg">
+                     <x>1.0</x>
+                     <y>0.0</y>
+                     <z>0.0</z>
+                     <w>0.0</w>
+                  </orientation>
+               </frame>
+               <frame name="f8_1">
+                  <location lengthUnit="mm">
+                     <x>2541.9</x>
+                     <y>2850.0</y>
+                     <z>1355.0</z>
                   </location>
                   <orientation angleUnit="deg">
                      <x>1.0</x>
@@ -9667,10 +9706,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896258</x>
-                                 <y>0.5773502691896258</y>
-                                 <z>0.5773502691896258</z>
-                                 <w>120.00000000000001</w>
+                                 <x>0.5773502691896257</x>
+                                 <y>0.5773502691896257</y>
+                                 <z>0.5773502691896257</z>
+                                 <w>119.99999999999999</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -9933,7 +9972,7 @@
                         <ns2:joint type="RIGID">
                            <ns2:transform>
                               <location lengthUnit="mm">
-                                 <x>700.0</x>
+                                 <x>900.0</x>
                                  <y>0.0</y>
                                  <z>900.0</z>
                               </location>
@@ -9950,9 +9989,9 @@
                         </ns2:geometry>
                         <ns2:children/>
                      </body>
-                     <body id="C1D.c1d_direction" visible="true">
+                     <body id="C1D.C1D_direction" visible="true">
                         <properties>
-                           <property name="#local.name" type="string">c1d_direction</property>
+                           <property name="#local.name" type="string">C1D_direction</property>
                            <property name="#instance.uuid" type="string">00567999-9bbf-4ef7-879a-35f1e4917fc0</property>
                            <property name="#prototype.element.expert_mode" type="boolean">true</property>
                         </properties>
@@ -9973,7 +10012,7 @@
                            </ns2:transform>
                         </ns2:joint>
                         <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
-                           <geometry-uri>generated/00567999-9bbf-4ef7-879a-35f1e4917fc0/c1d_direction</geometry-uri>
+                           <geometry-uri>generated/00567999-9bbf-4ef7-879a-35f1e4917fc0/C1D_direction</geometry-uri>
                         </ns2:geometry>
                         <ns2:children/>
                      </body>
@@ -10041,7 +10080,7 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>-921.7535750322584</x>
+                           <x>-1115.9746163962848</x>
                            <y>5117.454206336771</y>
                            <z>0.0</z>
                         </location>
@@ -10069,10 +10108,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896258</x>
-                                 <y>0.5773502691896258</y>
-                                 <z>0.5773502691896258</z>
-                                 <w>120.00000000000001</w>
+                                 <x>0.5773502691896257</x>
+                                 <y>0.5773502691896257</y>
+                                 <z>0.5773502691896257</z>
+                                 <w>119.99999999999999</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -10335,7 +10374,7 @@
                         <ns2:joint type="RIGID">
                            <ns2:transform>
                               <location lengthUnit="mm">
-                                 <x>700.0</x>
+                                 <x>900.0</x>
                                  <y>0.0</y>
                                  <z>900.0</z>
                               </location>
@@ -10352,9 +10391,9 @@
                         </ns2:geometry>
                         <ns2:children/>
                      </body>
-                     <body id="C2C.c2c_direction" visible="true">
+                     <body id="C2C.C2C_direction" visible="true">
                         <properties>
-                           <property name="#local.name" type="string">c2c_direction</property>
+                           <property name="#local.name" type="string">C2C_direction</property>
                            <property name="#instance.uuid" type="string">51242c9b-becf-4a17-b5f0-b3805aa7c61e</property>
                            <property name="#prototype.element.expert_mode" type="boolean">true</property>
                         </properties>
@@ -10375,7 +10414,7 @@
                            </ns2:transform>
                         </ns2:joint>
                         <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
-                           <geometry-uri>generated/51242c9b-becf-4a17-b5f0-b3805aa7c61e/c2c_direction</geometry-uri>
+                           <geometry-uri>generated/51242c9b-becf-4a17-b5f0-b3805aa7c61e/C2C_direction</geometry-uri>
                         </ns2:geometry>
                         <ns2:children/>
                      </body>
@@ -10443,7 +10482,7 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>746.3878801078774</x>
+                           <x>381.4614336024133</x>
                            <y>5126.729083508459</y>
                            <z>0.0</z>
                         </location>
@@ -10471,10 +10510,10 @@
                                  <z>847.0</z>
                               </location>
                               <orientation angleUnit="deg">
-                                 <x>0.5773502691896258</x>
-                                 <y>0.5773502691896258</y>
-                                 <z>0.5773502691896258</z>
-                                 <w>120.00000000000001</w>
+                                 <x>0.5773502691896257</x>
+                                 <y>0.5773502691896257</y>
+                                 <z>0.5773502691896257</z>
+                                 <w>119.99999999999999</w>
                               </orientation>
                            </ns2:transform>
                         </ns2:joint>
@@ -10737,7 +10776,7 @@
                         <ns2:joint type="RIGID">
                            <ns2:transform>
                               <location lengthUnit="mm">
-                                 <x>700.0</x>
+                                 <x>900.0</x>
                                  <y>0.0</y>
                                  <z>900.0</z>
                               </location>
@@ -10754,9 +10793,9 @@
                         </ns2:geometry>
                         <ns2:children/>
                      </body>
-                     <body id="C2D.c2d_direction" visible="true">
+                     <body id="C2D.C2D_direction" visible="true">
                         <properties>
-                           <property name="#local.name" type="string">c2d_direction</property>
+                           <property name="#local.name" type="string">C2D_direction</property>
                            <property name="#instance.uuid" type="string">e94bd7fa-721f-44ff-9420-6562fb19ebba</property>
                            <property name="#prototype.element.expert_mode" type="boolean">true</property>
                         </properties>
@@ -10777,7 +10816,7 @@
                            </ns2:transform>
                         </ns2:joint>
                         <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
-                           <geometry-uri>generated/e94bd7fa-721f-44ff-9420-6562fb19ebba/c2d_direction</geometry-uri>
+                           <geometry-uri>generated/e94bd7fa-721f-44ff-9420-6562fb19ebba/C2D_direction</geometry-uri>
                         </ns2:geometry>
                         <ns2:children/>
                      </body>
@@ -11668,7 +11707,7 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>-5.529571533203172</x>
+                           <x>-372.94653605737506</x>
                            <y>4694.6452197307535</y>
                            <z>0.0</z>
                         </location>
@@ -14862,7 +14901,7 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>-921.7535750322585</x>
+                           <x>-1115.9746163962848</x>
                            <y>6117.454206336771</y>
                            <z>0.0</z>
                         </location>
@@ -14943,7 +14982,7 @@
                   <ns2:joint type="RIGID">
                      <ns2:transform>
                         <location lengthUnit="mm">
-                           <x>746.3878801078773</x>
+                           <x>381.4614336024132</x>
                            <y>6126.729083508459</y>
                            <z>0.0</z>
                         </location>

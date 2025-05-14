@@ -175,17 +175,13 @@ public class pl3 extends StateMachine {
         // leggi entrambi prima
         plateEject = (ConveyorBox) PlateOnLoad.readAndForget();
         ConveyorBox part = boxEject;
-
         r3.move(driver.getFrameTransform("Frames.f2"), 2000);
         r3.pick(part.entity);
         sh1.remove(1);
         r3.move(driver.getFrameTransform("Frames.f1_1"), 1000);
         r3.move(driver.getFrameTransform("Frames.f5"), 1000);
         r3.release();
-
-        // attacca il pezzo sopra al vassoio
         schedule.attach(part.entity, plateEject.entity);
-
         r3.home();
         c1Batch.release(plateEject);
         setVar(PlateOnHand, false);
@@ -198,17 +194,21 @@ public class pl3 extends StateMachine {
 
 private void fromSh2ToBatch() {
         schedule.startSerial();
+        // leggi entrambi prima
+        plateEject = (ConveyorBox) PlateOnLoad.readAndForget();
+        ConveyorBox part = boxEject;
         r3.move(driver.getFrameTransform("Frames.f6"), 2000);
-        r3.pick(boxEject.entity);
-        sh1.remove(1);
+        r3.pick(part.entity);
+        sh2.remove(1);
         r3.move(driver.getFrameTransform("Frames.f1_1"), 1000);
         r3.move(driver.getFrameTransform("Frames.f5"), 1000);
         r3.release();
+        schedule.attach(part.entity, plateEject.entity);
         r3.home();
-        c1Batch.release(boxEject);
+        c1Batch.release(plateEject);
         setVar(PlateOnHand, false);
         setVar(r3Free, true);
-        setVar(sh1Free, true);
+        setVar(sh2Free, true);
         schedule.end();
     }
 
