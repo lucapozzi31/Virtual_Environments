@@ -35,7 +35,7 @@ public class pl6 extends ProgrammableLogics {
         c1Sensors = useSkill(ISensorProvider.class, "C11_Quality");
         c1Sensors.registerOnSensors(this::onSensori, "s1");
         c1Sensors.registerOnSensors(this::onSensori2, "s2");
-        r4Commands = useSkill(IRobotCommands.class, "r4");
+        r4Commands = useSkill(IRobotCommands.class, "R4");
     }
 
     void onSensori(SensorCatch t) {
@@ -45,7 +45,7 @@ public class pl6 extends ProgrammableLogics {
         schedule.startSerial();
         {
             c1Commands.lock(t.box);
-            schedule.waitTime(4000);//per simulare il controllo qualità 
+            schedule.waitTime(20000);//per simulare il controllo qualità 
             c1Commands.release(part1);
             //c1Commands.release(part2);
             cont = 0;
@@ -60,16 +60,20 @@ public class pl6 extends ProgrammableLogics {
 
         schedule.startSerial();
         {
-            c2Commands.lock(t.box);
-            r4Commands.move(BoxUtils.targetOffset(t.box, 0, 0, BoxUtils.zSize(t.box) + 100, 0, 0, 0), 1000);
-            r4Commands.moveLinear(BoxUtils.targetTop(t.box), 1000);
-            r4Commands.pick(t.box.entity);
-            c2Commands.remove(t.box);
-            r4Commands.moveLinear(BoxUtils.targetTop(part1), t.box.cF, 2000);
-            r4Commands.release();
-            schedule.attach(t.box.entityId, part1.entityId);
-            c1Commands.release(part1);
-
+            if (t.box.entity.getProperty("dif").equals(1)) {
+                c1Commands.lock(t.box);
+                r4Commands.move(BoxUtils.targetOffset(t.box, 0, 0, BoxUtils.zSize(t.box) + 100, 0, 0, 0), 1000);
+                r4Commands.moveLinear(BoxUtils.targetTop(t.box), 1000);
+                r4Commands.pick(t.box.entity);
+                c1Commands.remove(t.box);
+                r4Commands.moveLinear(BoxUtils.targetTop(part1), t.box.cF, 2000);
+                r4Commands.move(driver.getFrameTransform("Frames.Qualita"), 2000);
+                r4Commands.release();
+                r4Commands.home();
+                //c2Commands.c1Commands.release(part1);
+            } else {
+                c1Commands.release(part1);
+            }
         }
         schedule.end();
 

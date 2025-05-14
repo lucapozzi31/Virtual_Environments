@@ -16,7 +16,7 @@ public class Rule1 extends SplitRule{
     @Override
     public int select(ConveyorBox cb) {
         
-        return 0;
+        return 2;
     }
     
 }
