@@ -8,7 +8,7 @@
             <param name="logicClassName">my.company.LineInfo</param>
         </module-instance>
         <module-instance name="C10" type="com.ttsnetwork.modules.standard.ConveyorArc">
-            <visual x="7438" y="-1349"/>
+            <visual x="9438" y="-1349"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C10.startFrame</param>
             <param name="endFrame">C10.endFrame</param>
@@ -31,13 +31,6 @@
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
-        </module-instance>
-        <module-instance name="RobotGripper1" type="com.ttsnetwork.modules.standard.RobotGripper">
-            <visual x="703" y="-3300"/>
-            <param name="tcpFrameId">RobotGripper1.GruppoPinza.tcp</param>
-            <param name="leftJoint">RobotGripper1.pinza_singola_sx.T</param>
-            <param name="rightJoint">RobotGripper1.pinza_singola_dx.T</param>
-            <param name="zero">551.0</param>
         </module-instance>
         <module-instance name="S6_D1" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="-935" y="6990"/>
@@ -64,8 +57,15 @@
             <param name="script"></param>
             <param name="logicClassName"></param>
         </module-instance>
+        <module-instance name="RobotGripper1" type="com.ttsnetwork.modules.standard.RobotGripper">
+            <visual x="-447" y="-2456"/>
+            <param name="tcpFrameId">RobotGripper1.GruppoPinza.tcp</param>
+            <param name="leftJoint">RobotGripper1.pinza_singola_sx.T</param>
+            <param name="rightJoint">RobotGripper1.pinza_singola_dx.T</param>
+            <param name="zero">551.0</param>
+        </module-instance>
         <module-instance name="C7" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="7438" y="1151"/>
+            <visual x="9438" y="1151"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C7.startFrame</param>
             <param name="endFrame">C7.endFrame</param>
@@ -90,12 +90,12 @@
             <param name="automatic">true</param>
         </module-instance>
         <module-instance name="C11_Quality" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="1938" y="-2849"/>
+            <visual x="2938" y="-2849"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C11_Quality.startFrame</param>
             <param name="endFrame">C11_Quality.endFrame</param>
             <param name="sensorNames">s1;s2</param>
-            <param name="sensorPositions">2000;4000</param>
+            <param name="sensorPositions">2000;5500</param>
             <param name="sensorsReveal">LEAD;LEAD</param>
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
@@ -107,7 +107,7 @@
             <param name="logicClassName">my.company.pl6</param>
         </module-instance>
         <module-instance name="R4" type="com.ttsnetwork.modules.standard.Robot6DOF2">
-            <visual x="2403" y="-4200"/>
+            <visual x="2360" y="-4148"/>
             <param name="translationSpeed">1000</param>
             <param name="translationAcceleration">1000</param>
             <param name="rotationSpeed">360</param>
@@ -138,11 +138,6 @@
             <param name="shuttleStep">1100</param>
             <param name="positionsNumber">2</param>
         </module-instance>
-        <module-instance name="PL3_Logistic" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="-2495" y="1478"/>
-            <param name="id">PL3_Logistic</param>
-            <param name="logicClassName">my.company.pl3</param>
-        </module-instance>
         <module-instance name="S1_KO" type="com.ttsnetwork.modules.standard.Sink">
             <visual x="842" y="-4098"/>
             <param name="timeInterval">1000</param>
@@ -167,7 +162,7 @@
             <param name="splitRuleClass">my.company.Rule1</param>
         </module-instance>
         <module-instance name="C9_Join" type="com.ttsnetwork.modules.standard.ConveyorJoin">
-            <visual x="7438" y="-849"/>
+            <visual x="9438" y="-849"/>
             <param name="conveyorSpeed">1</param>
             <param name="in1Frame">C9_Join.inConv1.startFrame</param>
             <param name="in2Frame">C9_Join.inConv2.startFrame</param>
@@ -208,16 +203,21 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="C5_Forno1" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="5238" y="2851"/>
+            <visual x="6238" y="2851"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C5_Forno1.startFrame</param>
             <param name="endFrame">C5_Forno1.endFrame</param>
-            <param name="sensorNames">s1;s2</param>
-            <param name="sensorPositions">500;1500</param>
-            <param name="sensorsReveal">LEAD;LEAD</param>
+            <param name="sensorNames">s1;s2;s3</param>
+            <param name="sensorPositions">1000;2000;3000</param>
+            <param name="sensorsReveal">LEAD;LEAD;LEAD</param>
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
+        </module-instance>
+        <module-instance name="Qualita" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="2907" y="-1462"/>
+            <param name="id">Qualita</param>
+            <param name="logicClassName">my.company.Qualita</param>
         </module-instance>
         <module-instance name="C2C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-95" y="4309"/>
@@ -261,12 +261,12 @@
             <param name="logicClassName"></param>
         </module-instance>
         <module-instance name="C8_Forno2" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="5238" y="-349"/>
+            <visual x="6238" y="-349"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C8_Forno2.startFrame</param>
             <param name="endFrame">C8_Forno2.endFrame</param>
             <param name="sensorNames">s1</param>
-            <param name="sensorPositions">1200</param>
+            <param name="sensorPositions">2500</param>
             <param name="sensorsReveal">LEAD</param>
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
@@ -288,7 +288,7 @@
             <param name="logicClassName">my.company.pl1</param>
         </module-instance>
         <module-instance name="C6" type="com.ttsnetwork.modules.standard.ConveyorArc">
-            <visual x="6238" y="2851"/>
+            <visual x="8238" y="2851"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C6.startFrame</param>
             <param name="endFrame">C6.endFrame</param>
@@ -340,9 +340,9 @@
             <param name="automatic">true</param>
             <param name="minCreationDistance">100</param>
         </module-instance>
-        <module-instance name="PL4_Quality" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="5416" y="-1391"/>
-            <param name="id">PL4_Quality</param>
+        <module-instance name="ProgrammableLogics3" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="6346" y="-1396"/>
+            <param name="id">ProgrammableLogics3</param>
             <param name="logicClassName">my.company.pl4</param>
         </module-instance>
         <module-instance name="C12_KO" type="com.ttsnetwork.modules.standard.ConveyorLine2">
@@ -427,60 +427,12 @@
             <port-in module="C4" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="C4" port="flowOut"/>
-            <port-in module="C5_Forno1" port="flowIn"/>
-        </connection>
-        <connection>
-            <port-out module="C5_Forno1" port="flowOut"/>
-            <port-in module="C6" port="flowIn"/>
-        </connection>
-        <connection>
-            <port-out module="C6" port="flowOut"/>
-            <port-in module="C7" port="flowIn"/>
-        </connection>
-        <connection>
-            <port-out module="C7" port="flowOut"/>
-            <port-in module="C9_Join" port="in1"/>
-        </connection>
-        <connection>
-            <port-out module="C7" port="flowOut"/>
-            <port-in module="C9_Join" port="in3"/>
-        </connection>
-        <connection>
-            <port-out module="C2_Split" port="out3"/>
-            <port-in module="C8_Forno2" port="flowIn"/>
-        </connection>
-        <connection>
-            <port-out module="C8_Forno2" port="flowOut"/>
-            <port-in module="C9_Join" port="in2"/>
-        </connection>
-        <connection>
-            <port-out module="C9_Join" port="flowOut"/>
-            <port-in module="C10" port="flowIn"/>
-        </connection>
-        <connection>
-            <port-out module="C10" port="flowOut"/>
-            <port-in module="C11_Quality" port="insert"/>
-        </connection>
-        <connection>
-            <port-out module="C10" port="flowOut"/>
-            <port-in module="C11_Quality" port="flowIn"/>
-        </connection>
-        <connection>
             <port-out module="C12_KO" port="flowOut"/>
             <port-in module="S1_KO" port="in"/>
         </connection>
         <connection>
-            <port-out module="C11_Quality" port="flowOut"/>
-            <port-in module="S2_OK" port="in"/>
-        </connection>
-        <connection>
             <port-out module="PlanSource1" port="out"/>
             <port-in module="C1_Batch" port="flowIn"/>
-        </connection>
-        <connection>
-            <port-out module="RobotGripper1" port="control"/>
-            <port-in module="R4" port="tool"/>
         </connection>
         <connection>
             <port-out module="S6_D1" port="out"/>
@@ -505,6 +457,46 @@
         <connection>
             <port-out module="S6_D1" port="control"/>
             <port-in module="PL1_Station1" port="in"/>
+        </connection>
+        <connection>
+            <port-out module="RobotGripper1" port="control"/>
+            <port-in module="R4" port="tool"/>
+        </connection>
+        <connection>
+            <port-out module="C4" port="flowOut"/>
+            <port-in module="C5_Forno1" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C5_Forno1" port="flowOut"/>
+            <port-in module="C6" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C6" port="flowOut"/>
+            <port-in module="C7" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C9_Join" port="flowOut"/>
+            <port-in module="C10" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C2_Split" port="out3"/>
+            <port-in module="C8_Forno2" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C8_Forno2" port="flowOut"/>
+            <port-in module="C9_Join" port="in2"/>
+        </connection>
+        <connection>
+            <port-out module="C11_Quality" port="flowOut"/>
+            <port-in module="S2_OK" port="in"/>
+        </connection>
+        <connection>
+            <port-out module="C10" port="flowOut"/>
+            <port-in module="C11_Quality" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C7" port="flowOut"/>
+            <port-in module="C9_Join" port="in3"/>
         </connection>
     </connections>
 </model>

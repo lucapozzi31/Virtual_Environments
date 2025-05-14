@@ -85,7 +85,7 @@
          <property name="displayName" type="string" value="Speed [m/s]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="length" type="double" value="8000">
+      <parameter name="length" type="double" value="10000">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Length [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
@@ -100,7 +100,7 @@
          <property name="displayName" type="string" value="Height [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="sensorPositions" type="double[]" value="2000;4000">
+      <parameter name="sensorPositions" type="double[]" value="2000;5500">
          <property name="displayName" type="string" value="Sensor positions [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
@@ -495,7 +495,7 @@
          <property name="displayName" type="string" value="OUT1 Length [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="out2Length" type="double" value="0">
+      <parameter name="out2Length" type="double" value="250">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="OUT2 Length [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
@@ -633,7 +633,7 @@
          <property name="displayName" type="string" value="Speed [m/s]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="length" type="double" value="2000">
+      <parameter name="length" type="double" value="4000">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Length [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
@@ -648,15 +648,15 @@
          <property name="displayName" type="string" value="Height [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="sensorPositions" type="double[]" value="500;1500">
+      <parameter name="sensorPositions" type="double[]" value="1000;2000;3000">
          <property name="displayName" type="string" value="Sensor positions [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="sensorNames" type="string[]" value="s1;s2">
+      <parameter name="sensorNames" type="string[]" value="s1;s2;s3">
          <property name="displayName" type="string" value="Sensor names"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="sensorReveal" type="string[]" value="LEAD;LEAD">
+      <parameter name="sensorReveal" type="string[]" value="LEAD;LEAD;LEAD">
          <property name="displayName" type="string" value="Sensor reveal [LEAD/CENTER/TAIL]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
@@ -790,7 +790,7 @@
          <property name="displayName" type="string" value="Speed [m/s]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="length" type="double" value="2400">
+      <parameter name="length" type="double" value="4400">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Length [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
@@ -805,7 +805,7 @@
          <property name="displayName" type="string" value="Height [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="sensorPositions" type="double[]" value="1200">
+      <parameter name="sensorPositions" type="double[]" value="2500">
          <property name="displayName" type="string" value="Sensor positions [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
@@ -885,20 +885,6 @@
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
    </instance>
-   <instance name="PL3_Logistic" uuid="6ae074a8-1ff7-492d-bd17-9d3bebc913be" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.pl3">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
-   <instance name="PL4_Quality" uuid="c0182bf7-c035-446c-8884-78507bd825b8" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.pl4">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
    <instance name="PL5_Forni" uuid="1dfe4e3d-5997-47bf-b838-0041b367015e" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
       <parameter name="plClass" type="string" value="my.company.pl5">
          <property name="constraints" type="string" value="&gt;0"/>
@@ -969,6 +955,20 @@
    </instance>
    <instance name="ProgrammableLogics2" uuid="fab7a9e9-2e9a-4377-8784-5117075be45c" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
       <parameter name="plClass" type="string" value="my.company.LineInfo">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="ProgrammableLogics3" uuid="cbf205bf-dcf0-4a1e-b299-f63af12d6ae6" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.pl4">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="Qualita" uuid="80691114-cfea-499f-b176-ff2fc84f9a7f" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.Qualita">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Logics class"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1142,7 +1142,7 @@
          <property name="file_edit" type="boolean" value="false"/>
       </parameter>
    </instance>
-   <instance name="RobotGripper1" uuid="52c8c706-0006-4766-8288-4d9b22810e92" version="1" prototype="24925e13-84ee-4438-a2c8-e7e33076f003"/>
+   <instance name="RobotGripper1" uuid="b46604f7-5996-4ab9-98b8-8ecf9e452343" version="1" prototype="24925e13-84ee-4438-a2c8-e7e33076f003"/>
    <instance name="S1_KO" uuid="208c33fe-7506-4de3-8f05-2bd54682d550" version="1" prototype="5a6af30b-a6c6-4d2f-8b59-55688f183628">
       <parameter name="waitBeforeDelete" type="long" value="1000">
          <property name="constraints" type="string" value="&gt;0"/>
@@ -1527,30 +1527,34 @@
    <relationship sourcePortName="out1" sourceInstanceUuid="965527db-72e9-404f-b94b-3f7f94ce1e1a" targetPortName="insert" targetInstanceUuid="f1a6db7b-c651-488d-a213-6c75d7239202"/>
    <relationship sourcePortName="out1" sourceInstanceUuid="965527db-72e9-404f-b94b-3f7f94ce1e1a" targetPortName="in" targetInstanceUuid="f1a6db7b-c651-488d-a213-6c75d7239202"/>
    <relationship sourcePortName="out" sourceInstanceUuid="f1a6db7b-c651-488d-a213-6c75d7239202" targetPortName="in" targetInstanceUuid="6c792b34-e097-4991-9385-0e704dccd68c"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="6c792b34-e097-4991-9385-0e704dccd68c" targetPortName="in" targetInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814" targetPortName="in" targetInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a" targetPortName="in" targetInstanceUuid="71365a8f-ba45-45bb-a8ab-551c933f8d6b"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="71365a8f-ba45-45bb-a8ab-551c933f8d6b" targetPortName="in1" targetInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="71365a8f-ba45-45bb-a8ab-551c933f8d6b" targetPortName="in3" targetInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea"/>
-   <relationship sourcePortName="out3" sourceInstanceUuid="965527db-72e9-404f-b94b-3f7f94ce1e1a" targetPortName="in" targetInstanceUuid="bffc05a9-bc09-44fc-bbf4-d3ec11f28607"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="bffc05a9-bc09-44fc-bbf4-d3ec11f28607" targetPortName="in2" targetInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea" targetPortName="in" targetInstanceUuid="72eb477a-5798-40d8-b47b-56e23e28f64b"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="72eb477a-5798-40d8-b47b-56e23e28f64b" targetPortName="insert" targetInstanceUuid="da62becb-530c-4cab-b505-7ad1537adb88"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="72eb477a-5798-40d8-b47b-56e23e28f64b" targetPortName="in" targetInstanceUuid="da62becb-530c-4cab-b505-7ad1537adb88"/>
    <relationship sourcePortName="out" sourceInstanceUuid="943ce6db-85fe-4172-8c52-7814e88e8c53" targetPortName="in" targetInstanceUuid="208c33fe-7506-4de3-8f05-2bd54682d550"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="da62becb-530c-4cab-b505-7ad1537adb88" targetPortName="in" targetInstanceUuid="65103c38-1948-46a3-8e62-eb3bfb48f1c4"/>
    <relationship sourcePortName="out" sourceInstanceUuid="a5c69317-bf07-4128-85d5-21a425547ec7" targetPortName="in" targetInstanceUuid="5d978415-cfce-4370-bcf6-5273a0ad5630"/>
-   <relationship sourcePortName="TOOL" sourceInstanceUuid="52c8c706-0006-4766-8288-4d9b22810e92" targetPortName="TOOL" targetInstanceUuid="f2b576b7-b151-4821-bd3f-d1952dd9a62c"/>
    <relationship sourcePortName="out" sourceInstanceUuid="445700e3-f8cd-4361-aca4-d9c334985438" targetPortName="in" targetInstanceUuid="00567999-9bbf-4ef7-879a-35f1e4917fc0"/>
    <relationship sourcePortName="out" sourceInstanceUuid="4a23456c-01a4-40c0-8d82-be61e3093718" targetPortName="in" targetInstanceUuid="51242c9b-becf-4a17-b5f0-b3805aa7c61e"/>
    <relationship sourcePortName="out" sourceInstanceUuid="0637a8c1-8376-4c5d-b701-52dcca40c1d4" targetPortName="in" targetInstanceUuid="6ddf22ea-24e5-4987-8a28-ca87f7740b1c"/>
    <relationship sourcePortName="out" sourceInstanceUuid="05075db9-35c4-432f-8dc0-bd2bc4b9083b" targetPortName="in" targetInstanceUuid="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>
    <relationship sourcePortName="out" sourceInstanceUuid="b72a8ac5-4bc8-4063-96f5-d7ca65b46617" targetPortName="in" targetInstanceUuid="e94bd7fa-721f-44ff-9420-6562fb19ebba"/>
    <relationship sourcePortName="control" sourceInstanceUuid="445700e3-f8cd-4361-aca4-d9c334985438" targetPortName="in" targetInstanceUuid="d45b70c0-83d7-4b5a-a373-e62bcef138d9"/>
+   <relationship sourcePortName="TOOL" sourceInstanceUuid="b46604f7-5996-4ab9-98b8-8ecf9e452343" targetPortName="TOOL" targetInstanceUuid="f2b576b7-b151-4821-bd3f-d1952dd9a62c"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="6c792b34-e097-4991-9385-0e704dccd68c" targetPortName="in" targetInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814" targetPortName="in" targetInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a" targetPortName="in" targetInstanceUuid="71365a8f-ba45-45bb-a8ab-551c933f8d6b"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea" targetPortName="in" targetInstanceUuid="72eb477a-5798-40d8-b47b-56e23e28f64b"/>
+   <relationship sourcePortName="out3" sourceInstanceUuid="965527db-72e9-404f-b94b-3f7f94ce1e1a" targetPortName="in" targetInstanceUuid="bffc05a9-bc09-44fc-bbf4-d3ec11f28607"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="bffc05a9-bc09-44fc-bbf4-d3ec11f28607" targetPortName="in2" targetInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="da62becb-530c-4cab-b505-7ad1537adb88" targetPortName="in" targetInstanceUuid="65103c38-1948-46a3-8e62-eb3bfb48f1c4"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="72eb477a-5798-40d8-b47b-56e23e28f64b" targetPortName="in" targetInstanceUuid="da62becb-530c-4cab-b505-7ad1537adb88"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="71365a8f-ba45-45bb-a8ab-551c933f8d6b" targetPortName="in3" targetInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea"/>
    <modifiers type="attach">
       <property name="childInstance" type="string" value="4cbcf99b-ee06-4f83-8235-494ca335709b"/>
       <property name="parentInstance" type="string" value="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>
       <property name="parentNode" type="string" value="c1c"/>
       <property name="matrix" type="double[]" value="-1.0;0.0;0.0;0.0;0.0;-1.0;0.0;0.0;0.0;0.0;1.0;0.0;689.3190556323698;767.3557803448941;0.0;1.0"/>
+   </modifiers>
+   <modifiers type="attach">
+      <property name="childInstance" type="string" value="b46604f7-5996-4ab9-98b8-8ecf9e452343"/>
+      <property name="parentInstance" type="string" value="f2b576b7-b151-4821-bd3f-d1952dd9a62c"/>
+      <property name="parentNode" type="string" value="R4.link6"/>
+      <property name="matrix" type="double[]" value="0.0;-1.0;0.0;0.0;0.0;0.0;1.0;0.0;-1.0;0.0;0.0;0.0;3180.6399999999994;787.9609610082398;1584.1166228340126;1.0"/>
    </modifiers>
 </instances>
