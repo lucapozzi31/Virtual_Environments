@@ -1,25 +1,35 @@
 package my.company;
 
-import com.ttsnetwork.modules.standard.BoxUtils;
+//import com.ttsnetwork.modules.standard.BoxUtils;
 import com.ttsnetwork.modules.standard.IConveyorCommands;
 import com.ttsnetwork.modules.standard.IRobotCommands;
 import com.ttsnetwork.modules.standard.ISensorProvider;
 import com.ttsnetwork.modules.standard.IShuttle;
 import com.ttsnetwork.modules.standard.ProgrammableLogics;
-import com.ttsnetwork.modules.standard.SimpleStateVar;
 import com.ttsnetwork.modulespack.conveyors.SensorCatch;
+import com.ttsnetwork.modules.standard.SimpleStateVar;
+import com.ttsnetwork.modules.standard.StateMachine;
+import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
 
-public class pl3 extends ProgrammableLogics {
+public class pl3 extends StateMachine {
 
-    public LineInfo sharedState;
+    //Variabili di stato
+    //state variables for FSM
+    SimpleStateVar sh1Free = new SimpleStateVar();
+    SimpleStateVar sh2Free = new SimpleStateVar();
+    SimpleStateVar r3Free = new SimpleStateVar();
+    SimpleStateVar BoxOnStart = new SimpleStateVar();
+    SimpleStateVar Box1ToEject = new SimpleStateVar();
+    
+    SimpleStateVar PlateOnHand = new SimpleStateVar();
 
     private IConveyorCommands c1Start, c1Batch;
     private ISensorProvider c1StartS, c1BatchS;
     private IRobotCommands r3;
     private IShuttle sh1;
 
-    private final SimpleStateVar pendingPiece = new SimpleStateVar();  // SensorCatch
-    private final SimpleStateVar batchTray = new SimpleStateVar();  // SensorCatch
+    private ConveyorBox boxStart;
+    private ConveyorBox boxEject;
 
     @Override
     public void onInit() {
@@ -34,81 +44,108 @@ public class pl3 extends ProgrammableLogics {
         r3 = useSkill(IRobotCommands.class, "R3");
 
         sh1 = useSkill(IShuttle.class, "SH1");
-        sh1.registerOnPosition(1, this::onPos1);
+        sh1.registerOnPosition(1, this::onSh1Eject);
     }
 
-    /* ---------- SENSOR C1_StartPick ---------- */
-    private void onC1Start(SensorCatch sc) {
-        schedule.startSerial();
-        c1Start.lock(sc.box);              // blocco sempre il pezzo
-        pendingPiece.write(sc);            // lo metto in coda
-        schedule.callFunction(this::tryLoadShuttle); // tentativo dopo chiusura serial
-        schedule.end();
+    @Override
+    public void onStart() {
+        switchState(100); //stato iniziale
+        sh1Free.write(true);
+        sh2Free.write(true);
+        
     }
 
-    /* ---------- SENSOR C1_Batch ---------- */
-    private void onC1Batch(SensorCatch sc) {
-        schedule.startSerial();
-        c1Batch.lock(sc.box);
-        batchTray.write(sc);
-        schedule.end();
-    }
-
-    /* ---------- PROVA A CARICARE LO SHUTTLE ---------- */
-    private void tryLoadShuttle() {
-        SensorCatch piece = (SensorCatch) pendingPiece.read();
-        if (piece == null) {
-            return;
+    // 100 – Che cosa devo fare?
+    public void state_100() {
+        if (sh1Free.readBoolean() && BoxOnStart.read() != null) {
+            boxStart = BoxOnStart.readAndForget();
+            switchState(1000);
+        } else if (sh2Free.readBoolean() && BoxOnStart.read() != null) {
+            boxStart = BoxOnStart.readAndForget();
+            switchState(2000);
+        } else if (PlateOnHand.readBoolean() && Box1ToEject.read()!=null) {
+            boxEject = Box1ToEject.readAndForget();
+            switchState(1200);
         }
-        if (sharedState.shuttle1Busy || !sharedState.assemblyDoneStation1) {
-            pendingPiece.write(piece);     // riproveremo più tardi
-            return;
+    }
+
+    public void state_1000() {
+        r3Free.write(false);
+        sh1Free.write(false);
+        fromStartToSh1();
+        switchState(1100);
+    }
+
+    public void state_1100() {
+        if (r3Free.readBoolean()) {
+            switchState(100);
         }
+    }
 
-        sharedState.shuttle1Busy = true;
-        sharedState.assemblyDoneStation1 = false;
+    public void state_1200() {
+        r3Free.write(false);
+        fromSh1ToBatch();
+        switchState(1300);
+    }
 
+    public void state_1300() {
+        if (r3Free.readBoolean()) {
+            switchState(100);
+        }
+    }
+
+    //OPERATIONS
+    private void fromStartToSh1() {
         schedule.startSerial();
-
         r3.move(driver.getFrameTransform("Frames.f1"), 2000);
-        r3.move(BoxUtils.targetOffset(piece.box, 0, 0, 100, 0, 0, 0), 1000);
-        r3.pick(piece.box.entity);
+        //r3.move(boxStart., 1000);
+        r3.pick(boxStart.entity);
         r3.move(driver.getFrameTransform("Frames.f1_1"), 2000);
+        c1Start.remove(boxStart);
         r3.move(driver.getFrameTransform("Frames.f2"), 2000);
         r3.release();
         r3.home();
-        c1Start.release(piece.box);
-
-        sh1.insert(1, piece.box);
+        sh1.insert(1, boxStart);
         sh1.shuttle();
-
+        setVar(r3Free, true);
         schedule.end();
     }
 
-    /* ---------- SHUTTLE POS-1: SCARICO ---------- */
-    private void onPos1(SensorCatch sc) {
-        SensorCatch tray = (SensorCatch) batchTray.read();
-        if (tray == null) {
-            return;
-        }
-
+    private void fromSh1ToBatch() {
         schedule.startSerial();
-
-        r3.move(driver.getFrameTransform("Frames.f3"), 2000);
-        r3.pick(sc.box.entity);
+        r3.move(driver.getFrameTransform("Frames.f2"), 2000);
+        r3.pick(boxStart.entity);
+        sh1.remove(1);
         r3.move(driver.getFrameTransform("Frames.f5_1"), 1000);
         r3.move(driver.getFrameTransform("Frames.f5"), 1000);
         r3.release();
         r3.home();
-
-        schedule.attach(sc.box.entity, tray.box.entity);
-        c1Batch.release(tray.box);
-        batchTray.write(null);
-
-        sharedState.shuttle1Busy = false;
-        sharedState.assemblyDoneStation1 = true;
-
-        schedule.callFunction(this::tryLoadShuttle); // subito pronto per il prossimo
+        c1Batch.release(boxStart);
+        setVar(r3Free, true);
+        setVar(sh1Free, true);
+        setVar(Box1ToEject, false);
         schedule.end();
     }
+
+    //TUTTI I VARI INPUT
+    //Pezzo arrivato su C1Start
+    private void onC1Start(SensorCatch bx) {
+        schedule.startSerial();
+        c1Start.lock(bx.box);
+        setVar(BoxOnStart, bx.box);
+        schedule.end();
+    }
+    
+    private void onSh1Eject(SensorCatch bx){
+        setVar(Box1ToEject, bx.box);
+    }
+
+    //Sensore C1 Batch
+    private void onC1Batch(SensorCatch bx) {
+        schedule.startSerial();
+        c1Batch.lock(bx.box);
+        setVar(PlateOnHand, true);
+        schedule.end();
+    }
+    
 }
