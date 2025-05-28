@@ -215,7 +215,7 @@
             <param name="infoContent"></param>
         </module-instance>
         <module-instance name="Qualita" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="2907" y="-1462"/>
+            <visual x="2907" y="-1705"/>
             <param name="id">Qualita</param>
             <param name="logicClassName">my.company.Qualita</param>
         </module-instance>
@@ -259,6 +259,13 @@
             <param name="showAllGhosts">false</param>
             <param name="script"></param>
             <param name="logicClassName"></param>
+        </module-instance>
+        <module-instance name="R1G" type="com.ttsnetwork.modules.standard.RobotGripper">
+            <visual x="-2574" y="3369"/>
+            <param name="tcpFrameId">R1G.gripper.tcp</param>
+            <param name="leftJoint">R1G.LFinger.T</param>
+            <param name="rightJoint">R1G.RFinger.T</param>
+            <param name="zero">23</param>
         </module-instance>
         <module-instance name="C8_Forno2" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="6238" y="-349"/>
@@ -329,6 +336,13 @@
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
+        </module-instance>
+        <module-instance name="R2G" type="com.ttsnetwork.modules.standard.RobotGripper">
+            <visual x="-373" y="3393"/>
+            <param name="tcpFrameId">R2G.gripper.tcp</param>
+            <param name="leftJoint">R2G.LFinger.T</param>
+            <param name="rightJoint">R2G.RFinger.T</param>
+            <param name="zero">23</param>
         </module-instance>
         <module-instance name="PL3-Handle_Stations" type="com.ttsnetwork.modules.standard.PLModule">
             <visual x="-2261" y="1948"/>
@@ -498,6 +512,14 @@
         <connection>
             <port-out module="C5_Forno1" port="flowOut"/>
             <port-in module="C6" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="R1G" port="control"/>
+            <port-in module="R1" port="tool"/>
+        </connection>
+        <connection>
+            <port-out module="R2G" port="control"/>
+            <port-in module="R2" port="tool"/>
         </connection>
     </connections>
 </model>

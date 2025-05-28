@@ -1056,6 +1056,7 @@
          <property name="file_edit" type="boolean" value="false"/>
       </parameter>
    </instance>
+   <instance name="R1G" uuid="84d57f8a-b267-4405-a211-7be6f37186b8" version="1" prototype="ff90d752-c9b6-402b-99e1-1c6d6dabe574"/>
    <instance name="R2" uuid="ed3d36b1-52ef-4600-9c15-7184256c735a" version="1" prototype="4cf0efef-ad27-4ae1-a3d4-068ad898d5e0">
       <parameter name="logics" type="string" value="">
          <property name="displayName" type="string" value="Logics class name"/>
@@ -1098,6 +1099,7 @@
          <property name="file_edit" type="boolean" value="false"/>
       </parameter>
    </instance>
+   <instance name="R2G" uuid="3ddde84f-56a3-4db0-909a-5b0568d0de8b" version="1" prototype="ff90d752-c9b6-402b-99e1-1c6d6dabe574"/>
    <instance name="R3" uuid="5bdf2f9b-bda6-4c4b-954e-1296a951dcfe" version="1" prototype="4cf0efef-ad27-4ae1-a3d4-068ad898d5e0">
       <parameter name="logics" type="string" value="">
          <property name="displayName" type="string" value="Logics class name"/>
@@ -1385,15 +1387,15 @@
       <parameter name="delayInterval" type="long" value="3000">
          <property name="displayName" type="string" value="Initial delay [ms]"/>
       </parameter>
-      <parameter name="entityLength" type="double" value="30">
+      <parameter name="entityLength" type="double" value="10">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity length [mm]"/>
       </parameter>
-      <parameter name="entityWidth" type="double" value="50">
+      <parameter name="entityWidth" type="double" value="10">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity width [mm]"/>
       </parameter>
-      <parameter name="entityHeight" type="double" value="50">
+      <parameter name="entityHeight" type="double" value="20">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity height [mm]"/>
       </parameter>
@@ -1446,11 +1448,11 @@
       <parameter name="delayInterval" type="long" value="3000">
          <property name="displayName" type="string" value="Initial delay [ms]"/>
       </parameter>
-      <parameter name="entityLength" type="double" value="50">
+      <parameter name="entityLength" type="double" value="10">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity length [mm]"/>
       </parameter>
-      <parameter name="entityWidth" type="double" value="50">
+      <parameter name="entityWidth" type="double" value="15">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity width [mm]"/>
       </parameter>
@@ -1584,6 +1586,8 @@
    <relationship sourcePortName="out" sourceInstanceUuid="4a23456c-01a4-40c0-8d82-be61e3093718" targetPortName="in" targetInstanceUuid="51242c9b-becf-4a17-b5f0-b3805aa7c61e"/>
    <relationship sourcePortName="out" sourceInstanceUuid="b72a8ac5-4bc8-4063-96f5-d7ca65b46617" targetPortName="in" targetInstanceUuid="e94bd7fa-721f-44ff-9420-6562fb19ebba"/>
    <relationship sourcePortName="out" sourceInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814" targetPortName="in" targetInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a"/>
+   <relationship sourcePortName="TOOL" sourceInstanceUuid="84d57f8a-b267-4405-a211-7be6f37186b8" targetPortName="TOOL" targetInstanceUuid="c763341b-233f-4c9c-a22b-9d48c0d19db6"/>
+   <relationship sourcePortName="TOOL" sourceInstanceUuid="3ddde84f-56a3-4db0-909a-5b0568d0de8b" targetPortName="TOOL" targetInstanceUuid="ed3d36b1-52ef-4600-9c15-7184256c735a"/>
    <modifiers type="attach">
       <property name="childInstance" type="string" value="4cbcf99b-ee06-4f83-8235-494ca335709b"/>
       <property name="parentInstance" type="string" value="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>
@@ -1595,5 +1599,17 @@
       <property name="parentInstance" type="string" value="f2b576b7-b151-4821-bd3f-d1952dd9a62c"/>
       <property name="parentNode" type="string" value="R4.link6"/>
       <property name="matrix" type="double[]" value="0.0;-1.0;0.0;0.0;0.0;0.0;1.0;0.0;-1.0;0.0;0.0;0.0;3180.6399999999994;787.9609610082398;1584.1166228340126;1.0"/>
+   </modifiers>
+   <modifiers type="attach">
+      <property name="childInstance" type="string" value="84d57f8a-b267-4405-a211-7be6f37186b8"/>
+      <property name="parentInstance" type="string" value="c763341b-233f-4c9c-a22b-9d48c0d19db6"/>
+      <property name="parentNode" type="string" value="R1.link6"/>
+      <property name="matrix" type="double[]" value="0.0;0.0;1.0;0.0;0.0;1.0;0.0;0.0;-1.0;0.0;0.0;0.0;1301.9999999999995;0.0;1595.0;1.0"/>
+   </modifiers>
+   <modifiers type="attach">
+      <property name="childInstance" type="string" value="3ddde84f-56a3-4db0-909a-5b0568d0de8b"/>
+      <property name="parentInstance" type="string" value="ed3d36b1-52ef-4600-9c15-7184256c735a"/>
+      <property name="parentNode" type="string" value="R2.link6"/>
+      <property name="matrix" type="double[]" value="0.0;0.0;1.0;0.0;0.0;1.0;0.0;0.0;-1.0;0.0;0.0;0.0;1302.0;0.0;1595.0;1.0"/>
    </modifiers>
 </instances>

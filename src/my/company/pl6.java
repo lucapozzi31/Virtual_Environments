@@ -12,6 +12,7 @@ import com.ttsnetwork.modules.standard.ISource;
 import com.ttsnetwork.modules.standard.ProgrammableLogics;
 import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
 import com.ttsnetwork.modulespack.conveyors.SensorCatch;
+import java.util.List;
 
 /**
  *
@@ -37,30 +38,29 @@ public class pl6 extends ProgrammableLogics {
         r4Commands = useSkill(IRobotCommands.class, "R4");
     }
 
-   
-
     private void onSensori2(SensorCatch t) {
         System.out.println("Got event" + t.sensorName);
         part1 = t.box;
-
+        List<ConveyorBox> boards = part1.entity.getProperty("boards");
         schedule.startSerial();
         {
 //            if (t.box.entity.getProperty("dif").equals(1)) {
-            if (true) {
-                c1Commands.lock(t.box);
-                r4Commands.move(BoxUtils.targetOffset(t.box, 0, 0, BoxUtils.zSize(t.box) + 100, 0, 0, 0), 1000);
-                r4Commands.moveLinear(BoxUtils.targetTop(t.box), 1000);
-                r4Commands.pick(t.box.entity);
-                c1Commands.remove(t.box);
-                r4Commands.moveLinear(BoxUtils.targetTop(part1), t.box.cF, 2000);
-                r4Commands.move(driver.getFrameTransform("Frames.Qualita"), 2000);
-                r4Commands.release();
-                c2Commands.insert(t.box);
-                r4Commands.home();
-                //c2Commands.c1Commands.release(part1);
-            } else {
-                c1Commands.release(part1);
+            c1Commands.lock(t.box);
+            schedule.waitTime(500);
+            
+            for (ConveyorBox board : boards) {
+                if (board.entity.getProperty("defective")) {
+                    r4Commands.move(BoxUtils.targetOffset(board, 0, 0, BoxUtils.zSize(board) + 100, 0, 0, 0), 1000);
+                    r4Commands.moveLinear(BoxUtils.targetTop(board), 1000);
+                    r4Commands.pick(board.entity);
+//                    r4Commands.moveLinear(BoxUtils.targetTop(part1), t.box.cF, 2000);
+                    r4Commands.move(driver.getFrameTransform("Frames.Qualita"), 2000);
+                    r4Commands.release();
+                    c2Commands.insert(board);
+                }
             }
+            r4Commands.home();
+            c1Commands.release(t.box);
         }
         schedule.end();
 
