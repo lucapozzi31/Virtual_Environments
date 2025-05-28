@@ -9,6 +9,7 @@ import com.ttsnetwork.modulespack.conveyors.SensorCatch;
 import com.ttsnetwork.modules.standard.SimpleStateVar;
 import com.ttsnetwork.modules.standard.StateMachine;
 import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
+import com.ttsnetwork.modules.standard.*;
 
 public class pl3 extends StateMachine {
 
@@ -28,7 +29,6 @@ public class pl3 extends StateMachine {
     SimpleStateVar PlateOnLoad = new SimpleStateVar(); //Entity vassoio
     SimpleStateVar BatchFull = new SimpleStateVar(); //Boolean
 
-    private static final int PLATE_CAPACITY = 2;   // ← metti qui la capienza
     SimpleStateVar BatchCount = new SimpleStateVar();   // Integer
 
     private IConveyorCommands c1Start, c1Batch;
@@ -40,6 +40,17 @@ public class pl3 extends StateMachine {
     private ConveyorBox boxEject;
     private ConveyorBox boxEject2;
     private ConveyorBox plateEject;
+
+    private static final int CapacityA1 = 10;
+    private static final int CapacityA2 = 9;
+
+    //Coordinate offset pezzi
+    private double[] xA2 = new double[]{-160, 0, 160, -160, 0, 160, -160, 0, 160};
+    private double[] yA2 = new double[]{105, 105, 105, 0, 0, 0, -105, -105, -105};
+    private double[] xA1 = new double[]{-210, -105, 0, 105, 210, -210, -105, 0, 105, 210};
+    private double[] yA1 = new double[]{72.5,72.5,72.5,72.5,72.5,-72.5,-72.5,-72.5,-72.5,-72.5};
+
+    private int BatchPlateCount;
 
     @Override
     public void onInit() {
@@ -223,29 +234,44 @@ public class pl3 extends StateMachine {
     }
 
     private void fromSh1ToBatch() {
+
         plateEject = (ConveyorBox) PlateOnLoad.read();
         ConveyorBox part = boxEject;
         String type = part.entity.getProperty(String.class, "rfid");
         setVar(this.BatchType, type);
         Integer n = BatchCount.read();
+
+        //Variabili offset
+        double x;
+        double y;
+        int r;
+        if ("P001".equals(type)) {
+            x = xA1[BatchPlateCount];
+            y = yA1[BatchPlateCount];
+            r=90;
+        } else {
+            x = xA2[BatchPlateCount];
+            y = yA2[BatchPlateCount];
+            r=0;
+        }
+        
         schedule.startSerial();
         r3.move(driver.getFrameTransform("Frames.f2"), 2000);
         r3.pick(part.entity);
         sh1.remove(1);
         r3.move(driver.getFrameTransform("Frames.f1_1"), 1000);
-        r3.move(driver.getFrameTransform("Frames.f5"), 1000);
+        r3.move(BoxUtils.targetOffset(plateEject, x, y, BoxUtils.zSize(plateEject) + 100, 0, 0, r), 1000);
         r3.release();
         schedule.attach(part.entity, plateEject.entity);
 
-        if (n == null) {
-            n = 0;
-        }
-        n++;
-        setVar(BatchCount, n);
-
-        if (n >= PLATE_CAPACITY) {
+        BatchPlateCount++;
+        
+        if ("P001".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA1) {
+            setVar(BatchFull, true);
+        } else if ("P002".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA2) {
             setVar(BatchFull, true);
         }
+        
         r3.home();
         setVar(sh1Free, true);
         setVar(r3Free, true);
@@ -258,43 +284,55 @@ public class pl3 extends StateMachine {
         ConveyorBox part = boxEject2;
         String type = part.entity.getProperty(String.class, "rfid");
         setVar(this.BatchType, type);
+        
+         //Variabili offset
+        double x;
+        double y;
+        int r;
+        if ("P001".equals(type)) {
+            x = xA1[BatchPlateCount];
+            y = yA1[BatchPlateCount];
+            r=90;
+        } else {
+            x = xA2[BatchPlateCount];
+            y = yA2[BatchPlateCount];
+            r=0;
+        }
+        
         schedule.startSerial();
-
         r3.move(driver.getFrameTransform("Frames.f6"), 2000);
         r3.pick(part.entity);
         sh2.remove(1);
         r3.move(driver.getFrameTransform("Frames.f1_1"), 1000);
-        r3.move(driver.getFrameTransform("Frames.f5"), 1000);
+        r3.move(BoxUtils.targetOffset(plateEject, x, y, BoxUtils.zSize(plateEject) + 100, 0, 0, r), 1000);
         r3.release();
         schedule.attach(part.entity, plateEject.entity);
-        Integer n = BatchCount.read();
-        if (n == null) {
-            n = 0;
-        }
-        n++;
-        setVar(BatchCount, n);
-        if (n >= PLATE_CAPACITY) {
+
+        BatchPlateCount++;
+        
+        if ("P001".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA1) {
+            setVar(BatchFull, true);
+        } else if ("P002".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA2) {
             setVar(BatchFull, true);
         }
+
         r3.home();
         setVar(r3Free, true);
         setVar(sh2Free, true);
         schedule.callFunction(this::update);
-        
+
         schedule.end();
     }
 
     private void releaseBatch() {
-
-        /* 1️⃣  reset variabili di plate */
         setVar(PlateOnLoad, null);
         setVar(BatchType, null);
 
-        /*  🔄 contatore + flag  */
+        //contatore + flag
         setVar(BatchCount, 0);
         setVar(BatchFull, false);
+        BatchPlateCount = 0;
 
-        /* 2️⃣  rilascia fisicamente il vassoio */
         schedule.startSerial();
         c1Batch.release(plateEject);
         schedule.end();
