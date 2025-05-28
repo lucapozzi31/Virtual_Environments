@@ -346,7 +346,7 @@
             <param name="minCreationDistance">100</param>
         </module-instance>
         <module-instance name="ProgrammableLogics3" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="6346" y="-1396"/>
+            <visual x="5238" y="-1396"/>
             <param name="id">ProgrammableLogics3</param>
             <param name="logicClassName">my.company.pl4</param>
         </module-instance>
@@ -452,10 +452,6 @@
             <port-in module="C5_Forno1" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="C5_Forno1" port="flowOut"/>
-            <port-in module="C6" port="flowIn"/>
-        </connection>
-        <connection>
             <port-out module="C6" port="flowOut"/>
             <port-in module="C7" port="flowIn"/>
         </connection>
@@ -498,6 +494,10 @@
         <connection>
             <port-out module="S8_D2" port="out"/>
             <port-in module="C2D" port="flowIn"/>
+        </connection>
+        <connection>
+            <port-out module="C5_Forno1" port="flowOut"/>
+            <port-in module="C6" port="flowIn"/>
         </connection>
     </connections>
 </model>

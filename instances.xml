@@ -22,6 +22,39 @@
          <property name="constraints" type="string" value="&gt;0"/>
       </parameter>
    </instance>
+   <instance name="Box3" uuid="acc823d0-d6d8-4e7e-be52-aadad8a3521c" version="1" prototype="2dc8e763-ef58-4979-b96a-e9831432c82c">
+      <parameter name="width" type="double" value="2000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="depth" type="double" value="100">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="2000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Box4" uuid="27531a96-0f33-4311-8102-ec81ddf8aaa3" version="1" prototype="2dc8e763-ef58-4979-b96a-e9831432c82c">
+      <parameter name="width" type="double" value="2000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="depth" type="double" value="100">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="2000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Box5" uuid="cd7b0e58-e46f-4797-bf46-dd82a991f432" version="1" prototype="2dc8e763-ef58-4979-b96a-e9831432c82c">
+      <parameter name="width" type="double" value="2000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="depth" type="double" value="2000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="100">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
    <instance name="C10" uuid="72eb477a-5798-40d8-b47b-56e23e28f64b" version="2" prototype="ae405f70-8815-478f-8d89-223da5b45c53">
       <parameter name="speed" type="double" value="1">
          <property name="constraints" type="string" value="&gt;0"/>
@@ -1230,15 +1263,15 @@
       <parameter name="delayInterval" type="long" value="3000">
          <property name="displayName" type="string" value="Initial delay [ms]"/>
       </parameter>
-      <parameter name="entityLength" type="double" value="30">
+      <parameter name="entityLength" type="double" value="10">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity length [mm]"/>
       </parameter>
-      <parameter name="entityWidth" type="double" value="50">
+      <parameter name="entityWidth" type="double" value="10">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity width [mm]"/>
       </parameter>
-      <parameter name="entityHeight" type="double" value="50">
+      <parameter name="entityHeight" type="double" value="20">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity height [mm]"/>
       </parameter>
@@ -1291,11 +1324,11 @@
       <parameter name="delayInterval" type="long" value="3000">
          <property name="displayName" type="string" value="Initial delay [ms]"/>
       </parameter>
-      <parameter name="entityLength" type="double" value="50">
+      <parameter name="entityLength" type="double" value="10">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity length [mm]"/>
       </parameter>
-      <parameter name="entityWidth" type="double" value="50">
+      <parameter name="entityWidth" type="double" value="15">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity width [mm]"/>
       </parameter>
@@ -1539,7 +1572,6 @@
    <relationship sourcePortName="out" sourceInstanceUuid="0637a8c1-8376-4c5d-b701-52dcca40c1d4" targetPortName="in" targetInstanceUuid="6ddf22ea-24e5-4987-8a28-ca87f7740b1c"/>
    <relationship sourcePortName="TOOL" sourceInstanceUuid="b46604f7-5996-4ab9-98b8-8ecf9e452343" targetPortName="TOOL" targetInstanceUuid="f2b576b7-b151-4821-bd3f-d1952dd9a62c"/>
    <relationship sourcePortName="out" sourceInstanceUuid="6c792b34-e097-4991-9385-0e704dccd68c" targetPortName="in" targetInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814" targetPortName="in" targetInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a"/>
    <relationship sourcePortName="out" sourceInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a" targetPortName="in" targetInstanceUuid="71365a8f-ba45-45bb-a8ab-551c933f8d6b"/>
    <relationship sourcePortName="out" sourceInstanceUuid="3ae30fb0-e2eb-4fd2-ad36-bd7fe838fcea" targetPortName="in" targetInstanceUuid="72eb477a-5798-40d8-b47b-56e23e28f64b"/>
    <relationship sourcePortName="out3" sourceInstanceUuid="965527db-72e9-404f-b94b-3f7f94ce1e1a" targetPortName="in" targetInstanceUuid="bffc05a9-bc09-44fc-bbf4-d3ec11f28607"/>
@@ -1551,6 +1583,7 @@
    <relationship sourcePortName="out" sourceInstanceUuid="445700e3-f8cd-4361-aca4-d9c334985438" targetPortName="in" targetInstanceUuid="00567999-9bbf-4ef7-879a-35f1e4917fc0"/>
    <relationship sourcePortName="out" sourceInstanceUuid="4a23456c-01a4-40c0-8d82-be61e3093718" targetPortName="in" targetInstanceUuid="51242c9b-becf-4a17-b5f0-b3805aa7c61e"/>
    <relationship sourcePortName="out" sourceInstanceUuid="b72a8ac5-4bc8-4063-96f5-d7ca65b46617" targetPortName="in" targetInstanceUuid="e94bd7fa-721f-44ff-9420-6562fb19ebba"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814" targetPortName="in" targetInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a"/>
    <modifiers type="attach">
       <property name="childInstance" type="string" value="4cbcf99b-ee06-4f83-8235-494ca335709b"/>
       <property name="parentInstance" type="string" value="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>

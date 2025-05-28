@@ -27,15 +27,15 @@ public class pl1 extends StateMachine {
 
     private String curRfid;
 
-    private double[] xA1_C = new double[]{75, -75};
-    private double[] xA1_D = new double[]{-100, 100, 100, 100};
-    private double[] xA2_C = new double[]{60, -60, 100, -100};
-    private double[] xA2_D = new double[]{-100, 100, -75, -75};
+    private double[] xA1_C = new double[]{-50, -30};
+    private double[] xA1_D = new double[]{-50, 50, 50, 50};
+    private double[] xA2_C = new double[]{-50, 0, 50, 0};
+    private double[] xA2_D = new double[]{-20, -20, -50, 50};
 
-    private double[] yA1_C = new double[]{50, 50};
-    private double[] yA1_D = new double[]{50, 50, 0, -50};
-    private double[] yA2_C = new double[]{60, -60, 100, -100};
-    private double[] yA2_D = new double[]{50, 50, 0, -50};
+    private double[] yA1_C = new double[]{-20, 20};
+    private double[] yA1_D = new double[]{20, 20, 0, -20};
+    private double[] yA2_C = new double[]{-30, -20, -20, 20};
+    private double[] yA2_D = new double[]{-30, -10, 20, 20};
 
     @Override
     public void onInit() {
@@ -64,21 +64,15 @@ public class pl1 extends StateMachine {
     // stato cosa devo fare?
 
     public void state_100() {
-        if (boxOnC1C.read() != null
-                && baseCard1.read() != null
-                && rfidVar.read() != null) {
-
-            boxC = boxOnC1C.readAndForget();
+        if (baseCard1.read() != null && rfidVar.read() != null) {
             base = baseCard1.readAndForget();
             curRfid = (String) rfidVar.readAndForget();
-
-            switchState(1000);
-        } else if (cycleDone.readBoolean()) {
             switchState(1000);
         }
     }
 
     public void state_1000() {
+        CountC = 0;
         if ("P001".equals(curRfid)) {
             switchState(2000);
         } else if ("P002".equals(curRfid)) {
@@ -89,10 +83,12 @@ public class pl1 extends StateMachine {
 
 //Pezzo P001
     public void state_2000() {
-        if (CountC < 2 && boxC != null) {
+        if (CountC < 2 && boxOnC1C.read() != null) {
+            boxC = boxOnC1C.readAndForget();
             CountC++;
             switchState(2100);
-        } else if (CountD < 4 && boxD != null) {
+        } else if (CountD < 4 && boxOnC1D.read() != null) {
+            boxD = boxOnC1D.readAndForget();
             CountD++;
             switchState(3100);
         } else if (CountC == 2 && CountD == 4) {
@@ -109,6 +105,7 @@ public class pl1 extends StateMachine {
 
     public void state_2200() {
         if (cycleDone.readBoolean()) {
+            boxC = null;
             switchState(2000);
         }
     }
@@ -121,16 +118,20 @@ public class pl1 extends StateMachine {
 
     public void state_3200() {
         if (cycleDone.readBoolean()) {
+            boxD = null;
             switchState(2000);
         }
     }
 
+    //boxC != null
     //Pezzo P002
     public void state_4000() {
-        if (CountC < 4 && boxC != null) {
+        if (CountC < 4 && boxOnC1C.read() != null) {
+            boxC = boxOnC1C.readAndForget();
             CountC++;
             switchState(4100);
-        } else if (CountD < 4 && boxD != null) {
+        } else if (CountD < 4 && boxOnC1D.read() != null) {
+            boxD = boxOnC1D.readAndForget();
             CountD++;
             switchState(5100);
         } else if (CountC == 4 && CountD == 4) {
@@ -147,6 +148,7 @@ public class pl1 extends StateMachine {
 
     public void state_4200() {
         if (cycleDone.readBoolean()) {
+            boxC = null;
             switchState(4000);
         }
     }
@@ -159,19 +161,19 @@ public class pl1 extends StateMachine {
 
     public void state_5200() {
         if (cycleDone.readBoolean()) {
+            boxD = null;
             switchState(4000);
         }
     }
 
     //Spedisce pezzo finito
     public void state_200() {
+        CountC = 0;
+        CountD = 0;
         schedule.startSerial();
         sh.shuttle();
-        CountC=0;
-        CountD=0;
-        setVar(cycleDone, false);
         schedule.end();
-        switchState(210);
+        switchState(100);
     }
 
     //Attesa callback 
@@ -191,9 +193,9 @@ public class pl1 extends StateMachine {
 
     private void onC1D(SensorCatch sc) {
         schedule.startSerial();
-        c1c.lock(sc.box);
-        boxD = sc.box;
-        //setVar(boxOnC1D, sc.box);
+        c1d.lock(sc.box);
+        //boxD = sc.box;
+        setVar(boxOnC1D, sc.box);
         schedule.end();
 
     }
@@ -218,18 +220,21 @@ public class pl1 extends StateMachine {
             y = yA2_C[CountC - 1];
         }
         schedule.startSerial();
-        r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
-        r1.move(driver.getFrameTransform("Frames.f4"), 1000);
-        r1.pick(boxC.entity);
-        c1c.remove(boxC);
-        r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+        {
+            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+            r1.move(driver.getFrameTransform("Frames.f4"), 1000);
+            r1.moveLinear(BoxUtils.targetTop(boxC), 1000);
+            r1.pick(boxC.entity);
+            c1c.remove(boxC);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
 //        r1.move(driver.getFrameTransform("Frames.f3"), 1000);
-        r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base), 0, 0, 0), 1000);
-        r1.release();
-        schedule.attach(boxC.entity, base.entity);
-        r1.home();
-        setVar(cycleDone, true);
-        schedule.end();
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+10, 0, 0, 0), 1000);
+            r1.release();
+            schedule.attach(boxC.entity, base.entity);
+            r1.home();
+            setVar(cycleDone, true);
+            schedule.end();
+        }
     }
 
     private void onCycleD() {
@@ -243,17 +248,20 @@ public class pl1 extends StateMachine {
             y = yA2_D[CountD - 1];
         }
         schedule.startSerial();
-        r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
-        r1.move(driver.getFrameTransform("Frames.f4_1"), 1000);
-        r1.pick(boxD.entity);
-        c1c.remove(boxD);
-        r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+        {
+            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+            r1.move(driver.getFrameTransform("Frames.f4_1"), 1000);
+            r1.moveLinear(BoxUtils.targetTop(boxD), 1000);
+            r1.pick(boxD.entity);
+            c1d.remove(boxD);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
 //        r1.move(driver.getFrameTransform("Frames.f3"), 1000);
-        r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base), 0, 0, 0), 1000);
-        r1.release();
-        schedule.attach(boxD.entity, base.entity);
-        r1.home();
-        setVar(cycleDone, true);
-        schedule.end();
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+10, 0, 0, 0), 1000);
+            r1.release();
+            schedule.attach(boxD.entity, base.entity);
+            r1.home();
+            setVar(cycleDone, true);
+            schedule.end();
+        }
     }
 }
