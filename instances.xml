@@ -168,7 +168,7 @@
          <property name="displayName" type="string" value="Speed [m/s]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="length" type="double" value="1000">
+      <parameter name="length" type="double" value="3000">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Length [mm]"/>
          <property name="affectGeometry" type="boolean" value="true"/>
@@ -925,90 +925,36 @@
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
    </instance>
-   <instance name="PL5_Forni" uuid="1dfe4e3d-5997-47bf-b838-0041b367015e" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.pl5">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
-   <instance name="PlanSource1" uuid="a5c69317-bf07-4128-85d5-21a425547ec7" version="1" prototype="9240bd1e-c461-4c38-bf34-e1c1780df195">
-      <parameter name="creationtimeInterval" type="long" value="3000">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Creation interval [ms]"/>
-      </parameter>
-      <parameter name="delayInterval" type="long" value="0">
-         <property name="displayName" type="string" value="Initial delay [ms]"/>
-      </parameter>
-      <parameter name="minCreationDistance" type="double" value="100">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Min creation distance [mm]"/>
-      </parameter>
-      <parameter name="marker" type="string" value="">
-         <property name="displayName" type="string" value="Marker"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-      <parameter name="counterName" type="string" value="counter">
-         <property name="displayName" type="string" value="Counter name"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-      <parameter name="entityNamePrefix" type="string" value="E_">
-         <property name="displayName" type="string" value="Entity name prefix"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-      <parameter name="color" type="string" value="0x999999">
-         <property name="displayName" type="string" value="Color"/>
-         <property name="affectGeometry" type="boolean" value="true"/>
-      </parameter>
-      <parameter name="prodPlan" type="string" value="inputSource/a5c69317-bf07-4128-85d5-21a425547ec7/PlanSource1_prodPlan.csv">
-         <property name="displayName" type="string" value="Production Plan File"/>
-         <property name="file_chooser" type="string" value="file"/>
-         <property name="file_edit" type="boolean" value="true"/>
-      </parameter>
-      <parameter name="infoContent" type="string" value="">
-         <property name="displayName" type="string" value="HUD content (HTML)"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-      <parameter name="automatic" type="boolean" value="true">
-         <property name="displayName" type="string" value="Automatic"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-      <parameter name="baseWidth" type="double" value="500">
-         <property name="displayName" type="string" value="Base width [mm]"/>
-         <property name="affectGeometry" type="boolean" value="true"/>
-      </parameter>
-      <parameter name="baseLength" type="double" value="500">
-         <property name="displayName" type="string" value="Base length [mm]"/>
-         <property name="affectGeometry" type="boolean" value="true"/>
-      </parameter>
-      <parameter name="baseHeight" type="double" value="900">
-         <property name="displayName" type="string" value="Base height [mm]"/>
-         <property name="affectGeometry" type="boolean" value="true"/>
-      </parameter>
-   </instance>
-   <instance name="ProgrammableLogics1" uuid="a80981dd-5516-4a60-9fa0-1d88089854b6" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.pl6">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
-   <instance name="ProgrammableLogics2" uuid="fab7a9e9-2e9a-4377-8784-5117075be45c" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
-      <parameter name="plClass" type="string" value="my.company.LineInfo">
-         <property name="constraints" type="string" value="&gt;0"/>
-         <property name="displayName" type="string" value="Logics class"/>
-         <property name="affectGeometry" type="boolean" value="false"/>
-      </parameter>
-   </instance>
-   <instance name="ProgrammableLogics3" uuid="cbf205bf-dcf0-4a1e-b299-f63af12d6ae6" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+   <instance name="PL4_Forno_2" uuid="cbf205bf-dcf0-4a1e-b299-f63af12d6ae6" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
       <parameter name="plClass" type="string" value="my.company.pl4">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Logics class"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
    </instance>
-   <instance name="Qualita" uuid="80691114-cfea-499f-b176-ff2fc84f9a7f" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+   <instance name="PL5_Forno_1" uuid="1dfe4e3d-5997-47bf-b838-0041b367015e" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.pl5">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="PL6_Robot_Defect" uuid="a80981dd-5516-4a60-9fa0-1d88089854b6" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.pl6">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="PL7_Qualita" uuid="80691114-cfea-499f-b176-ff2fc84f9a7f" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
       <parameter name="plClass" type="string" value="my.company.Qualita">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Logics class"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+   </instance>
+   <instance name="PL8_LineInfo" uuid="fab7a9e9-2e9a-4377-8784-5117075be45c" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
+      <parameter name="plClass" type="string" value="my.company.LineInfo">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Logics class"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1232,6 +1178,60 @@
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
       <parameter name="prodPlan" type="string" value="inputSource/0637a8c1-8376-4c5d-b701-52dcca40c1d4/PlanSource1_prodPlan.csv">
+         <property name="displayName" type="string" value="Production Plan File"/>
+         <property name="file_chooser" type="string" value="file"/>
+         <property name="file_edit" type="boolean" value="true"/>
+      </parameter>
+      <parameter name="infoContent" type="string" value="">
+         <property name="displayName" type="string" value="HUD content (HTML)"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+      <parameter name="automatic" type="boolean" value="true">
+         <property name="displayName" type="string" value="Automatic"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+      <parameter name="baseWidth" type="double" value="500">
+         <property name="displayName" type="string" value="Base width [mm]"/>
+         <property name="affectGeometry" type="boolean" value="true"/>
+      </parameter>
+      <parameter name="baseLength" type="double" value="500">
+         <property name="displayName" type="string" value="Base length [mm]"/>
+         <property name="affectGeometry" type="boolean" value="true"/>
+      </parameter>
+      <parameter name="baseHeight" type="double" value="900">
+         <property name="displayName" type="string" value="Base height [mm]"/>
+         <property name="affectGeometry" type="boolean" value="true"/>
+      </parameter>
+   </instance>
+   <instance name="S4_Plates" uuid="a5c69317-bf07-4128-85d5-21a425547ec7" version="1" prototype="9240bd1e-c461-4c38-bf34-e1c1780df195">
+      <parameter name="creationtimeInterval" type="long" value="3000">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Creation interval [ms]"/>
+      </parameter>
+      <parameter name="delayInterval" type="long" value="0">
+         <property name="displayName" type="string" value="Initial delay [ms]"/>
+      </parameter>
+      <parameter name="minCreationDistance" type="double" value="100">
+         <property name="constraints" type="string" value="&gt;0"/>
+         <property name="displayName" type="string" value="Min creation distance [mm]"/>
+      </parameter>
+      <parameter name="marker" type="string" value="">
+         <property name="displayName" type="string" value="Marker"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+      <parameter name="counterName" type="string" value="counter">
+         <property name="displayName" type="string" value="Counter name"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+      <parameter name="entityNamePrefix" type="string" value="E_">
+         <property name="displayName" type="string" value="Entity name prefix"/>
+         <property name="affectGeometry" type="boolean" value="false"/>
+      </parameter>
+      <parameter name="color" type="string" value="0x999999">
+         <property name="displayName" type="string" value="Color"/>
+         <property name="affectGeometry" type="boolean" value="true"/>
+      </parameter>
+      <parameter name="prodPlan" type="string" value="inputSource/a5c69317-bf07-4128-85d5-21a425547ec7/PlanSource1_prodPlan.csv">
          <property name="displayName" type="string" value="Production Plan File"/>
          <property name="file_chooser" type="string" value="file"/>
          <property name="file_edit" type="boolean" value="true"/>
@@ -1569,7 +1569,6 @@
    <relationship sourcePortName="out1" sourceInstanceUuid="965527db-72e9-404f-b94b-3f7f94ce1e1a" targetPortName="insert" targetInstanceUuid="f1a6db7b-c651-488d-a213-6c75d7239202"/>
    <relationship sourcePortName="out1" sourceInstanceUuid="965527db-72e9-404f-b94b-3f7f94ce1e1a" targetPortName="in" targetInstanceUuid="f1a6db7b-c651-488d-a213-6c75d7239202"/>
    <relationship sourcePortName="out" sourceInstanceUuid="f1a6db7b-c651-488d-a213-6c75d7239202" targetPortName="in" targetInstanceUuid="6c792b34-e097-4991-9385-0e704dccd68c"/>
-   <relationship sourcePortName="out" sourceInstanceUuid="943ce6db-85fe-4172-8c52-7814e88e8c53" targetPortName="in" targetInstanceUuid="208c33fe-7506-4de3-8f05-2bd54682d550"/>
    <relationship sourcePortName="out" sourceInstanceUuid="a5c69317-bf07-4128-85d5-21a425547ec7" targetPortName="in" targetInstanceUuid="5d978415-cfce-4370-bcf6-5273a0ad5630"/>
    <relationship sourcePortName="out" sourceInstanceUuid="0637a8c1-8376-4c5d-b701-52dcca40c1d4" targetPortName="in" targetInstanceUuid="6ddf22ea-24e5-4987-8a28-ca87f7740b1c"/>
    <relationship sourcePortName="TOOL" sourceInstanceUuid="b46604f7-5996-4ab9-98b8-8ecf9e452343" targetPortName="TOOL" targetInstanceUuid="f2b576b7-b151-4821-bd3f-d1952dd9a62c"/>
@@ -1588,6 +1587,7 @@
    <relationship sourcePortName="out" sourceInstanceUuid="2fa9c414-febd-45b2-b37a-61be02030814" targetPortName="in" targetInstanceUuid="d8207209-6f5d-4d3c-898e-138bdd84dc6a"/>
    <relationship sourcePortName="TOOL" sourceInstanceUuid="84d57f8a-b267-4405-a211-7be6f37186b8" targetPortName="TOOL" targetInstanceUuid="c763341b-233f-4c9c-a22b-9d48c0d19db6"/>
    <relationship sourcePortName="TOOL" sourceInstanceUuid="3ddde84f-56a3-4db0-909a-5b0568d0de8b" targetPortName="TOOL" targetInstanceUuid="ed3d36b1-52ef-4600-9c15-7184256c735a"/>
+   <relationship sourcePortName="out" sourceInstanceUuid="943ce6db-85fe-4172-8c52-7814e88e8c53" targetPortName="in" targetInstanceUuid="208c33fe-7506-4de3-8f05-2bd54682d550"/>
    <modifiers type="attach">
       <property name="childInstance" type="string" value="4cbcf99b-ee06-4f83-8235-494ca335709b"/>
       <property name="parentInstance" type="string" value="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>

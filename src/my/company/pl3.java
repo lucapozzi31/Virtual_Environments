@@ -10,6 +10,7 @@ import com.ttsnetwork.modules.standard.SimpleStateVar;
 import com.ttsnetwork.modules.standard.StateMachine;
 import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
 import com.ttsnetwork.modules.standard.*;
+import java.util.List;
 
 public class pl3 extends StateMachine {
 
@@ -48,7 +49,7 @@ public class pl3 extends StateMachine {
     private double[] xA2 = new double[]{-160, 0, 160, -160, 0, 160, -160, 0, 160};
     private double[] yA2 = new double[]{105, 105, 105, 0, 0, 0, -105, -105, -105};
     private double[] xA1 = new double[]{-210, -105, 0, 105, 210, -210, -105, 0, 105, 210};
-    private double[] yA1 = new double[]{72.5,72.5,72.5,72.5,72.5,-72.5,-72.5,-72.5,-72.5,-72.5};
+    private double[] yA1 = new double[]{72.5, 72.5, 72.5, 72.5, 72.5, -72.5, -72.5, -72.5, -72.5, -72.5};
 
     private int BatchPlateCount;
 
@@ -248,13 +249,13 @@ public class pl3 extends StateMachine {
         if ("P001".equals(type)) {
             x = xA1[BatchPlateCount];
             y = yA1[BatchPlateCount];
-            r=90;
+            r = 90;
         } else {
             x = xA2[BatchPlateCount];
             y = yA2[BatchPlateCount];
-            r=0;
+            r = 0;
         }
-        
+
         schedule.startSerial();
         r3.move(driver.getFrameTransform("Frames.f2"), 2000);
         r3.pick(part.entity);
@@ -265,13 +266,20 @@ public class pl3 extends StateMachine {
         schedule.attach(part.entity, plateEject.entity);
 
         BatchPlateCount++;
-        
+
         if ("P001".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA1) {
             setVar(BatchFull, true);
         } else if ("P002".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA2) {
             setVar(BatchFull, true);
         }
-        
+
+        //Aggiungi la board alla lista
+        schedule.callFunction(() -> {
+            @SuppressWarnings("unchecked")
+            List<ConveyorBox> boards = (List<ConveyorBox>) plateEject.entity.getProperty("boards");
+            boards.add(part);          // memorizza il pezzo
+        });
+
         r3.home();
         setVar(sh1Free, true);
         setVar(r3Free, true);
@@ -284,21 +292,21 @@ public class pl3 extends StateMachine {
         ConveyorBox part = boxEject2;
         String type = part.entity.getProperty(String.class, "rfid");
         setVar(this.BatchType, type);
-        
-         //Variabili offset
+
+        //Variabili offset
         double x;
         double y;
         int r;
         if ("P001".equals(type)) {
             x = xA1[BatchPlateCount];
             y = yA1[BatchPlateCount];
-            r=90;
+            r = 90;
         } else {
             x = xA2[BatchPlateCount];
             y = yA2[BatchPlateCount];
-            r=0;
+            r = 0;
         }
-        
+
         schedule.startSerial();
         r3.move(driver.getFrameTransform("Frames.f6"), 2000);
         r3.pick(part.entity);
@@ -309,12 +317,19 @@ public class pl3 extends StateMachine {
         schedule.attach(part.entity, plateEject.entity);
 
         BatchPlateCount++;
-        
+
         if ("P001".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA1) {
             setVar(BatchFull, true);
         } else if ("P002".equals(Rfid_Shuttle1.read()) && BatchPlateCount >= CapacityA2) {
             setVar(BatchFull, true);
         }
+
+        //Aggiungi la board alla lista
+        schedule.callFunction(() -> {
+            @SuppressWarnings("unchecked")
+            List<ConveyorBox> boards = (List<ConveyorBox>) plateEject.entity.getProperty("boards");
+            boards.add(part);          // memorizza il pezzo
+        });
 
         r3.home();
         setVar(r3Free, true);
@@ -366,7 +381,7 @@ public class pl3 extends StateMachine {
 
         setVar(BatchType, null);
         setVar(PlateOnLoad, bx.box);     //  ora è visibile al prossimo state_100
-
+        bx.box.entity.setProperty("boards", new java.util.ArrayList<ConveyorBox>());
         schedule.startSerial();
         c1Batch.lock(bx.box);
         schedule.end();

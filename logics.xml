@@ -2,9 +2,9 @@
 <model name="model.xml" xmlns="http://heron.ttsnetwork.com/xml/v1">
     <variables/>
     <modules>
-        <module-instance name="ProgrammableLogics2" type="com.ttsnetwork.modules.standard.PLModule">
+        <module-instance name="PL8_LineInfo" type="com.ttsnetwork.modules.standard.PLModule">
             <visual x="-4919" y="-1637"/>
-            <param name="id">ProgrammableLogics2</param>
+            <param name="id">PL8_LineInfo</param>
             <param name="logicClassName">my.company.LineInfo</param>
         </module-instance>
         <module-instance name="C10" type="com.ttsnetwork.modules.standard.ConveyorArc">
@@ -101,9 +101,9 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="ProgrammableLogics1" type="com.ttsnetwork.modules.standard.PLModule">
+        <module-instance name="PL6_Robot_Defect" type="com.ttsnetwork.modules.standard.PLModule">
             <visual x="3558" y="-4111"/>
-            <param name="id">ProgrammableLogics1</param>
+            <param name="id">PL6_Robot_Defect</param>
             <param name="logicClassName">my.company.pl6</param>
         </module-instance>
         <module-instance name="R4" type="com.ttsnetwork.modules.standard.Robot6DOF2">
@@ -139,7 +139,7 @@
             <param name="positionsNumber">2</param>
         </module-instance>
         <module-instance name="S1_KO" type="com.ttsnetwork.modules.standard.Sink">
-            <visual x="842" y="-4098"/>
+            <visual x="842" y="-6233"/>
             <param name="timeInterval">1000</param>
             <param name="infoContent"></param>
             <param name="infoFrame">S1_KO.creationFrame</param>
@@ -214,9 +214,9 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
-        <module-instance name="Qualita" type="com.ttsnetwork.modules.standard.PLModule">
+        <module-instance name="PL7_Qualita" type="com.ttsnetwork.modules.standard.PLModule">
             <visual x="2907" y="-1705"/>
-            <param name="id">Qualita</param>
+            <param name="id">PL7_Qualita</param>
             <param name="logicClassName">my.company.Qualita</param>
         </module-instance>
         <module-instance name="C2C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
@@ -243,9 +243,9 @@
             <param name="script"></param>
             <param name="logicClassName"></param>
         </module-instance>
-        <module-instance name="PL5_Forni" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="5441" y="1864"/>
-            <param name="id">PL5_Forni</param>
+        <module-instance name="PL5_Forno_1" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="5440" y="1865"/>
+            <param name="id">PL5_Forno_1</param>
             <param name="logicClassName">my.company.pl5</param>
         </module-instance>
         <module-instance name="R1" type="com.ttsnetwork.modules.standard.Robot6DOF2">
@@ -349,23 +349,23 @@
             <param name="id">PL3-Handle_Stations</param>
             <param name="logicClassName">my.company.pl3</param>
         </module-instance>
-        <module-instance name="PlanSource1" type="com.ttsnetwork.modules.standard.PlanSource">
+        <module-instance name="S4_Plates" type="com.ttsnetwork.modules.standard.PlanSource">
             <visual x="-4962" y="-349"/>
-            <param name="modelName">PlanSource1</param>
+            <param name="modelName">S4_Plates</param>
             <param name="prodPlanFileName">inputSource/a5c69317-bf07-4128-85d5-21a425547ec7/PlanSource1_prodPlan.csv</param>
-            <param name="creationFrameName">PlanSource1.creationFrame</param>
+            <param name="creationFrameName">S4_Plates.creationFrame</param>
             <param name="marker"></param>
             <param name="infoContent"></param>
             <param name="automatic">true</param>
             <param name="minCreationDistance">100</param>
         </module-instance>
-        <module-instance name="ProgrammableLogics3" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="5238" y="-1396"/>
-            <param name="id">ProgrammableLogics3</param>
+        <module-instance name="PL4_Forno_2" type="com.ttsnetwork.modules.standard.PLModule">
+            <visual x="5440" y="890"/>
+            <param name="id">PL4_Forno_2</param>
             <param name="logicClassName">my.company.pl4</param>
         </module-instance>
         <module-instance name="C12_KO" type="com.ttsnetwork.modules.standard.ConveyorLine2">
-            <visual x="842" y="-3598"/>
+            <visual x="842" y="-4733"/>
             <param name="conveyorSpeed">1</param>
             <param name="startFrame">C12_KO.startFrame</param>
             <param name="endFrame">C12_KO.endFrame</param>
@@ -446,11 +446,7 @@
             <port-in module="C4" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="C12_KO" port="flowOut"/>
-            <port-in module="S1_KO" port="in"/>
-        </connection>
-        <connection>
-            <port-out module="PlanSource1" port="out"/>
+            <port-out module="S4_Plates" port="out"/>
             <port-in module="C1_Batch" port="flowIn"/>
         </connection>
         <connection>
@@ -520,6 +516,10 @@
         <connection>
             <port-out module="R2G" port="control"/>
             <port-in module="R2" port="tool"/>
+        </connection>
+        <connection>
+            <port-out module="C12_KO" port="flowOut"/>
+            <port-in module="S1_KO" port="in"/>
         </connection>
     </connections>
 </model>
