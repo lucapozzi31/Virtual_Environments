@@ -21,8 +21,15 @@ public class pl3 extends StateMachine {
     SimpleStateVar Box1ToEject = new SimpleStateVar();
     SimpleStateVar Box2ToEject = new SimpleStateVar();
 
-    SimpleStateVar PlateOnHand = new SimpleStateVar(); //Boolean c'è il vassoio?
-    SimpleStateVar PlateOnLoad = new SimpleStateVar();
+    SimpleStateVar Rfid_Shuttle1 = new SimpleStateVar();
+    SimpleStateVar Rfid_Shuttle2 = new SimpleStateVar();
+
+    SimpleStateVar BatchType = new SimpleStateVar(); //Che tipo sto caricando?
+    SimpleStateVar PlateOnLoad = new SimpleStateVar(); //Entity vassoio
+    SimpleStateVar BatchFull = new SimpleStateVar(); //Boolean
+
+    private static final int PLATE_CAPACITY = 2;   // ← metti qui la capienza
+    SimpleStateVar BatchCount = new SimpleStateVar();   // Integer
 
     private IConveyorCommands c1Start, c1Batch;
     private ISensorProvider c1StartS, c1BatchS;
@@ -31,6 +38,7 @@ public class pl3 extends StateMachine {
 
     private ConveyorBox boxStart;
     private ConveyorBox boxEject;
+    private ConveyorBox boxEject2;
     private ConveyorBox plateEject;
 
     @Override
@@ -56,28 +64,51 @@ public class pl3 extends StateMachine {
         switchState(100); //stato iniziale
         sh1Free.write(true);
         sh2Free.write(true);
-        PlateOnHand.write(false);
+        BatchCount.write(0);
+        BatchFull.write(false);
 
     }
 
     // 100 – Che cosa devo fare?
     public void state_100() {
-        if (sh1Free.readBoolean() && BoxOnStart.read() != null) {
+
+        if (PlateOnLoad.read() != null
+                && Box1ToEject.read() != null
+                && Box2ToEject.read() != null
+                && BatchType.read() != null
+                && !BatchType.read().equals(Rfid_Shuttle1.read())
+                && !BatchType.read().equals(Rfid_Shuttle2.read())) {
+
+            switchState(6000);
+
+        } else if (PlateOnLoad.read() != null
+                && Box1ToEject.read() != null
+                && (BatchType.read() == null
+                || BatchType.read().equals(Rfid_Shuttle1.read()))) {
+
+            boxEject = Box1ToEject.readAndForget();
+            switchState(3000);
+
+        } else if (PlateOnLoad.read() != null
+                && Box2ToEject.read() != null
+                && (BatchType.read() == null
+                || BatchType.read().equals(Rfid_Shuttle2.read()))) {
+
+            boxEject2 = Box2ToEject.readAndForget();
+            switchState(4000);
+
+        } else if (sh1Free.readBoolean() && BoxOnStart.read() != null) {
             boxStart = BoxOnStart.readAndForget();
             switchState(1000);
+
         } else if (sh2Free.readBoolean() && BoxOnStart.read() != null) {
             boxStart = BoxOnStart.readAndForget();
             switchState(2000);
-        } else if (PlateOnHand.readBoolean() && Box1ToEject.read() != null) {
-            boxEject = Box1ToEject.readAndForget();
-            switchState(1200);
-        } else if (PlateOnHand.readBoolean() && Box2ToEject.read() != null) {
-            boxEject = Box2ToEject.readAndForget();
-            switchState(2200);
+
         }
     }
+    //Carica il pezzo da start a SH1
 
-//Carica il pezzo da start a SH1
     public void state_1000() {
         r3Free.write(false);
         sh1Free.write(false);
@@ -85,7 +116,7 @@ public class pl3 extends StateMachine {
         switchState(1100);
     }
 
-//Aspetta che il robot sia libero
+    //Aspetta che il robot sia libero
     public void state_1100() {
         if (r3Free.readBoolean()) {
             switchState(100);
@@ -93,15 +124,24 @@ public class pl3 extends StateMachine {
     }
 
     //Scarica il pezzo da SH1 al Vassoio
-    public void state_1200() {
+    public void state_3000() {
         r3Free.write(false);
         fromSh1ToBatch();
-        switchState(1300);
+        switchState(3100);
     }
 
     //Aspetta che il robot sia libero
-    public void state_1300() {
+    public void state_3100() {
         if (r3Free.readBoolean()) {
+            switchState(3200);
+        }
+    }
+
+    //Il vassoio è pieno?
+    public void state_3200() {
+        if (BatchFull.readBoolean()) {
+            switchState(6000);
+        } else {
             switchState(100);
         }
     }
@@ -121,25 +161,40 @@ public class pl3 extends StateMachine {
         }
     }
 
-    //Scarica il pezzo da SH1 al Vassoio
-    public void state_2200() {
+    //Scarica il pezzo da SH2 al Vassoio
+    public void state_4000() {
         r3Free.write(false);
         fromSh2ToBatch();
-        switchState(2300);
+        switchState(4100);
     }
 
     //Aspetta che il robot sia libero
-    public void state_2300() {
+    public void state_4100() {
         if (r3Free.readBoolean()) {
+            switchState(4200);
+        }
+    }
+
+    //Il vassoio è pieno?
+    public void state_4200() {
+        if (BatchFull.readBoolean()) {
+            switchState(6000);
+        } else {
             switchState(100);
         }
     }
 
+    //Release del conveyor con i vassoi
+    public void state_6000() {
+        releaseBatch();
+        switchState(100);
+    }
+
     //OPERATIONS
     private void fromStartToSh1() {
+
         schedule.startSerial();
         r3.move(driver.getFrameTransform("Frames.f1"), 2000);
-        //r3.move(boxStart., 1000);
         r3.pick(boxStart.entity);
         r3.move(driver.getFrameTransform("Frames.f1_1"), 2000);
         c1Start.remove(boxStart);
@@ -155,7 +210,6 @@ public class pl3 extends StateMachine {
     private void fromStartToSh2() {
         schedule.startSerial();
         r3.move(driver.getFrameTransform("Frames.f1"), 2000);
-        //r3.move(boxStart., 1000);
         r3.pick(boxStart.entity);
         r3.move(driver.getFrameTransform("Frames.f1_1"), 2000);
         c1Start.remove(boxStart);
@@ -168,13 +222,13 @@ public class pl3 extends StateMachine {
         schedule.end();
     }
 
-
     private void fromSh1ToBatch() {
-        schedule.startSerial();
-
-        // leggi entrambi prima
-        plateEject = (ConveyorBox) PlateOnLoad.readAndForget();
+        plateEject = (ConveyorBox) PlateOnLoad.read();
         ConveyorBox part = boxEject;
+        String type = part.entity.getProperty(String.class, "rfid");
+        setVar(this.BatchType, type);
+        Integer n = BatchCount.read();
+        schedule.startSerial();
         r3.move(driver.getFrameTransform("Frames.f2"), 2000);
         r3.pick(part.entity);
         sh1.remove(1);
@@ -182,21 +236,30 @@ public class pl3 extends StateMachine {
         r3.move(driver.getFrameTransform("Frames.f5"), 1000);
         r3.release();
         schedule.attach(part.entity, plateEject.entity);
-        r3.home();
-        c1Batch.release(plateEject);
-        setVar(PlateOnHand, false);
-        setVar(r3Free, true);
-        setVar(sh1Free, true);
 
+        if (n == null) {
+            n = 0;
+        }
+        n++;
+        setVar(BatchCount, n);
+
+        if (n >= PLATE_CAPACITY) {
+            setVar(BatchFull, true);
+        }
+        r3.home();
+        setVar(sh1Free, true);
+        setVar(r3Free, true);
+        schedule.callFunction(this::update);
         schedule.end();
     }
 
-
-private void fromSh2ToBatch() {
+    private void fromSh2ToBatch() {
+        plateEject = (ConveyorBox) PlateOnLoad.read();
+        ConveyorBox part = boxEject2;
+        String type = part.entity.getProperty(String.class, "rfid");
+        setVar(this.BatchType, type);
         schedule.startSerial();
-        // leggi entrambi prima
-        plateEject = (ConveyorBox) PlateOnLoad.readAndForget();
-        ConveyorBox part = boxEject;
+
         r3.move(driver.getFrameTransform("Frames.f6"), 2000);
         r3.pick(part.entity);
         sh2.remove(1);
@@ -204,16 +267,40 @@ private void fromSh2ToBatch() {
         r3.move(driver.getFrameTransform("Frames.f5"), 1000);
         r3.release();
         schedule.attach(part.entity, plateEject.entity);
+        Integer n = BatchCount.read();
+        if (n == null) {
+            n = 0;
+        }
+        n++;
+        setVar(BatchCount, n);
+        if (n >= PLATE_CAPACITY) {
+            setVar(BatchFull, true);
+        }
         r3.home();
-        c1Batch.release(plateEject);
-        setVar(PlateOnHand, false);
         setVar(r3Free, true);
         setVar(sh2Free, true);
+        schedule.callFunction(this::update);
+        
+        schedule.end();
+    }
+
+    private void releaseBatch() {
+
+        /* 1️⃣  reset variabili di plate */
+        setVar(PlateOnLoad, null);
+        setVar(BatchType, null);
+
+        /*  🔄 contatore + flag  */
+        setVar(BatchCount, 0);
+        setVar(BatchFull, false);
+
+        /* 2️⃣  rilascia fisicamente il vassoio */
+        schedule.startSerial();
+        c1Batch.release(plateEject);
         schedule.end();
     }
 
     //TUTTI GLI INPUT
-    //Pezzo arrivato su C1Start
     private void onC1Start(SensorCatch bx) {
         schedule.startSerial();
         c1Start.lock(bx.box);
@@ -222,23 +309,28 @@ private void fromSh2ToBatch() {
     }
 
     private void onSh1Eject(SensorCatch t) {
+        String id = t.box.entity.getProperty(String.class, "rfid");
+        setVar(Rfid_Shuttle1, id);
         schedule.startSerial();
         setVar(Box1ToEject, t.box);
         schedule.end();
     }
 
     private void onSh2Eject(SensorCatch t) {
+        String id = t.box.entity.getProperty(String.class, "rfid");
+        setVar(Rfid_Shuttle2, id);
         schedule.startSerial();
         setVar(Box2ToEject, t.box);
         schedule.end();
     }
 
-    //Sensore C1 Batch
     private void onC1Batch(SensorCatch bx) {
+
+        setVar(BatchType, null);
+        setVar(PlateOnLoad, bx.box);     //  ora è visibile al prossimo state_100
+
         schedule.startSerial();
         c1Batch.lock(bx.box);
-        setVar(PlateOnLoad, bx.box);
-        setVar(PlateOnHand, true);
         schedule.end();
     }
 
