@@ -11300,7 +11300,7 @@
                                                                               <orientation angleUnit="deg">
                                                                                  <x>-5.551115123125783E-17</x>
                                                                                  <y>-1.0</y>
-                                                                                 <z>5.72118872610983E-18</z>
+                                                                                 <z>5.721188726109827E-18</z>
                                                                                  <w>90.0</w>
                                                                               </orientation>
                                                                            </ns2:transform>
@@ -12366,7 +12366,7 @@
                                                                               <orientation angleUnit="deg">
                                                                                  <x>-5.551115123125783E-17</x>
                                                                                  <y>-1.0</y>
-                                                                                 <z>5.72118872610983E-18</z>
+                                                                                 <z>5.721188726109827E-18</z>
                                                                                  <w>90.0</w>
                                                                               </orientation>
                                                                            </ns2:transform>
@@ -16254,6 +16254,109 @@
                            <property name="#instance.uuid" type="string">cd7b0e58-e46f-4797-bf46-dd82a991f432</property>
                            <property name="#prototype.uuid" type="string">2dc8e763-ef58-4979-b96a-e9831432c82c</property>
                         </properties>
+                        <ns2:frames>
+                           <frame name="anchor">
+                              <properties>
+                                 <property name="#anchor" type="boolean">true</property>
+                              </properties>
+                              <location lengthUnit="mm">
+                                 <x>0.0</x>
+                                 <y>-1000.0</y>
+                                 <z>50.0</z>
+                              </location>
+                              <orientation angleUnit="deg">
+                                 <x>1.0</x>
+                                 <y>0.0</y>
+                                 <z>0.0</z>
+                                 <w>0.0</w>
+                              </orientation>
+                           </frame>
+                        </ns2:frames>
+                        <ns2:joint type="RIGID">
+                           <ns2:transform>
+                              <location lengthUnit="mm">
+                                 <x>6963.066691150438</x>
+                                 <y>2873.7554030882416</y>
+                                 <z>1950.0</z>
+                              </location>
+                              <orientation angleUnit="deg">
+                                 <x>1.0</x>
+                                 <y>0.0</y>
+                                 <z>0.0</z>
+                                 <w>0.0</w>
+                              </orientation>
+                           </ns2:transform>
+                        </ns2:joint>
+                        <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
+                           <geometry-uri>parametrics/cd7b0e58-e46f-4797-bf46-dd82a991f432.ptx</geometry-uri>
+                        </ns2:geometry>
+                        <ns2:children/>
+                     </body>
+                  </ns2:children>
+               </group>
+               <group id="Forno_2">
+                  <ns2:frames/>
+                  <ns2:joint type="RIGID">
+                     <ns2:transform>
+                        <location lengthUnit="mm">
+                           <x>0.0</x>
+                           <y>-3157.279302819359</y>
+                           <z>0.0</z>
+                        </location>
+                        <orientation angleUnit="deg">
+                           <x>1.0</x>
+                           <y>0.0</y>
+                           <z>0.0</z>
+                           <w>0.0</w>
+                        </orientation>
+                     </ns2:transform>
+                  </ns2:joint>
+                  <ns2:children>
+                     <body id="Box6" visible="true">
+                        <ns2:frames/>
+                        <ns2:joint type="RIGID">
+                           <ns2:transform>
+                              <location lengthUnit="mm">
+                                 <x>6963.066691150438</x>
+                                 <y>3827.095001013973</y>
+                                 <z>0.0</z>
+                              </location>
+                              <orientation angleUnit="deg">
+                                 <x>1.0</x>
+                                 <y>0.0</y>
+                                 <z>0.0</z>
+                                 <w>0.0</w>
+                              </orientation>
+                           </ns2:transform>
+                        </ns2:joint>
+                        <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
+                           <geometry-uri>parametrics/acc823d0-d6d8-4e7e-be52-aadad8a3521c.ptx</geometry-uri>
+                        </ns2:geometry>
+                        <ns2:children/>
+                     </body>
+                     <body id="Box7" visible="true">
+                        <ns2:frames/>
+                        <ns2:joint type="RIGID">
+                           <ns2:transform>
+                              <location lengthUnit="mm">
+                                 <x>6963.066691150438</x>
+                                 <y>1941.9370883553142</y>
+                                 <z>0.0</z>
+                              </location>
+                              <orientation angleUnit="deg">
+                                 <x>1.0</x>
+                                 <y>0.0</y>
+                                 <z>0.0</z>
+                                 <w>0.0</w>
+                              </orientation>
+                           </ns2:transform>
+                        </ns2:joint>
+                        <ns2:geometry lengthUnit="mm" type="PARAMETRIC">
+                           <geometry-uri>parametrics/27531a96-0f33-4311-8102-ec81ddf8aaa3.ptx</geometry-uri>
+                        </ns2:geometry>
+                        <ns2:children/>
+                     </body>
+                     <body id="Box8" visible="true">
                         <ns2:frames>
                            <frame name="anchor">
                               <properties>
