@@ -904,6 +904,70 @@
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
    </instance>
+   <instance name="Fences1" uuid="70feb812-dbea-41f1-a044-ab5346020abe" version="1" prototype="8d61cea2-b3e8-45f2-98e7-4597fb2d4f7b">
+      <parameter name="length" type="double" value="4000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Fences2" uuid="4eef271a-382d-41ee-98a2-7eb18b266485" version="1" prototype="8d61cea2-b3e8-45f2-98e7-4597fb2d4f7b">
+      <parameter name="length" type="double" value="4000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Fences3" uuid="c57c4365-e393-448c-995b-8847f7d68737" version="1" prototype="8d61cea2-b3e8-45f2-98e7-4597fb2d4f7b">
+      <parameter name="length" type="double" value="4000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Fences4" uuid="85f55f87-59e1-4022-a19b-b889cc075503" version="1" prototype="8d61cea2-b3e8-45f2-98e7-4597fb2d4f7b">
+      <parameter name="length" type="double" value="4000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Fences5" uuid="75295416-17e9-4916-b256-a54300d92244" version="1" prototype="8d61cea2-b3e8-45f2-98e7-4597fb2d4f7b">
+      <parameter name="length" type="double" value="8000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Fences6" uuid="91df255b-49da-422a-87a9-ebaf41b4a723" version="1" prototype="8d61cea2-b3e8-45f2-98e7-4597fb2d4f7b">
+      <parameter name="length" type="double" value="5000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Fences7" uuid="94c32fa3-a38f-45bf-8741-b6436f91401b" version="1" prototype="8d61cea2-b3e8-45f2-98e7-4597fb2d4f7b">
+      <parameter name="length" type="double" value="6500">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
+   <instance name="Operator1" uuid="021c6dc2-94ae-4626-b4c9-704bc09b9d53" version="1" prototype="630fb14e-0949-46c8-ac36-40a0f15eea25">
+      <parameter name="length" type="double" value="4000">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+      <parameter name="height" type="double" value="1800">
+         <property name="constraints" type="string" value="&gt;0"/>
+      </parameter>
+   </instance>
    <instance name="PL1_Station1" uuid="d45b70c0-83d7-4b5a-a373-e62bcef138d9" version="1" prototype="ffb20cba-6216-40c1-81f5-4d18313ca199">
       <parameter name="plClass" type="string" value="my.company.pl1">
          <property name="constraints" type="string" value="&gt;0"/>
