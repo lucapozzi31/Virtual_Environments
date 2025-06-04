@@ -13,6 +13,7 @@ import com.ttsnetwork.modules.standard.ProgrammableLogics;
 import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
 import com.ttsnetwork.modulespack.conveyors.SensorCatch;
 import java.util.List;
+import org.apache.commons.math3.distribution.TriangularDistribution;
 import org.apache.commons.math3.distribution.UniformIntegerDistribution;
 import org.apache.commons.math3.distribution.UniformRealDistribution;
 
@@ -32,8 +33,12 @@ public class Qualita extends ProgrammableLogics {
     UniformRealDistribution distA;
     UniformRealDistribution distB;
 
+    TriangularDistribution randomDist;
+
     @Override
     public void onInit() {
+        randomDist = model.getRandomGenerator().getTriangularDistribution(10000, 15000, 20000);
+
         c1Commands = useSkill(IConveyorCommands.class, "C11_Quality");
         c1Sensors = useSkill(ISensorProvider.class, "C11_Quality");
         c1Sensors.registerOnSensors(this::onSensori, "s1");
@@ -49,8 +54,7 @@ public class Qualita extends ProgrammableLogics {
 
         @SuppressWarnings("unchecked")
         List<ConveyorBox> boards = (List<ConveyorBox>) part1.entity.getProperty("boards");
-
-        long wt = boards.size() * 1000;      // tempo di test simulato
+        double wt = randomDist.sample();
 
         for (ConveyorBox board : boards) {
             String rfid = board.entity.getProperty("rfid");
@@ -73,7 +77,7 @@ public class Qualita extends ProgrammableLogics {
         schedule.startSerial();
         {
             c1Commands.lock(t.box);
-            schedule.waitTime(wt);    // simula la durata del controllo qualità
+            schedule.waitTime((long) wt);    // simula la durata del controllo qualità
             c1Commands.release(part1);
         }
         schedule.end();
