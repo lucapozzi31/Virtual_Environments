@@ -280,6 +280,9 @@ public class pl3 extends StateMachine {
             boards.add(part);          // memorizza il pezzo
         });
 
+        Integer qt = plateEject.entity.getProperty(Integer.class, "BatchQt");
+        plateEject.entity.setProperty("BatchQt", qt + 1);
+
         r3.home();
         setVar(sh1Free, true);
         setVar(r3Free, true);
@@ -330,6 +333,9 @@ public class pl3 extends StateMachine {
             List<ConveyorBox> boards = (List<ConveyorBox>) plateEject.entity.getProperty("boards");
             boards.add(part);          // memorizza il pezzo
         });
+
+        Integer qt = plateEject.entity.getProperty(Integer.class, "BatchQt");
+        plateEject.entity.setProperty("BatchQt", qt + 1);
 
         r3.home();
         setVar(r3Free, true);
@@ -382,6 +388,7 @@ public class pl3 extends StateMachine {
         setVar(BatchType, null);
         setVar(PlateOnLoad, bx.box);     //  ora è visibile al prossimo state_100
         bx.box.entity.setProperty("boards", new java.util.ArrayList<ConveyorBox>());
+        bx.box.entity.setProperty("BatchQt", 0); //Numero di pezzi sul batch
         schedule.startSerial();
         c1Batch.lock(bx.box);
         schedule.end();

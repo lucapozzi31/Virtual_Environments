@@ -15,6 +15,14 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
+        <module-instance name="InfluxProxy1" type="com.ttsnetwork.modules.standard.InfluxModule">
+            <visual x="-4908" y="-1959"/>
+            <param name="id">InfluxProxy1</param>
+            <param name="url">http://localhost:8086</param>
+            <param name="token">BPSlc_eoysLXFLf6j9Ne4ITlPEWVdWXtH2I8n6mp8qCKe4eTCeZZ-4wKkYU8ZNp6V5z5b_2VTIWSbaJP8b95cQ==</param>
+            <param name="org">SUPSI</param>
+            <param name="bucket">DDD</param>
+        </module-instance>
         <module-instance name="R3" type="com.ttsnetwork.modules.standard.Robot6DOF2">
             <visual x="-1117" y="1387"/>
             <param name="translationSpeed">1000</param>
@@ -80,13 +88,27 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
+        <module-instance name="PH3_S1" type="com.ttsnetwork.modules.standard.SimplePhotoCell">
+            <visual x="-2524" y="3465"/>
+            <param name="refreshInterval">50</param>
+            <param name="sensorGeometryId">PH3_S1.pc_geom</param>
+            <param name="marker">box</param>
+            <param name="writeOnlyOnce">false</param>
+        </module-instance>
         <module-instance name="SH1" type="com.ttsnetwork.modules.standard.ShuttleTable">
-            <visual x="-2527" y="2945"/>
+            <visual x="-2527" y="2944"/>
             <param name="width">500</param>
             <param name="tableName">SH1.table</param>
             <param name="shuttleStepTime">1500</param>
             <param name="shuttleStep">1100</param>
             <param name="positionsNumber">2</param>
+        </module-instance>
+        <module-instance name="PH4_S2" type="com.ttsnetwork.modules.standard.SimplePhotoCell">
+            <visual x="-427" y="3465"/>
+            <param name="refreshInterval">50</param>
+            <param name="sensorGeometryId">PH4_S2.pc_geom</param>
+            <param name="marker">box</param>
+            <param name="writeOnlyOnce">false</param>
         </module-instance>
         <module-instance name="S1_KO" type="com.ttsnetwork.modules.standard.Sink">
             <visual x="842" y="-6233"/>
@@ -159,10 +181,17 @@
             <param name="modelName">S3_Planning</param>
             <param name="prodPlanFileName">inputSource/0637a8c1-8376-4c5d-b701-52dcca40c1d4/PlanSource1_prodPlan.csv</param>
             <param name="creationFrameName">S3_Planning.creationFrame</param>
-            <param name="marker"></param>
+            <param name="marker">box</param>
             <param name="infoContent"></param>
             <param name="automatic">true</param>
             <param name="minCreationDistance">100</param>
+        </module-instance>
+        <module-instance name="PH5_Quality" type="com.ttsnetwork.modules.standard.SimplePhotoCell">
+            <visual x="5968" y="-2849"/>
+            <param name="refreshInterval">50</param>
+            <param name="sensorGeometryId">PH5_Quality.pc_geom</param>
+            <param name="marker">box</param>
+            <param name="writeOnlyOnce">false</param>
         </module-instance>
         <module-instance name="S7_C2" type="com.ttsnetwork.modules.standard.ParametricSource2">
             <visual x="-1116" y="6117"/>
@@ -188,6 +217,28 @@
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
+        </module-instance>
+        <module-instance name="RFID_1" type="com.ttsnetwork.modules.standard.RFIDSensor">
+            <visual x="-257" y="-349"/>
+            <param name="id">RFID_1</param>
+            <param name="refreshInterval">500</param>
+            <param name="sensorGeometryId">RFID_1.pc_geom</param>
+            <param name="marker">EntityIn</param>
+            <param name="codeName">BatchQt</param>
+            <param name="writeOnlyOnce">true</param>
+            <param name="additionalDataDelimiter">;</param>
+            <param name="additionalDataName"></param>
+        </module-instance>
+        <module-instance name="RFID_2_Exit" type="com.ttsnetwork.modules.standard.RFIDSensor">
+            <visual x="1762" y="-2851"/>
+            <param name="id">RFID_2_Exit</param>
+            <param name="refreshInterval">500</param>
+            <param name="sensorGeometryId">RFID_2_Exit.pc_geom</param>
+            <param name="marker">EntityOut</param>
+            <param name="codeName">BatchQt</param>
+            <param name="writeOnlyOnce">true</param>
+            <param name="additionalDataDelimiter">;</param>
+            <param name="additionalDataName"></param>
         </module-instance>
         <module-instance name="PL3-Handle_Stations" type="com.ttsnetwork.modules.standard.PLModule">
             <visual x="-2261" y="1948"/>
@@ -217,6 +268,13 @@
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
+        </module-instance>
+        <module-instance name="PH1_Forno_1" type="com.ttsnetwork.modules.standard.SimplePhotoCell">
+            <visual x="6041" y="2851"/>
+            <param name="refreshInterval">50</param>
+            <param name="sensorGeometryId">PH1_Forno_1.pc_geom</param>
+            <param name="marker">box</param>
+            <param name="writeOnlyOnce">false</param>
         </module-instance>
         <module-instance name="C2D" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="381" y="5127"/>
@@ -338,6 +396,13 @@
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
         </module-instance>
+        <module-instance name="PH2_Forno_2" type="com.ttsnetwork.modules.standard.SimplePhotoCell">
+            <visual x="6214" y="-352"/>
+            <param name="refreshInterval">50</param>
+            <param name="sensorGeometryId">PH2_Forno_2.pc_geom</param>
+            <param name="marker">box</param>
+            <param name="writeOnlyOnce">false</param>
+        </module-instance>
         <module-instance name="PL5_Forno_1" type="com.ttsnetwork.modules.standard.PLModule">
             <visual x="5440" y="1865"/>
             <param name="id">PL5_Forno_1</param>
@@ -420,7 +485,7 @@
             <param name="automatic">true</param>
         </module-instance>
         <module-instance name="SH2" type="com.ttsnetwork.modules.standard.ShuttleTable">
-            <visual x="-426" y="3020"/>
+            <visual x="-426" y="2944"/>
             <param name="width">500</param>
             <param name="tableName">SH2.table</param>
             <param name="shuttleStepTime">1500</param>
