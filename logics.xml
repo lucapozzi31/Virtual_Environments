@@ -190,7 +190,7 @@
             <visual x="5968" y="-2849"/>
             <param name="refreshInterval">50</param>
             <param name="sensorGeometryId">PH5_Quality.pc_geom</param>
-            <param name="marker">box</param>
+            <param name="marker">pallet</param>
             <param name="writeOnlyOnce">false</param>
         </module-instance>
         <module-instance name="S7_C2" type="com.ttsnetwork.modules.standard.ParametricSource2">
@@ -221,9 +221,9 @@
         <module-instance name="RFID_1" type="com.ttsnetwork.modules.standard.RFIDSensor">
             <visual x="-257" y="-349"/>
             <param name="id">RFID_1</param>
-            <param name="refreshInterval">500</param>
+            <param name="refreshInterval">20</param>
             <param name="sensorGeometryId">RFID_1.pc_geom</param>
-            <param name="marker">EntityIn</param>
+            <param name="marker">pallet</param>
             <param name="codeName">BatchQt</param>
             <param name="writeOnlyOnce">true</param>
             <param name="additionalDataDelimiter">;</param>
@@ -232,9 +232,9 @@
         <module-instance name="RFID_2_Exit" type="com.ttsnetwork.modules.standard.RFIDSensor">
             <visual x="1762" y="-2851"/>
             <param name="id">RFID_2_Exit</param>
-            <param name="refreshInterval">500</param>
+            <param name="refreshInterval">20</param>
             <param name="sensorGeometryId">RFID_2_Exit.pc_geom</param>
-            <param name="marker">EntityOut</param>
+            <param name="marker">pallet</param>
             <param name="codeName">BatchQt</param>
             <param name="writeOnlyOnce">true</param>
             <param name="additionalDataDelimiter">;</param>
@@ -273,7 +273,7 @@
             <visual x="6041" y="2851"/>
             <param name="refreshInterval">50</param>
             <param name="sensorGeometryId">PH1_Forno_1.pc_geom</param>
-            <param name="marker">box</param>
+            <param name="marker">pallet</param>
             <param name="writeOnlyOnce">false</param>
         </module-instance>
         <module-instance name="C2D" type="com.ttsnetwork.modules.standard.ConveyorLine2">
@@ -400,7 +400,7 @@
             <visual x="6214" y="-352"/>
             <param name="refreshInterval">50</param>
             <param name="sensorGeometryId">PH2_Forno_2.pc_geom</param>
-            <param name="marker">box</param>
+            <param name="marker">pallet</param>
             <param name="writeOnlyOnce">false</param>
         </module-instance>
         <module-instance name="PL5_Forno_1" type="com.ttsnetwork.modules.standard.PLModule">
@@ -455,7 +455,7 @@
             <param name="modelName">S4_Plates</param>
             <param name="prodPlanFileName">inputSource/a5c69317-bf07-4128-85d5-21a425547ec7/PlanSource1_prodPlan.csv</param>
             <param name="creationFrameName">S4_Plates.creationFrame</param>
-            <param name="marker"></param>
+            <param name="marker">pallet</param>
             <param name="infoContent"></param>
             <param name="automatic">true</param>
             <param name="minCreationDistance">100</param>
