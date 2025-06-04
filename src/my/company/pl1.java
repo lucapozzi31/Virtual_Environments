@@ -20,6 +20,7 @@ public class pl1 extends StateMachine {
     private final SimpleStateVar rfidVar = new SimpleStateVar();
     private int CountC;
     private int CountD;
+    private int Time;
 
     private ConveyorBox boxC;
     private ConveyorBox boxD;
@@ -51,7 +52,7 @@ public class pl1 extends StateMachine {
         sh.registerOnPosition(2, this::onShAtPos2);
 
         r1 = useSkill(IRobotCommands.class, "R1");
-
+        Time=1000;
     }
 
     @Override
@@ -221,12 +222,12 @@ public class pl1 extends StateMachine {
         }
         schedule.startSerial();
         {
-            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
-            r1.move(driver.getFrameTransform("Frames.f4"), 1000);
-            r1.moveLinear(BoxUtils.targetTop(boxC), 1000);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
+            r1.move(driver.getFrameTransform("Frames.f4"), Time);
+            r1.moveLinear(BoxUtils.targetTop(boxC), Time);
             r1.pick(boxC.entity);
             c1c.remove(boxC);
-            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
 //        r1.move(driver.getFrameTransform("Frames.f3"), 1000);
             r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+10, 0, 0, 0), 1000);
             r1.release();
@@ -249,12 +250,12 @@ public class pl1 extends StateMachine {
         }
         schedule.startSerial();
         {
-            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
-            r1.move(driver.getFrameTransform("Frames.f4_1"), 1000);
-            r1.moveLinear(BoxUtils.targetTop(boxD), 1000);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
+            r1.move(driver.getFrameTransform("Frames.f4_1"), Time);
+            r1.moveLinear(BoxUtils.targetTop(boxD), Time);
             r1.pick(boxD.entity);
             c1d.remove(boxD);
-            r1.move(driver.getFrameTransform("Frames.f3_1"), 1000);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
 //        r1.move(driver.getFrameTransform("Frames.f3"), 1000);
             r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+10, 0, 0, 0), 1000);
             r1.release();
