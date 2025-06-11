@@ -1008,7 +1008,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Beam width [mm]"/>
       </parameter>
-      <parameter name="marker" type="string" value="box">
+      <parameter name="marker" type="string" value="pallet">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Object marker"/>
       </parameter>
@@ -1034,7 +1034,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Beam width [mm]"/>
       </parameter>
-      <parameter name="marker" type="string" value="box">
+      <parameter name="marker" type="string" value="pallet">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Object marker"/>
       </parameter>
@@ -1112,7 +1112,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Beam width [mm]"/>
       </parameter>
-      <parameter name="marker" type="string" value="box">
+      <parameter name="marker" type="string" value="pallet">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Object marker"/>
       </parameter>
@@ -1350,7 +1350,7 @@
    </instance>
    <instance name="R4G" uuid="b46604f7-5996-4ab9-98b8-8ecf9e452343" version="1" prototype="24925e13-84ee-4438-a2c8-e7e33076f003"/>
    <instance name="RFID_1" uuid="5d1d5c00-3a4f-4a3b-a2f0-043706442336" version="1" prototype="26e00061-2d73-4934-8d37-94ce4f116b71">
-      <parameter name="refreshInterval" type="long" value="500">
+      <parameter name="refreshInterval" type="long" value="20">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Refresh interval [ms]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1379,7 +1379,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Beam width [mm]"/>
       </parameter>
-      <parameter name="marker" type="string" value="EntityIn">
+      <parameter name="marker" type="string" value="pallet">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Object marker"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1390,7 +1390,7 @@
       </parameter>
    </instance>
    <instance name="RFID_2_Exit" uuid="a9bc248e-2667-4274-8525-2ce6e4bc0303" version="1" prototype="26e00061-2d73-4934-8d37-94ce4f116b71">
-      <parameter name="refreshInterval" type="long" value="500">
+      <parameter name="refreshInterval" type="long" value="20">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Refresh interval [ms]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1419,7 +1419,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Beam width [mm]"/>
       </parameter>
-      <parameter name="marker" type="string" value="EntityOut">
+      <parameter name="marker" type="string" value="pallet">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Object marker"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1513,7 +1513,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Min creation distance [mm]"/>
       </parameter>
-      <parameter name="marker" type="string" value="">
+      <parameter name="marker" type="string" value="pallet">
          <property name="displayName" type="string" value="Marker"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
