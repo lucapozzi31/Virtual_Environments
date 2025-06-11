@@ -15,26 +15,17 @@ import com.ttsnetwork.modulespack.conveyors.ConveyorBox;
  */
 public class Rule1 extends SplitRule {
 
-    IConveyorCommands c1Commands;
-    IConveyorCommands c2Commands;
-    ISensorProvider c1Sensors;
-    ISensorProvider c2Sensors;
-    ISensorProvider c3Sensors;
-
-    ConveyorBox partA;
-//    private int counter;
-    private int counterS2;
-    private int counterS3;
-
-    
+    private int counter;
 
     @Override
     public int select(ConveyorBox cb) {
-        return 0;
+        int rem = counter % 3;
+        counter++;
+        if (rem < 2) {
+            return 0;
+        }else{
+            return 2;
+        }
     }
-    
-    
-    
-    
-    
+
 }

@@ -10,10 +10,12 @@ public class pl1 extends StateMachine {
     private IShuttle sh;
     private IConveyorCommands c1c, c1d;
     private ISensorProvider c1cS, c1dS;
+    private IGripper gripper;
 
     private final SimpleStateVar boxOnC1C = new SimpleStateVar();
     private final SimpleStateVar boxOnC1D = new SimpleStateVar();
     private final SimpleStateVar baseCard1 = new SimpleStateVar();
+    private final SimpleStateVar casa = new SimpleStateVar();
     private final SimpleStateVar baseCard2 = new SimpleStateVar();
     private final SimpleStateVar cycleDone = new SimpleStateVar();
     private final SimpleStateVar cycleDoneLong = new SimpleStateVar();
@@ -52,7 +54,9 @@ public class pl1 extends StateMachine {
         sh.registerOnPosition(2, this::onShAtPos2);
 
         r1 = useSkill(IRobotCommands.class, "R1");
-        Time=1000;
+        gripper = useSkill(IGripper.class, "R1G");
+        Time = 1000;
+        setVar(casa, false);
     }
 
     @Override
@@ -93,7 +97,7 @@ public class pl1 extends StateMachine {
             CountD++;
             switchState(3100);
         } else if (CountC == 2 && CountD == 4) {
-            switchState(200);
+            switchState(8060);
         }
     }
 
@@ -136,7 +140,7 @@ public class pl1 extends StateMachine {
             CountD++;
             switchState(5100);
         } else if (CountC == 4 && CountD == 4) {
-            switchState(200);
+            switchState(8060);
         }
     }
 
@@ -178,9 +182,24 @@ public class pl1 extends StateMachine {
     }
 
     //Attesa callback 
-    public void state_210() {
-        if (baseCard1.read() != null) {
-            switchState(100);
+    public void state_8060() {
+        casa.write(false);
+        homing();
+        switchState(8061);
+    }
+
+    private void homing() {
+        schedule.startSerial();
+        {
+            r1.home();
+            setVar(casa, true);
+        }
+        schedule.end();
+    }
+
+    public void state_8061() {
+        if (casa.readBoolean()) {
+            switchState(200);
         }
     }
 
@@ -222,17 +241,20 @@ public class pl1 extends StateMachine {
         }
         schedule.startSerial();
         {
-            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
-            r1.move(driver.getFrameTransform("Frames.f4"), Time);
-            r1.moveLinear(BoxUtils.targetTop(boxC), Time);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
+            r1.moveLinear(driver.getFrameTransform("Frames.f4"), 4000.0);
+            r1.moveLinear(BoxUtils.targetTop(boxC), 2000.0);
+            r1.move(BoxUtils.targetOffset(boxC, 0, 0, BoxUtils.zSize(boxC) - 10, 0, 0, 0), 2000.0);
+            gripper.moveGripTo(BoxUtils.ySize(boxC), 500);
             r1.pick(boxC.entity);
             c1c.remove(boxC);
-            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
-//        r1.move(driver.getFrameTransform("Frames.f3"), 1000);
-            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+10, 0, 0, 0), 1000);
+            //r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+100, 0, 0, 0), boxC.cF, 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+1, 0, 0, 0), boxC.cF, 200.0);
             r1.release();
+            gripper.moveGripTo(BoxUtils.ySize(boxC)+10, 500);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+200, 0, 0, 0), 2000.0);
             schedule.attach(boxC.entity, base.entity);
-            r1.home();
             setVar(cycleDone, true);
             schedule.end();
         }
@@ -250,17 +272,20 @@ public class pl1 extends StateMachine {
         }
         schedule.startSerial();
         {
-            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
-            r1.move(driver.getFrameTransform("Frames.f4_1"), Time);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
+            r1.moveLinear(driver.getFrameTransform("Frames.f4_1"), 4000.0);
             r1.moveLinear(BoxUtils.targetTop(boxD), Time);
+            r1.move(BoxUtils.targetOffset(boxD, 0, 0, BoxUtils.zSize(boxD) - 10, 0, 0, 0), 2000.0);
+            gripper.moveGripTo(BoxUtils.ySize(boxD), 500);
             r1.pick(boxD.entity);
             c1d.remove(boxD);
-            r1.move(driver.getFrameTransform("Frames.f3_1"), Time);
-//        r1.move(driver.getFrameTransform("Frames.f3"), 1000);
-            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+10, 0, 0, 0), 1000);
+           // r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+100, 0, 0, 0), boxD.cF, 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)-10, 0, 0, 0), boxD.cF, 200.0);
             r1.release();
+            gripper.moveGripTo(BoxUtils.ySize(boxD)+10, 500);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+200, 0, 0, 0), 2000.0);
             schedule.attach(boxD.entity, base.entity);
-            r1.home();
             setVar(cycleDone, true);
             schedule.end();
         }

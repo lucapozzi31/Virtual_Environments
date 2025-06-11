@@ -1183,12 +1183,12 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="speed" type="double" value="1000">
+      <parameter name="speed" type="double" value="5000">
          <property name="displayName" type="string" value="V [mm/s]"/>
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="acceleration" type="double" value="1000">
+      <parameter name="acceleration" type="double" value="10000">
          <property name="displayName" type="string" value="A [mm/s^2]"/>
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1198,7 +1198,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="rotMaxAcceleration" type="double" value="180">
+      <parameter name="rotMaxAcceleration" type="double" value="720">
          <property name="displayName" type="string" value="Arot deg/s^2]"/>
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1226,12 +1226,12 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="speed" type="double" value="1000">
+      <parameter name="speed" type="double" value="5000">
          <property name="displayName" type="string" value="V [mm/s]"/>
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="acceleration" type="double" value="1000">
+      <parameter name="acceleration" type="double" value="10000">
          <property name="displayName" type="string" value="A [mm/s^2]"/>
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1241,7 +1241,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
-      <parameter name="rotMaxAcceleration" type="double" value="180">
+      <parameter name="rotMaxAcceleration" type="double" value="720">
          <property name="displayName" type="string" value="Arot deg/s^2]"/>
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1305,6 +1305,7 @@
          <property name="file_edit" type="boolean" value="false"/>
       </parameter>
    </instance>
+   <instance name="R3G" uuid="ae4054a2-47d6-490b-bfce-b2dbb7790ea3" version="1" prototype="24925e13-84ee-4438-a2c8-e7e33076f003"/>
    <instance name="R4" uuid="f2b576b7-b151-4821-bd3f-d1952dd9a62c" version="1" prototype="4cf0efef-ad27-4ae1-a3d4-068ad898d5e0">
       <parameter name="logics" type="string" value="">
          <property name="displayName" type="string" value="Logics class name"/>
@@ -1347,6 +1348,7 @@
          <property name="file_edit" type="boolean" value="false"/>
       </parameter>
    </instance>
+   <instance name="R4G" uuid="b46604f7-5996-4ab9-98b8-8ecf9e452343" version="1" prototype="24925e13-84ee-4438-a2c8-e7e33076f003"/>
    <instance name="RFID_1" uuid="5d1d5c00-3a4f-4a3b-a2f0-043706442336" version="1" prototype="26e00061-2d73-4934-8d37-94ce4f116b71">
       <parameter name="refreshInterval" type="long" value="500">
          <property name="constraints" type="string" value="&gt;0"/>
@@ -1427,7 +1429,6 @@
          <property name="affectGeometry" type="boolean" value="false"/>
       </parameter>
    </instance>
-   <instance name="RobotGripper1" uuid="b46604f7-5996-4ab9-98b8-8ecf9e452343" version="1" prototype="24925e13-84ee-4438-a2c8-e7e33076f003"/>
    <instance name="S1_KO" uuid="208c33fe-7506-4de3-8f05-2bd54682d550" version="1" prototype="5a6af30b-a6c6-4d2f-8b59-55688f183628">
       <parameter name="waitBeforeDelete" type="long" value="1000">
          <property name="constraints" type="string" value="&gt;0"/>
@@ -1631,7 +1632,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity width [mm]"/>
       </parameter>
-      <parameter name="entityHeight" type="double" value="50">
+      <parameter name="entityHeight" type="double" value="40">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity height [mm]"/>
       </parameter>
@@ -1753,7 +1754,7 @@
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity width [mm]"/>
       </parameter>
-      <parameter name="entityHeight" type="double" value="50">
+      <parameter name="entityHeight" type="double" value="40">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Entity height [mm]"/>
       </parameter>
@@ -1885,6 +1886,8 @@
    <relationship sourcePortName="TOOL" sourceInstanceUuid="84d57f8a-b267-4405-a211-7be6f37186b8" targetPortName="TOOL" targetInstanceUuid="c763341b-233f-4c9c-a22b-9d48c0d19db6"/>
    <relationship sourcePortName="TOOL" sourceInstanceUuid="3ddde84f-56a3-4db0-909a-5b0568d0de8b" targetPortName="TOOL" targetInstanceUuid="ed3d36b1-52ef-4600-9c15-7184256c735a"/>
    <relationship sourcePortName="out" sourceInstanceUuid="943ce6db-85fe-4172-8c52-7814e88e8c53" targetPortName="in" targetInstanceUuid="208c33fe-7506-4de3-8f05-2bd54682d550"/>
+   <relationship sourcePortName="control" sourceInstanceUuid="0637a8c1-8376-4c5d-b701-52dcca40c1d4" targetPortName="in" targetInstanceUuid="d62ebe16-708e-4eb0-94ea-59d90304b7fe"/>
+   <relationship sourcePortName="TOOL" sourceInstanceUuid="ae4054a2-47d6-490b-bfce-b2dbb7790ea3" targetPortName="TOOL" targetInstanceUuid="5bdf2f9b-bda6-4c4b-954e-1296a951dcfe"/>
    <modifiers type="attach">
       <property name="childInstance" type="string" value="4cbcf99b-ee06-4f83-8235-494ca335709b"/>
       <property name="parentInstance" type="string" value="977b74e2-4ebb-4ffa-a124-e65f92a0acdd"/>
@@ -1908,5 +1911,11 @@
       <property name="parentInstance" type="string" value="ed3d36b1-52ef-4600-9c15-7184256c735a"/>
       <property name="parentNode" type="string" value="R2.link6"/>
       <property name="matrix" type="double[]" value="0.0;0.0;1.0;0.0;0.0;1.0;0.0;0.0;-1.0;0.0;0.0;0.0;1302.0;0.0;1595.0;1.0"/>
+   </modifiers>
+   <modifiers type="attach">
+      <property name="childInstance" type="string" value="ae4054a2-47d6-490b-bfce-b2dbb7790ea3"/>
+      <property name="parentInstance" type="string" value="5bdf2f9b-bda6-4c4b-954e-1296a951dcfe"/>
+      <property name="parentNode" type="string" value="R3.link6"/>
+      <property name="matrix" type="double[]" value="0.0;-1.0;0.0;0.0;0.0;0.0;1.0;0.0;-1.0;0.0;0.0;0.0;3180.64;787.9609610082379;1584.116622834013;1.0"/>
    </modifiers>
 </instances>

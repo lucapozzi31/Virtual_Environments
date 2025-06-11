@@ -147,10 +147,10 @@
         </module-instance>
         <module-instance name="R2" type="com.ttsnetwork.modules.standard.Robot6DOF2">
             <visual x="-373" y="4695"/>
-            <param name="translationSpeed">1000</param>
-            <param name="translationAcceleration">1000</param>
+            <param name="translationSpeed">5000</param>
+            <param name="translationAcceleration">10000</param>
             <param name="rotationSpeed">360</param>
-            <param name="rotationAcceleration">180</param>
+            <param name="rotationAcceleration">720</param>
             <param name="modelName">R2</param>
             <param name="jerkTime">32</param>
             <param name="showAllGhosts">false</param>
@@ -241,7 +241,7 @@
             <param name="additionalDataName"></param>
         </module-instance>
         <module-instance name="PL3-Handle_Stations" type="com.ttsnetwork.modules.standard.PLModule">
-            <visual x="-2261" y="1948"/>
+            <visual x="-5156" y="1117"/>
             <param name="id">PL3-Handle_Stations</param>
             <param name="logicClassName">my.company.pl3</param>
         </module-instance>
@@ -256,6 +256,13 @@
             <param name="sensorFrames"></param>
             <param name="idleOnStart">false</param>
             <param name="infoContent"></param>
+        </module-instance>
+        <module-instance name="R3G" type="com.ttsnetwork.modules.standard.RobotGripper">
+            <visual x="-4265" y="2295"/>
+            <param name="tcpFrameId">R3G.GruppoPinza.tcp</param>
+            <param name="leftJoint">R3G.pinza_singola_sx.T</param>
+            <param name="rightJoint">R3G.pinza_singola_dx.T</param>
+            <param name="zero">551.0</param>
         </module-instance>
         <module-instance name="C1C" type="com.ttsnetwork.modules.standard.ConveyorLine2">
             <visual x="-3382" y="5126"/>
@@ -318,11 +325,11 @@
             <param name="infoContent"></param>
             <param name="automatic">true</param>
         </module-instance>
-        <module-instance name="RobotGripper1" type="com.ttsnetwork.modules.standard.RobotGripper">
+        <module-instance name="R4G" type="com.ttsnetwork.modules.standard.RobotGripper">
             <visual x="-447" y="-2456"/>
-            <param name="tcpFrameId">RobotGripper1.GruppoPinza.tcp</param>
-            <param name="leftJoint">RobotGripper1.pinza_singola_sx.T</param>
-            <param name="rightJoint">RobotGripper1.pinza_singola_dx.T</param>
+            <param name="tcpFrameId">R4G.GruppoPinza.tcp</param>
+            <param name="leftJoint">R4G.pinza_singola_sx.T</param>
+            <param name="rightJoint">R4G.pinza_singola_dx.T</param>
             <param name="zero">551.0</param>
         </module-instance>
         <module-instance name="S5_C1" type="com.ttsnetwork.modules.standard.ParametricSource2">
@@ -410,10 +417,10 @@
         </module-instance>
         <module-instance name="R1" type="com.ttsnetwork.modules.standard.Robot6DOF2">
             <visual x="-2574" y="4671"/>
-            <param name="translationSpeed">1000</param>
-            <param name="translationAcceleration">1000</param>
+            <param name="translationSpeed">5000</param>
+            <param name="translationAcceleration">10000</param>
             <param name="rotationSpeed">360</param>
-            <param name="rotationAcceleration">180</param>
+            <param name="rotationAcceleration">720</param>
             <param name="modelName">R1</param>
             <param name="jerkTime">32</param>
             <param name="showAllGhosts">false</param>
@@ -519,7 +526,7 @@
             <port-in module="C1_StartPick" port="flowIn"/>
         </connection>
         <connection>
-            <port-out module="RobotGripper1" port="control"/>
+            <port-out module="R4G" port="control"/>
             <port-in module="R4" port="tool"/>
         </connection>
         <connection>
@@ -585,6 +592,14 @@
         <connection>
             <port-out module="C12_KO" port="flowOut"/>
             <port-in module="S1_KO" port="in"/>
+        </connection>
+        <connection>
+            <port-out module="S3_Planning" port="control"/>
+            <port-in module="PL3-Handle_Stations" port="in"/>
+        </connection>
+        <connection>
+            <port-out module="R3G" port="control"/>
+            <port-in module="R3" port="tool"/>
         </connection>
     </connections>
 </model>

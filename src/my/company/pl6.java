@@ -6,6 +6,7 @@ package my.company;
 
 import com.ttsnetwork.modules.standard.BoxUtils;
 import com.ttsnetwork.modules.standard.IConveyorCommands;
+import com.ttsnetwork.modules.standard.IGripper;
 import com.ttsnetwork.modules.standard.IRobotCommands;
 import com.ttsnetwork.modules.standard.ISensorProvider;
 import com.ttsnetwork.modules.standard.ISource;
@@ -24,6 +25,7 @@ public class pl6 extends ProgrammableLogics {
     IConveyorCommands c2Commands;
     ISensorProvider c1Sensors;
     IRobotCommands r4Commands;
+    IGripper gripper;
 
     ConveyorBox part1;
     //ConveyorBox part2;
@@ -36,6 +38,7 @@ public class pl6 extends ProgrammableLogics {
         c1Sensors = useSkill(ISensorProvider.class, "C11_Quality");
         c1Sensors.registerOnSensors(this::onSensori2, "s2");
         r4Commands = useSkill(IRobotCommands.class, "R4");
+        gripper = useSkill(IGripper.class, "R4G");
     }
 
     private void onSensori2(SensorCatch t) {
@@ -52,10 +55,12 @@ public class pl6 extends ProgrammableLogics {
                 if (board.entity.getProperty("defective")) {
                     r4Commands.move(BoxUtils.targetOffset(board, 0, 0, BoxUtils.zSize(board) + 100, 0, 0, 0), 1000);
                     r4Commands.moveLinear(BoxUtils.targetTop(board), 1000);
+                    gripper.moveGripTo(BoxUtils.ySize(board), 500);
                     r4Commands.pick(board.entity);
 //                    r4Commands.moveLinear(BoxUtils.targetTop(part1), t.box.cF, 2000);
                     r4Commands.move(driver.getFrameTransform("Frames.Qualita"), 2000);
                     r4Commands.release();
+                    gripper.moveGripTo(BoxUtils.ySize(board)+100, 500);
                     c2Commands.insert(board);
                 }
             }
