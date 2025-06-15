@@ -45,6 +45,8 @@ public class pl3 extends StateMachine {
 
     private static final int CapacityA1 = 10;
     private static final int CapacityA2 = 9;
+    
+    private static final double r3Speed = 4000.0;
 
     //Coordinate offset pezzi
     private double[] xA2 = new double[]{-160, 0, 160, -160, 0, 160, -160, 0, 160};
@@ -208,13 +210,13 @@ public class pl3 extends StateMachine {
     private void fromStartToSh1() {
 
         schedule.startSerial();
-        r3.move(driver.getFrameTransform("Frames.f1"), 2000);
-        r3.moveLinear(BoxUtils.targetOffset(boxStart, 0,0,BoxUtils.zSize(boxStart)+90, 0,0,0), 500);
+        r3.move(driver.getFrameTransform("Frames.f1"), r3Speed);
+        r3.moveLinear(BoxUtils.targetOffset(boxStart, 0,0,BoxUtils.zSize(boxStart)+90, 0,0,0), r3Speed);
         gripper.moveGripTo(BoxUtils.ySize(boxStart), 500);
         r3.pick(boxStart.entity);
-        r3.move(driver.getFrameTransform("Frames.f1_1"), 2000);
+        r3.move(driver.getFrameTransform("Frames.f1_1"), r3Speed);
         c1Start.remove(boxStart);
-        r3.move(driver.getFrameTransform("Frames.f2"), 2000);
+        r3.move(driver.getFrameTransform("Frames.f2"), r3Speed);
         r3.release();
         gripper.moveGripTo(BoxUtils.ySize(boxStart)+100, 500);
         r3.home();
@@ -226,13 +228,13 @@ public class pl3 extends StateMachine {
 
     private void fromStartToSh2() {
         schedule.startSerial();
-        r3.move(driver.getFrameTransform("Frames.f1"), 2000);
-        r3.moveLinear(BoxUtils.targetOffset(boxStart, 0,0,BoxUtils.zSize(boxStart)+90, 0,0,0), 500);
+        r3.move(driver.getFrameTransform("Frames.f1"), r3Speed);
+        r3.moveLinear(BoxUtils.targetOffset(boxStart, 0,0,BoxUtils.zSize(boxStart)+90, 0,0,0), r3Speed);
         gripper.moveGripTo(BoxUtils.ySize(boxStart), 500);
         r3.pick(boxStart.entity);
-        r3.move(driver.getFrameTransform("Frames.f1_1"), 2000);
+        r3.move(driver.getFrameTransform("Frames.f1_1"), r3Speed);
         c1Start.remove(boxStart);
-        r3.move(driver.getFrameTransform("Frames.f6"), 2000);
+        r3.move(driver.getFrameTransform("Frames.f6"), r3Speed);
         r3.release();
         gripper.moveGripTo(BoxUtils.ySize(boxStart)+100, 500);
         r3.home();
@@ -265,12 +267,12 @@ public class pl3 extends StateMachine {
         }
 
         schedule.startSerial();
-        r3.move(driver.getFrameTransform("Frames.f2"), 2000);
+        r3.move(driver.getFrameTransform("Frames.f2"), r3Speed);
         gripper.moveGripTo(BoxUtils.ySize(part), 500);
         r3.pick(part.entity);
         sh1.remove(1);
-        r3.move(driver.getFrameTransform("Frames.f1_1"), 1000);
-        r3.move(BoxUtils.targetOffset(plateEject, x, y, BoxUtils.zSize(plateEject) + 100, 0, 0, r), 1000);
+        r3.move(driver.getFrameTransform("Frames.f1_1"), r3Speed);
+        r3.move(BoxUtils.targetOffset(plateEject, x, y, BoxUtils.zSize(plateEject) + 100, 0, 0, r), r3Speed);
         gripper.moveGripTo(BoxUtils.ySize(part)+100, 500);
         r3.release();
         schedule.attach(part.entity, plateEject.entity);
@@ -321,12 +323,12 @@ public class pl3 extends StateMachine {
         }
 
         schedule.startSerial();
-        r3.move(driver.getFrameTransform("Frames.f6"), 2000);
+        r3.move(driver.getFrameTransform("Frames.f6"), r3Speed);
         gripper.moveGripTo(BoxUtils.ySize(part), 500);
         r3.pick(part.entity);
         sh2.remove(1);
-        r3.move(driver.getFrameTransform("Frames.f1_1"), 1000);
-        r3.move(BoxUtils.targetOffset(plateEject, x, y, BoxUtils.zSize(plateEject) + 100, 0, 0, r), 1000);
+        r3.move(driver.getFrameTransform("Frames.f1_1"), r3Speed);
+        r3.move(BoxUtils.targetOffset(plateEject, x, y, BoxUtils.zSize(plateEject) + 100, 0, 0, r), r3Speed);
         gripper.moveGripTo(BoxUtils.ySize(part)+100, 500);
         r3.release();
         schedule.attach(part.entity, plateEject.entity);

@@ -62,10 +62,10 @@ public class Qualita extends ProgrammableLogics {
             boolean isDefective;
             if ("P001".equals(rfid)) {
                 // 1 % difettosi
-                isDefective = distA.sample() < 80.0;
+                isDefective = distA.sample() < 1.0;
             } else {                         // P002
                 // 2 % difettosi
-                isDefective = distB.sample() < 80.0;
+                isDefective = distB.sample() < 2.0;
             }
 
             board.entity.setProperty("defective", isDefective);

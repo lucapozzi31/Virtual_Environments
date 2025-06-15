@@ -29,6 +29,8 @@ public class pl1 extends StateMachine {
     private ConveyorBox base;
 
     private String curRfid;
+    
+    private static final double r1Speed = 3500.0;
 
     private double[] xA1_C = new double[]{-50, -30};
     private double[] xA1_D = new double[]{-50, 50, 50, 50};
@@ -241,19 +243,19 @@ public class pl1 extends StateMachine {
         }
         schedule.startSerial();
         {
-            r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
-            r1.moveLinear(driver.getFrameTransform("Frames.f4"), 4000.0);
-            r1.moveLinear(BoxUtils.targetTop(boxC), 2000.0);
-            r1.move(BoxUtils.targetOffset(boxC, 0, 0, BoxUtils.zSize(boxC) - 10, 0, 0, 0), 2000.0);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), r1Speed);
+            r1.moveLinear(driver.getFrameTransform("Frames.f4"), r1Speed);
+            r1.moveLinear(BoxUtils.targetTop(boxC), r1Speed);
+            r1.move(BoxUtils.targetOffset(boxC, 0, 0, BoxUtils.zSize(boxC) - 10, 0, 0, 0), r1Speed);
             gripper.moveGripTo(BoxUtils.ySize(boxC), 500);
             r1.pick(boxC.entity);
             c1c.remove(boxC);
             //r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
-            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+100, 0, 0, 0), boxC.cF, 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+100, 0, 0, 0), boxC.cF, r1Speed);
             r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+1, 0, 0, 0), boxC.cF, 200.0);
             r1.release();
             gripper.moveGripTo(BoxUtils.ySize(boxC)+10, 500);
-            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+200, 0, 0, 0), 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+200, 0, 0, 0), r1Speed);
             schedule.attach(boxC.entity, base.entity);
             setVar(cycleDone, true);
             schedule.end();
@@ -272,19 +274,19 @@ public class pl1 extends StateMachine {
         }
         schedule.startSerial();
         {
-            r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
-            r1.moveLinear(driver.getFrameTransform("Frames.f4_1"), 4000.0);
+            r1.move(driver.getFrameTransform("Frames.f3_1"), r1Speed);
+            r1.moveLinear(driver.getFrameTransform("Frames.f4_1"), r1Speed);
             r1.moveLinear(BoxUtils.targetTop(boxD), Time);
-            r1.move(BoxUtils.targetOffset(boxD, 0, 0, BoxUtils.zSize(boxD) - 10, 0, 0, 0), 2000.0);
+            r1.move(BoxUtils.targetOffset(boxD, 0, 0, BoxUtils.zSize(boxD) - 10, 0, 0, 0), r1Speed);
             gripper.moveGripTo(BoxUtils.ySize(boxD), 500);
             r1.pick(boxD.entity);
             c1d.remove(boxD);
            // r1.move(driver.getFrameTransform("Frames.f3_1"), 2000.0);
-            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+100, 0, 0, 0), boxD.cF, 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+100, 0, 0, 0), boxD.cF, r1Speed);
             r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)-10, 0, 0, 0), boxD.cF, 200.0);
             r1.release();
             gripper.moveGripTo(BoxUtils.ySize(boxD)+10, 500);
-            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+200, 0, 0, 0), 2000.0);
+            r1.move(BoxUtils.targetOffset(base, x, y, BoxUtils.zSize(base)+200, 0, 0, 0), r1Speed);
             schedule.attach(boxD.entity, base.entity);
             setVar(cycleDone, true);
             schedule.end();

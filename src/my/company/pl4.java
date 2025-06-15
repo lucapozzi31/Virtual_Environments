@@ -42,7 +42,7 @@ public class pl4 extends ProgrammableLogics {
         schedule.startSerial();
         {
             c1Commands.lock(t.box);
-            schedule.waitTime(3000);
+            schedule.waitTime(160000);
             c1Commands.release(part1);
         }
         schedule.end();

@@ -99,7 +99,7 @@
             <visual x="-2527" y="2944"/>
             <param name="width">500</param>
             <param name="tableName">SH1.table</param>
-            <param name="shuttleStepTime">1500</param>
+            <param name="shuttleStepTime">750</param>
             <param name="shuttleStep">1100</param>
             <param name="positionsNumber">2</param>
         </module-instance>
@@ -495,7 +495,7 @@
             <visual x="-426" y="2944"/>
             <param name="width">500</param>
             <param name="tableName">SH2.table</param>
-            <param name="shuttleStepTime">1500</param>
+            <param name="shuttleStepTime">750</param>
             <param name="shuttleStep">1100</param>
             <param name="positionsNumber">2</param>
         </module-instance>

@@ -1825,7 +1825,7 @@
          <property name="displayName" type="string" value="Number of positions"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="shuttleStepTime" type="int" value="1500">
+      <parameter name="shuttleStepTime" type="int" value="750">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Shuttle step time [ms]"/>
          <property name="affectGeometry" type="boolean" value="false"/>
@@ -1857,7 +1857,7 @@
          <property name="displayName" type="string" value="Number of positions"/>
          <property name="affectGeometry" type="boolean" value="true"/>
       </parameter>
-      <parameter name="shuttleStepTime" type="int" value="1500">
+      <parameter name="shuttleStepTime" type="int" value="750">
          <property name="constraints" type="string" value="&gt;0"/>
          <property name="displayName" type="string" value="Shuttle step time [ms]"/>
          <property name="affectGeometry" type="boolean" value="false"/>

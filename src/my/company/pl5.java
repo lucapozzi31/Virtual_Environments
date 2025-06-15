@@ -83,7 +83,7 @@ public class pl5 extends StateMachine {
 
     void cook() {
         schedule.startSerial();
-        schedule.waitTime(400000);
+        schedule.waitTime(160000);
         c1Commands.release(boxPos2.readAndForget());
         c1Commands.release(boxPos3.readAndForget());
         setVar(processComplete, true);
