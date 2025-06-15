@@ -1,10 +1,15 @@
 # Virtual_Environments
 Design and Configuration of Automated Production Systems using Virtual Environments
 
+![Screenshot 2025-06-15 at 15 58 51](https://github.com/user-attachments/assets/5f41ccd0-a3e7-496f-9711-96426e30cbe4)
+
 
 ## Welcome to the project Virtual_Environments wiki!
 
-_This repository contains the project carried out during the Master of Science in Business Engineering at SUPSI (University of Applied Sciences and Arts of Southern Switzerland) in Lugano, under the supervision of Prof. Diego Rovere. Using the DDD Model Editor simulator, we built a virtual-environment simulation of automated production systems._
+_This repository contains the project carried out during the Master of Science in Business Engineering at SUPSI (University of Applied Sciences and Arts of Southern Switzerland) in Lugano, under the supervision of Prof. Diego Rovere. Using the DDD Model Editor simulator, InfluxDB and Grafana, we built a virtual-environment simulation of automated production systems with a dashboard to show the real time performances._
+
+![Screenshot 2025-06-15 at 16 08 19](https://github.com/user-attachments/assets/f6c0d6c9-daae-436a-9d06-d2dd58dc9ccc)
+
 
 
 ## Process Description
