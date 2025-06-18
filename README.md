@@ -6,11 +6,23 @@ Design and Configuration of Automated Production Systems using Virtual Environme
 
 ## Welcome to the project Virtual_Environments wiki!
 
-_This repository contains the project carried out during the Master of Science in Business Engineering at SUPSI (University of Applied Sciences and Arts of Southern Switzerland) in Lugano, under the supervision of Prof. Diego Rovere. Using the DDD Model Editor simulator, InfluxDB and Grafana, we built a virtual-environment simulation of automated production systems with a dashboard to show the real time performances._
+_This repository contains the project carried out during the Master of Science in Business Engineering at SUPSI (University of Applied Sciences and Arts of Southern Switzerland) in Lugano, under the supervision of Prof. Researcher Diego Rovere. Using the DDD Model Editor simulator, InfluxDB and Grafana, we built a virtual-environment simulation of automated production systems with a dashboard to show the real time performances._
+
+
+## Requirements
+_To bring this project to life, you'll need the following tools and technologies:_
+
+- **Java JDK 11**: Our model runs on JDK11 [Download JDK 11](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html). Ensure you have it installed.
+- **DDDModelEditor**: [Windows](https://drive.switch.ch/index.php/s/uaz6sIOhuMdvfLt), [MacOs](https://drive.switch.ch/index.php/s/9Qi5fRmON4E24ZD) Developed by [Technology Transfer System](https://www.ttsnetwork.com/en/#)
+- **InfluxDB 2.7.6**: All data is stored efficiently for time series data: [Download InfluxDB 2.7.6](https://portal.influxdata.com/downloads/).
+- **Grafana v.11**: To visualize sensor measurements, we use [Download Grafana v.11](https://grafana.com/grafana/download).
+- **Fusion360**: To create custom items and put them into production: [Download Fusion360](https://www.autodesk.ch/it/products/fusion-360/overview?term=1-YEAR&tab=subscription).
+
+With these tools in your toolkit, you'll be well-equipped to dive into the world of automated production systems.
+
+
 
 ![Screenshot 2025-06-15 at 16 08 19](https://github.com/user-attachments/assets/f6c0d6c9-daae-436a-9d06-d2dd58dc9ccc)
-
-
 
 ## Process Description
 
